@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
+  - lottie-ios (3.1.8)
   - RxAlamofire (5.1.0):
     - RxAlamofire/Core (= 5.1.0)
   - RxAlamofire/Core (5.1.0):
@@ -8,19 +9,22 @@ PODS:
   - RxSwift (5.1.1)
 
 DEPENDENCIES:
+  - lottie-ios (= 3.1.8)
   - RxAlamofire (= 5.1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - lottie-ios
     - RxAlamofire
     - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   RxAlamofire: a2d7621de4c23a0c6e7b476b504acc32838ee341
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 562b340024aa3ba98be9290b5863ef805b0289ba
+PODFILE CHECKSUM: 12323e1a14b2de737abe1ab9f76d66bc15ecb1d5
 
 COCOAPODS: 1.5.3

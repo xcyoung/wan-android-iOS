@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 class Toast: NSObject {
     static let defaultDuration: Float = 1.5
-    static let defaultBackgroukColor: UIColor = UIColor.init(argb: "#99000000")
-
+    static let defaultBackgroukColor: UIColor = UIColor.project.toastBackound
     let contentView: ToastView
 
     init(text: String) {
@@ -44,24 +43,8 @@ class Toast: NSObject {
         contentView.alpha = isShow ? 1 : 0
     }
 
-    @available(*, deprecated, message: "ToastOperation control")
-    func showAnimation() {
-        UIView.beginAnimations("show", context: nil)
-        UIView.setAnimationCurve(.easeIn)
-        UIView.setAnimationDuration(0.3)
-        contentView.alpha = 1
-        UIView.commitAnimations()
-    }
-
-    @available(*, deprecated, message: "ToastOperation control")
-    @objc func hideAnimation() {
-        UIView.beginAnimations("hide", context: nil)
-        UIView.setAnimationCurve(.easeOut)
-        UIView.setAnimationDelegate(self)
-        UIView.setAnimationDidStop(#selector(dismiss))
-        UIView.setAnimationDuration(0.3)
-        contentView.alpha = 0
-        UIView.commitAnimations()
+    func showIconAnimation() {
+        contentView.showAnimation()
     }
 
     class func show(text: String) {

@@ -8,16 +8,21 @@
 
 import Foundation
 import UIKit
+import Lottie
 class ToastView: UIView {
     let textLabel: UILabel
-    let iconView: UIImageView
+    let iconView: AnimationView
 
     override init(frame: CGRect) {
-        iconView = UIImageView.init(frame: CGRect.zero)
-        iconView.backgroundColor = UIColor.white
+        let animation = Animation.nameWithMode("alert_circle", subdirectory: "animation/alert_circle")
+
+        iconView = AnimationView.init(frame: CGRect.zero)
+        iconView.animation = animation
+        iconView.contentMode = .scaleAspectFit
+        iconView.backgroundBehavior = .pauseAndRestore
 
         textLabel = UILabel.init(frame: CGRect.zero)
-        textLabel.textColor = UIColor.white
+        textLabel.textColor = UIColor.project.toastLabel
         textLabel.textAlignment = .left
         textLabel.font = UIFont.systemFont(ofSize: 16)
         textLabel.numberOfLines = 0
@@ -26,7 +31,7 @@ class ToastView: UIView {
 
         backgroundColor = Toast.defaultBackgroukColor
         layer.cornerRadius = 8
-        
+
         addSubview(iconView)
         addSubview(textLabel)
     }
@@ -46,9 +51,16 @@ class ToastView: UIView {
 
         let y = superHeight - 100 - textLabelSize.height
 
-        self.frame = CGRect.init(x: 0.5 * (superWidth - textLabelSize.width - 60), y: y, width: textLabelSize.width + 60, height: textLabelSize.height + 30)
-        self.textLabel.frame = CGRect.init(x: 30 + 14, y: 15, width: textLabelSize.width, height: textLabelSize.height)
-        self.iconView.frame = CGRect.init(x: 2 + 14, y: 0.5 * (self.frame.height - 20), width: 20, height: 20)
+        self.frame = CGRect.init(x: 0.5 * (superWidth - textLabelSize.width - 70), y: y, width: textLabelSize.width + 70, height: textLabelSize.height + 30)
+        self.textLabel.frame = CGRect.init(x: 40 + 14, y: 15, width: textLabelSize.width, height: textLabelSize.height)
+        self.iconView.frame = CGRect.init(x: 2 + 14, y: 0.5 * (self.frame.height - 30), width: 30, height: 30)
     }
 
+    func showAnimation() {
+        iconView.play(fromProgress: 0,
+            toProgress: 1,
+            loopMode: LottieLoopMode.repeat(2),
+            completion: { (finished) in
+            })
+    }
 }

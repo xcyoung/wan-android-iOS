@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
+        view.backgroundColor = UIColor.white
+        
         let label = UILabel.init(frame: CGRect.init(x: 100, y: 100, width: 100, height: 100))
         label.backgroundColor = UIColor.init(argb: "#FFFF00")
 
@@ -25,6 +26,8 @@ class ViewController: UIViewController {
 
     @objc func labelClick() {
         Toast.show(text: "你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？")
+        Toast.show(text: "你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？你好吗？2")
+        Toast.show(text: "你好吗？你好吗？3")
     }
 }
 

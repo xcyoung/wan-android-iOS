@@ -14,6 +14,9 @@
 		3A5F733B249BB4DB00A3AE68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5F7339249BB4DB00A3AE68 /* Main.storyboard */; };
 		3A5F733D249BB4DD00A3AE68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A5F733C249BB4DD00A3AE68 /* Assets.xcassets */; };
 		3A5F7340249BB4DD00A3AE68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5F733E249BB4DD00A3AE68 /* LaunchScreen.storyboard */; };
+		3A79DA6B24A609D3002BCD2A /* animation in Resources */ = {isa = PBXBuildFile; fileRef = 3A79DA6A24A609D3002BCD2A /* animation */; };
+		3A79DA6F24A62650002BCD2A /* Ext_UIColor_project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79DA6E24A62650002BCD2A /* Ext_UIColor_project.swift */; };
+		3A79DAAC24A62EF7002BCD2A /* Ext_LottieAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79DAAB24A62EF7002BCD2A /* Ext_LottieAnimation.swift */; };
 		3A90B0E324A4781200651342 /* RxLiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0E224A4781200651342 /* RxLiveData.swift */; };
 		3A90B0E724A47C6F00651342 /* Ext_UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0E624A47C6F00651342 /* Ext_UIApplication.swift */; };
 		3A90B0EA24A481EA00651342 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0E924A481EA00651342 /* Toast.swift */; };
@@ -34,6 +37,9 @@
 		3A5F733C249BB4DD00A3AE68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A5F733F249BB4DD00A3AE68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A5F7341249BB4DD00A3AE68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A79DA6A24A609D3002BCD2A /* animation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = animation; sourceTree = "<group>"; };
+		3A79DA6E24A62650002BCD2A /* Ext_UIColor_project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIColor_project.swift; sourceTree = "<group>"; };
+		3A79DAAB24A62EF7002BCD2A /* Ext_LottieAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_LottieAnimation.swift; sourceTree = "<group>"; };
 		3A90B0E224A4781200651342 /* RxLiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxLiveData.swift; sourceTree = "<group>"; };
 		3A90B0E624A47C6F00651342 /* Ext_UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIApplication.swift; sourceTree = "<group>"; };
 		3A90B0E924A481EA00651342 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 		3A5F7332249BB4DB00A3AE68 /* wan-android-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3A79DA6A24A609D3002BCD2A /* animation */,
 				3AEEE2D824A46E63000A10F6 /* base */,
 				3A90B0E424A47BEA00651342 /* common */,
 				3A5F7333249BB4DB00A3AE68 /* AppDelegate.swift */,
@@ -108,6 +115,8 @@
 			children = (
 				3A90B0E624A47C6F00651342 /* Ext_UIApplication.swift */,
 				3A90B0EB24A4858E00651342 /* Ext_UIColor_Hex.swift */,
+				3A79DA6E24A62650002BCD2A /* Ext_UIColor_project.swift */,
+				3A79DAAB24A62EF7002BCD2A /* Ext_LottieAnimation.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -218,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A79DA6B24A609D3002BCD2A /* animation in Resources */,
 				3A5F7340249BB4DD00A3AE68 /* LaunchScreen.storyboard in Resources */,
 				3A5F733D249BB4DD00A3AE68 /* Assets.xcassets in Resources */,
 				3A5F733B249BB4DB00A3AE68 /* Main.storyboard in Resources */,
@@ -261,6 +271,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -269,6 +280,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -286,8 +298,10 @@
 				3A90B0EA24A481EA00651342 /* Toast.swift in Sources */,
 				3A90B0E324A4781200651342 /* RxLiveData.swift in Sources */,
 				3AEEE2DC24A473BC000A10F6 /* BaseViewModel.swift in Sources */,
+				3A79DA6F24A62650002BCD2A /* Ext_UIColor_project.swift in Sources */,
 				3AEE1C8924A5C18F00660388 /* ToastView.swift in Sources */,
 				3A90B0E724A47C6F00651342 /* Ext_UIApplication.swift in Sources */,
+				3A79DAAC24A62EF7002BCD2A /* Ext_LottieAnimation.swift in Sources */,
 				3A90B0EC24A4858E00651342 /* Ext_UIColor_Hex.swift in Sources */,
 				3AEEE2DA24A46EC9000A10F6 /* BaseViewController.swift in Sources */,
 				3A90B0EF24A5996C00651342 /* ToastOperation.swift in Sources */,

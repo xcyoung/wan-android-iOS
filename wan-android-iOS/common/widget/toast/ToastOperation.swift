@@ -81,11 +81,17 @@ class ToastOperation: Operation {
         finish()
         toast.dismiss()
     }
+    
+    @objc func onShowComplete() {
+        toast.showIconAnimation()
+    }
 
     func showAnimation() {
         UIView.beginAnimations("show", context: nil)
         UIView.setAnimationCurve(.easeIn)
         UIView.setAnimationDuration(0.8)
+        UIView.setAnimationDelegate(self)
+        UIView.setAnimationDidStop(#selector(onShowComplete))
         toast.onAnimate(isShow: true)
         UIView.commitAnimations()
     }
