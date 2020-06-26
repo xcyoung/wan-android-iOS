@@ -7,3 +7,5 @@
   https://github.com/WangLiquan/EWToast
   
   https://github.com/Darren-chenchen/CLToast
+
+- 集成Lottie, 对于Toast显示逻辑优化
