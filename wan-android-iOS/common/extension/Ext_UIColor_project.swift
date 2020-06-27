@@ -37,4 +37,5 @@ class Project: NSObject {
 
     let toastBackound: UIColor = Project.modeColor(light: "#99000000", dark: "#eeffffff")
     let toastLabel: UIColor = Project.modeColor(light: "#ffffff", dark: "#000000")
+    let green: UIColor = Project.make("#00BFA6")
 }

@@ -8,19 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.white
         
-        let label = UILabel.init(frame: CGRect.init(x: 100, y: 100, width: 100, height: 100))
-        label.backgroundColor = UIColor.init(argb: "#FFFF00")
-
-        label.isUserInteractionEnabled = true
-        label.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(labelClick)))
-        self.view.addSubview(label)
+//        let label = UILabel.init(frame: CGRect.init(x: 100, y: 100, width: 100, height: 100))
+//        label.backgroundColor = UIColor.init(argb: "#FFFF00")
+//
+//        label.isUserInteractionEnabled = true
+//        label.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(labelClick)))
+//
+//        let image = DefaultLoadingView.init(frame: CGRect.init(x: 0, y: 200, width: UIScreen.main.bounds.width - 100, height: 500))
+//        image.startLoading()
+//
+//        self.view.addSubview(image)
+//        self.view.addSubview(label)
+        showLoading()
     }
 
 

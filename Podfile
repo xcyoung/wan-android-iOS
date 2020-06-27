@@ -8,6 +8,8 @@ target 'wan-android-iOS' do
   use_frameworks!
   pod 'RxAlamofire',  '5.1.0'
   pod 'lottie-ios',   '3.1.8'
+  pod 'SnapKit'
+  pod 'R.swift',      '5.0.0'
   # Pods for wan-android-iOS
 
 end
