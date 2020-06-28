@@ -9,7 +9,8 @@ target 'wan-android-iOS' do
   pod 'RxAlamofire',  '5.1.0'
   pod 'lottie-ios',   '3.1.8'
   pod 'SnapKit'
-  pod 'R.swift',      '5.0.0'
+  #pod 'R.swift',      '5.0.0'
+  pod 'MJRefresh',    '3.4.3'
   # Pods for wan-android-iOS
 
 end

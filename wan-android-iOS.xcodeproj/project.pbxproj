@@ -26,6 +26,7 @@
 		3A90B0EC24A4858E00651342 /* Ext_UIColor_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0EB24A4858E00651342 /* Ext_UIColor_Hex.swift */; };
 		3A90B0EF24A5996C00651342 /* ToastOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0EE24A5996C00651342 /* ToastOperation.swift */; };
 		3A90B0F124A59A4800651342 /* ToastHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0F024A59A4800651342 /* ToastHandler.swift */; };
+		3ACC1B3C24A8EB75001F69EB /* BaseTableViewUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC1B3B24A8EB75001F69EB /* BaseTableViewUIController.swift */; };
 		3ACD1A3124A79A2400081C46 /* AnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD1A3024A79A2400081C46 /* AnimationProtocol.swift */; };
 		3ACF902124A650A100648C9A /* PageStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF902024A650A100648C9A /* PageStateManager.swift */; };
 		3AEE1C8924A5C18F00660388 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE1C8824A5C18F00660388 /* ToastView.swift */; };
@@ -54,6 +55,7 @@
 		3A90B0EB24A4858E00651342 /* Ext_UIColor_Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIColor_Hex.swift; sourceTree = "<group>"; };
 		3A90B0EE24A5996C00651342 /* ToastOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastOperation.swift; sourceTree = "<group>"; };
 		3A90B0F024A59A4800651342 /* ToastHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastHandler.swift; sourceTree = "<group>"; };
+		3ACC1B3B24A8EB75001F69EB /* BaseTableViewUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewUIController.swift; sourceTree = "<group>"; };
 		3ACD1A3024A79A2400081C46 /* AnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationProtocol.swift; sourceTree = "<group>"; };
 		3ACF902024A650A100648C9A /* PageStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStateManager.swift; sourceTree = "<group>"; };
 		3AEE1C8824A5C18F00660388 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
@@ -114,7 +116,7 @@
 		3A90B0E424A47BEA00651342 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				3A90B0E824A481D800651342 /* widget */,
+				3A90B0E824A481D800651342 /* component */,
 				3A90B0E524A47C1100651342 /* extension */,
 			);
 			path = common;
@@ -131,13 +133,15 @@
 			path = extension;
 			sourceTree = "<group>";
 		};
-		3A90B0E824A481D800651342 /* widget */ = {
+		3A90B0E824A481D800651342 /* component */ = {
 			isa = PBXGroup;
 			children = (
+				3ACC1B3D24A8F3C7001F69EB /* paging */,
+				3ACC1B3A24A8EB30001F69EB /* tableView */,
 				3ACF901F24A6508800648C9A /* pageState */,
 				3A90B0ED24A5993400651342 /* toast */,
 			);
-			path = widget;
+			path = component;
 			sourceTree = "<group>";
 		};
 		3A90B0ED24A5993400651342 /* toast */ = {
@@ -149,6 +153,21 @@
 				3A90B0F024A59A4800651342 /* ToastHandler.swift */,
 			);
 			path = toast;
+			sourceTree = "<group>";
+		};
+		3ACC1B3A24A8EB30001F69EB /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+				3ACC1B3B24A8EB75001F69EB /* BaseTableViewUIController.swift */,
+			);
+			path = tableView;
+			sourceTree = "<group>";
+		};
+		3ACC1B3D24A8F3C7001F69EB /* paging */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = paging;
 			sourceTree = "<group>";
 		};
 		3ACF901F24A6508800648C9A /* pageState */ = {
@@ -292,6 +311,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-wan-android-iOS/Pods-wan-android-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -302,6 +322,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -321,6 +342,7 @@
 			files = (
 				3ACD1A3124A79A2400081C46 /* AnimationProtocol.swift in Sources */,
 				3A5F7338249BB4DB00A3AE68 /* ViewController.swift in Sources */,
+				3ACC1B3C24A8EB75001F69EB /* BaseTableViewUIController.swift in Sources */,
 				3A096D5724A7A36700E7FF1D /* DefaultEmptyView.swift in Sources */,
 				3A23DD7824A6F7D3003DD81B /* DefaultLoadingView.swift in Sources */,
 				3A90B0EA24A481EA00651342 /* Toast.swift in Sources */,
