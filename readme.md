@@ -18,3 +18,7 @@ https://github.com/manondidi/swiftArch
 - 新增页面管理PageStateManager
 
 - 引入SnapKit布局
+
+### 2020.06.30
+
+- 集成Alamofire，新增http请求封装
