@@ -2,6 +2,9 @@ PODS:
   - Alamofire (4.9.1)
   - lottie-ios (3.1.8)
   - MJRefresh (3.4.3)
+  - R.swift (5.0.0):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.1)
   - RxAlamofire (5.1.0):
     - RxAlamofire/Core (= 5.1.0)
   - RxAlamofire/Core (5.1.0):
@@ -13,6 +16,7 @@ PODS:
 DEPENDENCIES:
   - lottie-ios (= 3.1.8)
   - MJRefresh (= 3.4.3)
+  - R.swift (= 5.0.0)
   - RxAlamofire (= 5.1.0)
   - SnapKit
 
@@ -21,6 +25,8 @@ SPEC REPOS:
     - Alamofire
     - lottie-ios
     - MJRefresh
+    - R.swift
+    - R.swift.Library
     - RxAlamofire
     - RxSwift
     - SnapKit
@@ -29,10 +35,12 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  R.swift: f88c7d7d48a2be4dffa132dde1b3d389620310eb
+  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   RxAlamofire: a2d7621de4c23a0c6e7b476b504acc32838ee341
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: de7734d0ce4b2fb2d7b274cea562bb23de7e1cb8
+PODFILE CHECKSUM: e0408430294124d18db60ed4cf5e6dcd5a5d3718
 
 COCOAPODS: 1.5.3
