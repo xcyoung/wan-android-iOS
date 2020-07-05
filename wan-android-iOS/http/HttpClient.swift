@@ -45,7 +45,7 @@ class HttpClient: NSObject {
                     if let model: T = JsonUtils.jsonParse(jsonStr: jsonString) {
                         return model
                     } else {
-                        throw NSError.init()
+                        throw XError.init(code: -1, message: "json解析异常")
                     }
             }
         #else
@@ -54,7 +54,7 @@ class HttpClient: NSObject {
                     if let model: T = JsonUtils.jsonParse(jsonStr: jsonString) {
                         return model
                     } else {
-                        throw NSError.init()
+                        throw XError.init(code: -1, message: "json解析异常")
                     }
             }
         #endif
