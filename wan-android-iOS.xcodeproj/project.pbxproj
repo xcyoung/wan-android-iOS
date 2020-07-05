@@ -30,9 +30,15 @@
 		3A90B0EC24A4858E00651342 /* Ext_UIColor_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0EB24A4858E00651342 /* Ext_UIColor_Hex.swift */; };
 		3A90B0EF24A5996C00651342 /* ToastOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0EE24A5996C00651342 /* ToastOperation.swift */; };
 		3A90B0F124A59A4800651342 /* ToastHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0F024A59A4800651342 /* ToastHandler.swift */; };
-		3ACC1B3C24A8EB75001F69EB /* BaseTableViewUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC1B3B24A8EB75001F69EB /* BaseTableViewUIController.swift */; };
+		3ACC1B3C24A8EB75001F69EB /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC1B3B24A8EB75001F69EB /* BaseTableViewController.swift */; };
 		3ACD1A3124A79A2400081C46 /* AnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD1A3024A79A2400081C46 /* AnimationProtocol.swift */; };
 		3ACF902124A650A100648C9A /* PageStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF902024A650A100648C9A /* PageStateManager.swift */; };
+		3AEC6D8324B018570072120C /* WanResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8224B018570072120C /* WanResponse.swift */; };
+		3AEC6D8524B040070072120C /* PageStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8424B040070072120C /* PageStrategy.swift */; };
+		3AEC6D8724B041A60072120C /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8624B041A60072120C /* PageInfo.swift */; };
+		3AEC6DEC24B17D1A0072120C /* WanAndroidNumberPageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6DEB24B17D1A0072120C /* WanAndroidNumberPageInfo.swift */; };
+		3AEC6DEE24B17E6D0072120C /* WanAndroidPageStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6DED24B17E6D0072120C /* WanAndroidPageStrategy.swift */; };
+		3AEC6DF024B182570072120C /* PageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6DEF24B182570072120C /* PageTableViewController.swift */; };
 		3AEE1C8924A5C18F00660388 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE1C8824A5C18F00660388 /* ToastView.swift */; };
 		3AEEE2DA24A46EC9000A10F6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEE2D924A46EC9000A10F6 /* BaseViewController.swift */; };
 		3AEEE2DC24A473BC000A10F6 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEE2DB24A473BC000A10F6 /* BaseViewModel.swift */; };
@@ -63,9 +69,15 @@
 		3A90B0EB24A4858E00651342 /* Ext_UIColor_Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIColor_Hex.swift; sourceTree = "<group>"; };
 		3A90B0EE24A5996C00651342 /* ToastOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastOperation.swift; sourceTree = "<group>"; };
 		3A90B0F024A59A4800651342 /* ToastHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastHandler.swift; sourceTree = "<group>"; };
-		3ACC1B3B24A8EB75001F69EB /* BaseTableViewUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewUIController.swift; sourceTree = "<group>"; };
+		3ACC1B3B24A8EB75001F69EB /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		3ACD1A3024A79A2400081C46 /* AnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationProtocol.swift; sourceTree = "<group>"; };
 		3ACF902024A650A100648C9A /* PageStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStateManager.swift; sourceTree = "<group>"; };
+		3AEC6D8224B018570072120C /* WanResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanResponse.swift; sourceTree = "<group>"; };
+		3AEC6D8424B040070072120C /* PageStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStrategy.swift; sourceTree = "<group>"; };
+		3AEC6D8624B041A60072120C /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
+		3AEC6DEB24B17D1A0072120C /* WanAndroidNumberPageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanAndroidNumberPageInfo.swift; sourceTree = "<group>"; };
+		3AEC6DED24B17E6D0072120C /* WanAndroidPageStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanAndroidPageStrategy.swift; sourceTree = "<group>"; };
+		3AEC6DEF24B182570072120C /* PageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTableViewController.swift; sourceTree = "<group>"; };
 		3AEE1C8824A5C18F00660388 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		3AEEE2D924A46EC9000A10F6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3AEEE2DB24A473BC000A10F6 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				240FF5BB24A0992000E3F5A8 /* HttpClient.swift */,
+				3AEC6D8224B018570072120C /* WanResponse.swift */,
 			);
 			path = http;
 			sourceTree = "<group>";
@@ -194,7 +207,8 @@
 		3ACC1B3A24A8EB30001F69EB /* tableView */ = {
 			isa = PBXGroup;
 			children = (
-				3ACC1B3B24A8EB75001F69EB /* BaseTableViewUIController.swift */,
+				3ACC1B3B24A8EB75001F69EB /* BaseTableViewController.swift */,
+				3AEC6DEF24B182570072120C /* PageTableViewController.swift */,
 			);
 			path = tableView;
 			sourceTree = "<group>";
@@ -202,6 +216,10 @@
 		3ACC1B3D24A8F3C7001F69EB /* paging */ = {
 			isa = PBXGroup;
 			children = (
+				3AEC6D8424B040070072120C /* PageStrategy.swift */,
+				3AEC6D8624B041A60072120C /* PageInfo.swift */,
+				3AEC6DEB24B17D1A0072120C /* WanAndroidNumberPageInfo.swift */,
+				3AEC6DED24B17E6D0072120C /* WanAndroidPageStrategy.swift */,
 			);
 			path = paging;
 			sourceTree = "<group>";
@@ -401,11 +419,13 @@
 			files = (
 				3ACD1A3124A79A2400081C46 /* AnimationProtocol.swift in Sources */,
 				3A5F7338249BB4DB00A3AE68 /* ViewController.swift in Sources */,
-				3ACC1B3C24A8EB75001F69EB /* BaseTableViewUIController.swift in Sources */,
+				3ACC1B3C24A8EB75001F69EB /* BaseTableViewController.swift in Sources */,
+				3AEC6D8524B040070072120C /* PageStrategy.swift in Sources */,
 				3A096D5724A7A36700E7FF1D /* DefaultEmptyView.swift in Sources */,
 				3A23DD7824A6F7D3003DD81B /* DefaultLoadingView.swift in Sources */,
 				3A90B0EA24A481EA00651342 /* Toast.swift in Sources */,
 				3A90B0E324A4781200651342 /* RxLiveData.swift in Sources */,
+				3AEC6DF024B182570072120C /* PageTableViewController.swift in Sources */,
 				3AEEE2DC24A473BC000A10F6 /* BaseViewModel.swift in Sources */,
 				3A79DA6F24A62650002BCD2A /* Ext_UIColor_project.swift in Sources */,
 				3AEE1C8924A5C18F00660388 /* ToastView.swift in Sources */,
@@ -413,11 +433,15 @@
 				3A81D5E024AB973A000DEDEB /* R.generated.swift in Sources */,
 				3A79DAAC24A62EF7002BCD2A /* Ext_LottieAnimation.swift in Sources */,
 				3A90B0EC24A4858E00651342 /* Ext_UIColor_Hex.swift in Sources */,
+				3AEC6D8324B018570072120C /* WanResponse.swift in Sources */,
+				3AEC6D8724B041A60072120C /* PageInfo.swift in Sources */,
 				3AEEE2DA24A46EC9000A10F6 /* BaseViewController.swift in Sources */,
 				3A90B0EF24A5996C00651342 /* ToastOperation.swift in Sources */,
+				3AEC6DEE24B17E6D0072120C /* WanAndroidPageStrategy.swift in Sources */,
 				3ACF902124A650A100648C9A /* PageStateManager.swift in Sources */,
 				3A096D5924A7A42000E7FF1D /* DefaultErrorView.swift in Sources */,
 				3A5F7334249BB4DB00A3AE68 /* AppDelegate.swift in Sources */,
+				3AEC6DEC24B17D1A0072120C /* WanAndroidNumberPageInfo.swift in Sources */,
 				24F73AA424A0BA0A007A2B4D /* BaseService.swift in Sources */,
 				240FF5BF24A0A31A00E3F5A8 /* JsonUtils.swift in Sources */,
 				240FF5BC24A0992000E3F5A8 /* HttpClient.swift in Sources */,

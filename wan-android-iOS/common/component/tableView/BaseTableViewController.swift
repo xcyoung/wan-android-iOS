@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MJRefresh
 import SnapKit
-class BaseTableViewUIController: BaseViewController {
+class BaseTableViewController: BaseViewController {
     public let tableView: UITableView = UITableView.init(frame: CGRect.zero)
 
     public var header: MJRefreshHeader?
@@ -31,8 +31,14 @@ class BaseTableViewUIController: BaseViewController {
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func initView() {
         configRefresh()
         configTableView()
+        
+        self.view.addSubview(tableView)
     }
 
     //  MARK: - 子类需实现该方法配置tableView
