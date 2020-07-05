@@ -22,3 +22,11 @@ https://github.com/manondidi/swiftArch
 ### 2020.06.30
 
 - 集成Alamofire，新增http请求封装
+
+### 2020.07.05
+
+- 加入UITableView在UIController的封装、分页逻辑、下拉刷新、上拉加载逻辑封装
+
+- 加入XError用于错误信息统一处理
+
+- 添加UIController的扩展对于toast的显示
