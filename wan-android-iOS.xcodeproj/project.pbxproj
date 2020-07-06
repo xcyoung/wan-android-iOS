@@ -30,6 +30,7 @@
 		3A90B0EC24A4858E00651342 /* Ext_UIColor_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0EB24A4858E00651342 /* Ext_UIColor_Hex.swift */; };
 		3A90B0EF24A5996C00651342 /* ToastOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0EE24A5996C00651342 /* ToastOperation.swift */; };
 		3A90B0F124A59A4800651342 /* ToastHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0F024A59A4800651342 /* ToastHandler.swift */; };
+		3AB1A82424B369ED009F9596 /* HttpObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1A82324B369ED009F9596 /* HttpObserverType.swift */; };
 		3ACC1B3C24A8EB75001F69EB /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC1B3B24A8EB75001F69EB /* BaseTableViewController.swift */; };
 		3ACD1A3124A79A2400081C46 /* AnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD1A3024A79A2400081C46 /* AnimationProtocol.swift */; };
 		3ACF902124A650A100648C9A /* PageStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF902024A650A100648C9A /* PageStateManager.swift */; };
@@ -41,6 +42,11 @@
 		3AEC6DF024B182570072120C /* PageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6DEF24B182570072120C /* PageTableViewController.swift */; };
 		3AEC6DF224B19FE00072120C /* Ext_UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6DF124B19FE00072120C /* Ext_UIViewController.swift */; };
 		3AEC6DF424B1A0BD0072120C /* XError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6DF324B1A0BD0072120C /* XError.swift */; };
+		3AEC6DF624B1F3760072120C /* WanAndroidRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6DF524B1F3760072120C /* WanAndroidRepo.swift */; };
+		3AEC6DF824B1F41D0072120C /* WanAndroidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6DF724B1F41D0072120C /* WanAndroidService.swift */; };
+		3AEC6DFC24B1F7DE0072120C /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6DFB24B1F7DE0072120C /* Pagination.swift */; };
+		3AEC6DFE24B1F84D0072120C /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6DFD24B1F84D0072120C /* ArticleModel.swift */; };
+		3AEC6E3B24B22AF40072120C /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6E3A24B22AF40072120C /* ArticleViewModel.swift */; };
 		3AEE1C8924A5C18F00660388 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE1C8824A5C18F00660388 /* ToastView.swift */; };
 		3AEEE2DA24A46EC9000A10F6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEE2D924A46EC9000A10F6 /* BaseViewController.swift */; };
 		3AEEE2DC24A473BC000A10F6 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEE2DB24A473BC000A10F6 /* BaseViewModel.swift */; };
@@ -71,6 +77,7 @@
 		3A90B0EB24A4858E00651342 /* Ext_UIColor_Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIColor_Hex.swift; sourceTree = "<group>"; };
 		3A90B0EE24A5996C00651342 /* ToastOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastOperation.swift; sourceTree = "<group>"; };
 		3A90B0F024A59A4800651342 /* ToastHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastHandler.swift; sourceTree = "<group>"; };
+		3AB1A82324B369ED009F9596 /* HttpObserverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpObserverType.swift; sourceTree = "<group>"; };
 		3ACC1B3B24A8EB75001F69EB /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		3ACD1A3024A79A2400081C46 /* AnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationProtocol.swift; sourceTree = "<group>"; };
 		3ACF902024A650A100648C9A /* PageStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStateManager.swift; sourceTree = "<group>"; };
@@ -82,6 +89,11 @@
 		3AEC6DEF24B182570072120C /* PageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTableViewController.swift; sourceTree = "<group>"; };
 		3AEC6DF124B19FE00072120C /* Ext_UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIViewController.swift; sourceTree = "<group>"; };
 		3AEC6DF324B1A0BD0072120C /* XError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XError.swift; sourceTree = "<group>"; };
+		3AEC6DF524B1F3760072120C /* WanAndroidRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanAndroidRepo.swift; sourceTree = "<group>"; };
+		3AEC6DF724B1F41D0072120C /* WanAndroidService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanAndroidService.swift; sourceTree = "<group>"; };
+		3AEC6DFB24B1F7DE0072120C /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		3AEC6DFD24B1F84D0072120C /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		3AEC6E3A24B22AF40072120C /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		3AEE1C8824A5C18F00660388 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		3AEEE2D924A46EC9000A10F6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3AEEE2DB24A473BC000A10F6 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -107,6 +119,7 @@
 			children = (
 				240FF5BB24A0992000E3F5A8 /* HttpClient.swift */,
 				3AEC6D8224B018570072120C /* WanResponse.swift */,
+				3AB1A82324B369ED009F9596 /* HttpObserverType.swift */,
 			);
 			path = http;
 			sourceTree = "<group>";
@@ -123,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				24F73AA324A0BA0A007A2B4D /* BaseService.swift */,
+				3AEC6DF724B1F41D0072120C /* WanAndroidService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -148,19 +162,21 @@
 		3A5F7332249BB4DB00A3AE68 /* wan-android-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				3A81D5DF24AB973A000DEDEB /* R.generated.swift */,
 				3A79DA6A24A609D3002BCD2A /* animation */,
 				3AEEE2D824A46E63000A10F6 /* base */,
+				3AEC6DF924B1F7530072120C /* moudle */,
 				3A90B0E424A47BEA00651342 /* common */,
 				240FF5BD24A0A30700E3F5A8 /* utils */,
 				240FF5BA24A0984300E3F5A8 /* http */,
 				24F73AA224A0B957007A2B4D /* service */,
+				3AEC6DF524B1F3760072120C /* WanAndroidRepo.swift */,
 				3A5F7333249BB4DB00A3AE68 /* AppDelegate.swift */,
 				3A5F7335249BB4DB00A3AE68 /* SceneDelegate.swift */,
 				3A5F7337249BB4DB00A3AE68 /* ViewController.swift */,
 				3AEC6DF324B1A0BD0072120C /* XError.swift */,
 				3A5F7339249BB4DB00A3AE68 /* Main.storyboard */,
 				3A5F733C249BB4DD00A3AE68 /* Assets.xcassets */,
+				3A81D5DF24AB973A000DEDEB /* R.generated.swift */,
 				3A5F733E249BB4DD00A3AE68 /* LaunchScreen.storyboard */,
 				3A5F7341249BB4DD00A3AE68 /* Info.plist */,
 			);
@@ -240,6 +256,24 @@
 				3ACD1A3024A79A2400081C46 /* AnimationProtocol.swift */,
 			);
 			path = pageState;
+			sourceTree = "<group>";
+		};
+		3AEC6DF924B1F7530072120C /* moudle */ = {
+			isa = PBXGroup;
+			children = (
+				3AEC6DFA24B1F7630072120C /* article */,
+				3AEC6DFB24B1F7DE0072120C /* Pagination.swift */,
+			);
+			path = moudle;
+			sourceTree = "<group>";
+		};
+		3AEC6DFA24B1F7630072120C /* article */ = {
+			isa = PBXGroup;
+			children = (
+				3AEC6DFD24B1F84D0072120C /* ArticleModel.swift */,
+				3AEC6E3A24B22AF40072120C /* ArticleViewModel.swift */,
+			);
+			path = article;
 			sourceTree = "<group>";
 		};
 		3AEEE2D824A46E63000A10F6 /* base */ = {
@@ -428,17 +462,22 @@
 				3ACC1B3C24A8EB75001F69EB /* BaseTableViewController.swift in Sources */,
 				3AEC6D8524B040070072120C /* PageStrategy.swift in Sources */,
 				3A096D5724A7A36700E7FF1D /* DefaultEmptyView.swift in Sources */,
+				3AB1A82424B369ED009F9596 /* HttpObserverType.swift in Sources */,
 				3A23DD7824A6F7D3003DD81B /* DefaultLoadingView.swift in Sources */,
 				3A90B0EA24A481EA00651342 /* Toast.swift in Sources */,
 				3A90B0E324A4781200651342 /* RxLiveData.swift in Sources */,
 				3AEC6DF024B182570072120C /* PageTableViewController.swift in Sources */,
 				3AEC6DF424B1A0BD0072120C /* XError.swift in Sources */,
+				3AEC6DFE24B1F84D0072120C /* ArticleModel.swift in Sources */,
 				3AEEE2DC24A473BC000A10F6 /* BaseViewModel.swift in Sources */,
+				3AEC6E3B24B22AF40072120C /* ArticleViewModel.swift in Sources */,
 				3A79DA6F24A62650002BCD2A /* Ext_UIColor_project.swift in Sources */,
+				3AEC6DF824B1F41D0072120C /* WanAndroidService.swift in Sources */,
 				3AEE1C8924A5C18F00660388 /* ToastView.swift in Sources */,
 				3A90B0E724A47C6F00651342 /* Ext_UIApplication.swift in Sources */,
 				3A81D5E024AB973A000DEDEB /* R.generated.swift in Sources */,
 				3A79DAAC24A62EF7002BCD2A /* Ext_LottieAnimation.swift in Sources */,
+				3AEC6DFC24B1F7DE0072120C /* Pagination.swift in Sources */,
 				3A90B0EC24A4858E00651342 /* Ext_UIColor_Hex.swift in Sources */,
 				3AEC6D8324B018570072120C /* WanResponse.swift in Sources */,
 				3AEC6D8724B041A60072120C /* PageInfo.swift in Sources */,
@@ -452,6 +491,7 @@
 				3AEC6DEC24B17D1A0072120C /* WanAndroidNumberPageInfo.swift in Sources */,
 				24F73AA424A0BA0A007A2B4D /* BaseService.swift in Sources */,
 				240FF5BF24A0A31A00E3F5A8 /* JsonUtils.swift in Sources */,
+				3AEC6DF624B1F3760072120C /* WanAndroidRepo.swift in Sources */,
 				240FF5BC24A0992000E3F5A8 /* HttpClient.swift in Sources */,
 				3A5F7336249BB4DB00A3AE68 /* SceneDelegate.swift in Sources */,
 				3A90B0F124A59A4800651342 /* ToastHandler.swift in Sources */,

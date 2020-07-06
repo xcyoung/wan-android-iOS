@@ -30,3 +30,15 @@ https://github.com/manondidi/swiftArch
 - 加入XError用于错误信息统一处理
 
 - 添加UIController的扩展对于toast的显示
+
+### 2020.07.06
+
+- 新增Repo、Service搭建项目数据层
+
+- 新增HttpObserverType用于统一处理http请求回调结果
+
+- 接入WanAndroidApi 文章列表、置顶文章接口：
+
+    "article/list/\(pageIndex)/json"
+
+    "article/top/json"

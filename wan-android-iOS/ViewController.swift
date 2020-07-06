@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: BaseViewController {
-
+    let articleViewModel = ArticleViewModel.init()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,6 +27,8 @@ class ViewController: BaseViewController {
 //        self.view.addSubview(image)
 //        self.view.addSubview(label)
         showLoading()
+        
+        articleViewModel.onRefresh(pageIndex: 0)
     }
 
 

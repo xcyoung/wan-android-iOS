@@ -11,6 +11,6 @@ class BaseService: NSObject {
     public let httpClient: HttpClient
     
     override init() {
-        self.httpClient = HttpClient.init(baseUrl: "", headers: nil)
+        self.httpClient = HttpClient.init(baseUrl: "https://www.wanandroid.com/", headers: nil)
     }
 }

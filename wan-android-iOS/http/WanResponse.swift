@@ -25,4 +25,10 @@ class WanResponse<T>: NSObject, Codable where T: Codable {
         errorMsg = try c.decode(String.self, forKey: .errorMsg)
         data = try c.decodeIfPresent(T.self, forKey: .data)
     }
+    
+    init(errorCode: Int, errorMsg: String, data: T?) {
+        self.errorCode = errorCode
+        self.errorMsg = errorMsg
+        self.data = data
+    }
 }
