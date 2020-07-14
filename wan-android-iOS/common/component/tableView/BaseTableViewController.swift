@@ -36,9 +36,10 @@ class BaseTableViewController: BaseViewController {
     
     override func initView() {
         configRefresh()
-        configTableView()
         
         self.view.addSubview(tableView)
+        
+        configTableView()
     }
 
     //  MARK: - 子类需实现该方法配置tableView

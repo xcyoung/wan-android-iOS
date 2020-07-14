@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import SnapKit
+import MyLayout
 class ViewController: BaseViewController {
     let articleViewModel = ArticleViewModel.init()
     override func viewDidLoad() {
@@ -28,7 +29,46 @@ class ViewController: BaseViewController {
 //        self.view.addSubview(label)
         showLoading()
         
-        articleViewModel.onRefresh(pageIndex: 0)
+//        articleViewModel.onRefresh(pageIndex: 0)
+        let s = MyFlowLayout.init(orientation: MyOrientation_Vert, arrangedCount: 4)
+        s?.myHeight = 400
+        s?.myWidth = 300
+        s?.padding = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
+        s?.gravity = MyGravity_Fill
+        s?.subviewSpace = 10
+        
+        let label = UILabel.init()
+        label.textColor = UIColor.blue
+        label.text = "111"
+        s?.addSubview(label)
+        
+        let label2 = UILabel.init()
+        label2.textColor = UIColor.red
+        label2.text = "222"
+        s?.addSubview(label2)
+        
+        self.view.addSubview(s!)
+        
+//        label.snp.makeConstraints { m in
+//            if #available(iOS 11.0, *) {
+//                m.left.equalTo(self.view.safeAreaInsets.left)
+//                m.top.equalTo(self.view.safeAreaInsets.top)
+//            } else {
+//                // Fallback on earlier versions
+//            }
+//
+//        }
+//
+//        label2.snp.makeConstraints { m in
+//            if #available(iOS 11.0, *) {
+//                m.left.equalTo(label.snp.right)
+//                m.top.equalTo(self.view.safeAreaInsets.top)
+//            } else {
+//                // Fallback on earlier versions
+//            }
+//        }
+//
+        label.isHidden = true
     }
 
 

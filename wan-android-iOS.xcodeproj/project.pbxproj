@@ -20,6 +20,8 @@
 		3A5F733B249BB4DB00A3AE68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5F7339249BB4DB00A3AE68 /* Main.storyboard */; };
 		3A5F733D249BB4DD00A3AE68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A5F733C249BB4DD00A3AE68 /* Assets.xcassets */; };
 		3A5F7340249BB4DD00A3AE68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5F733E249BB4DD00A3AE68 /* LaunchScreen.storyboard */; };
+		3A70932B24B4C8F200DCF916 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70932A24B4C8F200DCF916 /* ArticleViewController.swift */; };
+		3A70932D24B4CE4100DCF916 /* ArticleListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70932C24B4CE4100DCF916 /* ArticleListItemCell.swift */; };
 		3A79DA6B24A609D3002BCD2A /* animation in Resources */ = {isa = PBXBuildFile; fileRef = 3A79DA6A24A609D3002BCD2A /* animation */; };
 		3A79DA6F24A62650002BCD2A /* Ext_UIColor_project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79DA6E24A62650002BCD2A /* Ext_UIColor_project.swift */; };
 		3A79DAAC24A62EF7002BCD2A /* Ext_LottieAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79DAAB24A62EF7002BCD2A /* Ext_LottieAnimation.swift */; };
@@ -67,6 +69,8 @@
 		3A5F733C249BB4DD00A3AE68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A5F733F249BB4DD00A3AE68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A5F7341249BB4DD00A3AE68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A70932A24B4C8F200DCF916 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		3A70932C24B4CE4100DCF916 /* ArticleListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListItemCell.swift; sourceTree = "<group>"; };
 		3A79DA6A24A609D3002BCD2A /* animation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = animation; sourceTree = "<group>"; };
 		3A79DA6E24A62650002BCD2A /* Ext_UIColor_project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIColor_project.swift; sourceTree = "<group>"; };
 		3A79DAAB24A62EF7002BCD2A /* Ext_LottieAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_LottieAnimation.swift; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 			children = (
 				3AEC6DFD24B1F84D0072120C /* ArticleModel.swift */,
 				3AEC6E3A24B22AF40072120C /* ArticleViewModel.swift */,
+				3A70932A24B4C8F200DCF916 /* ArticleViewController.swift */,
+				3A70932C24B4CE4100DCF916 /* ArticleListItemCell.swift */,
 			);
 			path = article;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-wan-android-iOS/Pods-wan-android-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MyLayout/MyLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -439,6 +446,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MyLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -467,6 +475,7 @@
 				3A90B0EA24A481EA00651342 /* Toast.swift in Sources */,
 				3A90B0E324A4781200651342 /* RxLiveData.swift in Sources */,
 				3AEC6DF024B182570072120C /* PageTableViewController.swift in Sources */,
+				3A70932B24B4C8F200DCF916 /* ArticleViewController.swift in Sources */,
 				3AEC6DF424B1A0BD0072120C /* XError.swift in Sources */,
 				3AEC6DFE24B1F84D0072120C /* ArticleModel.swift in Sources */,
 				3AEEE2DC24A473BC000A10F6 /* BaseViewModel.swift in Sources */,
@@ -491,6 +500,7 @@
 				3AEC6DEC24B17D1A0072120C /* WanAndroidNumberPageInfo.swift in Sources */,
 				24F73AA424A0BA0A007A2B4D /* BaseService.swift in Sources */,
 				240FF5BF24A0A31A00E3F5A8 /* JsonUtils.swift in Sources */,
+				3A70932D24B4CE4100DCF916 /* ArticleListItemCell.swift in Sources */,
 				3AEC6DF624B1F3760072120C /* WanAndroidRepo.swift in Sources */,
 				240FF5BC24A0992000E3F5A8 /* HttpClient.swift in Sources */,
 				3A5F7336249BB4DB00A3AE68 /* SceneDelegate.swift in Sources */,

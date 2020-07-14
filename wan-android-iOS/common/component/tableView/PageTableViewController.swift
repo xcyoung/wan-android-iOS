@@ -74,11 +74,15 @@ class PageTableViewController: BaseTableViewController {
         
     }
     
-    open func onLoadFail(_ error: Error? = nil){
+    open func onLoadFail(_ error: XError? = nil){
         if(self.dataSource.count == 0) {
             showError()
         } else {
-//            self.view.makeToast("加载失败")
+            if let e = error {
+                self.toastError(error: e)
+            } else {
+                self.toast(message: "加载失败")
+            }
         }
     }
 }

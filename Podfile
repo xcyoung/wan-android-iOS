@@ -11,6 +11,7 @@ target 'wan-android-iOS' do
   pod 'SnapKit'
   pod 'R.swift',      '5.0.0'
   pod 'MJRefresh',    '3.4.3'
+  pod 'MyLayout'
   # Pods for wan-android-iOS
 
 end
