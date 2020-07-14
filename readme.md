@@ -42,3 +42,9 @@ https://github.com/manondidi/swiftArch
     "article/list/\(pageIndex)/json"
 
     "article/top/json"
+
+### 2020.07.14
+
+- 引入MyLayout布局
+
+- 文章列表TableViewCell ui
