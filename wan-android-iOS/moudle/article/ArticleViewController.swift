@@ -44,11 +44,11 @@ class ArticleViewController: PageTableViewController {
     }
 
     override func getRefresh() -> MJRefreshHeader? {
-        return MJRefreshHeader.init()
+        return MJRefreshStateHeader.init()
     }
 
     override func getFooter() -> MJRefreshFooter? {
-        return MJRefreshFooter.init()
+        return MJRefreshBackStateFooter.init()
     }
 
     override func onLoadData(page: PageStrategy?) {

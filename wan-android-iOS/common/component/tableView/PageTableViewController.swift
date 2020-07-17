@@ -32,7 +32,7 @@ class PageTableViewController: BaseTableViewController {
     }
     
     override func configTableView() {
-        
+        super.configTableView()
     }
     
     override func refresh() {
@@ -53,6 +53,11 @@ class PageTableViewController: BaseTableViewController {
     }
     
     open func onLoadSuccess(result: Any?) {
+        if self.pageStrategy?.pageInfo.isFirstPage() == true {
+            self.refreshing(isBegin: false)
+        } else {
+            self.loading(isBegin: false)
+        }
         self.transformDataSource(result: result)
         if self.dataSource.isEmpty {
             showEmpty()
