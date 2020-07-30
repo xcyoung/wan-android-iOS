@@ -23,6 +23,14 @@ class ArticleViewController: PageTableViewController {
             self?.onLoadSuccess(result: model)
         }.disposed(by: self.disposeBag)
         
+        articleViewModel.articleListLiveData.asObservable().subscribe { [weak self] event in
+            guard let model = event.element else {
+                return
+            }
+
+            self?.onLoadSuccess(result: model)
+        }.disposed(by: self.disposeBag)
+        
         articleViewModel.onRefresh(pageIndex: 0)
     }
 
@@ -37,8 +45,16 @@ class ArticleViewController: PageTableViewController {
     override func configTableView() {
         super.configTableView()
         
+        self.tableView.separatorStyle = .none
+        self.tableView.separatorInset = .zero
         self.tableView.snp.makeConstraints { m in
-            m.edges.equalToSuperview()
+            if #available(iOS 11.0, *) {
+                m.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+                m.left.right.equalTo(0)
+                m.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+            } else {
+                m.edges.equalTo(self.view)
+            }
         }
         self.tableView.register(ArticleListItemCell.self, forCellReuseIdentifier: ArticleListItemCell.description())
     }
@@ -59,7 +75,7 @@ class ArticleViewController: PageTableViewController {
         if wanPageInfo.isFirstPage() {
             articleViewModel.onRefresh(pageIndex: wanPageInfo.pageStartNum)
         } else {
-
+            articleViewModel.onLoad(pageIndex: wanPageInfo.pageNum)
         }
     }
 
@@ -67,6 +83,10 @@ class ArticleViewController: PageTableViewController {
         if let firstModel = result as? ArticleFirstModel {
             let contentItems = firstModel.datas
 
+            self.dataSource.append(contentItems)
+        } else if let listModel = result as? ArticleListModel {
+            let contentItems = listModel.datas
+            
             self.dataSource.append(contentItems)
         }
     }
@@ -81,5 +101,13 @@ class ArticleViewController: PageTableViewController {
 
         cell.setModel(item: model)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if cell .responds(to: #selector(setS))
     }
 }
