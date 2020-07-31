@@ -48,3 +48,11 @@ https://github.com/manondidi/swiftArch
 - 引入MyLayout布局
 
 - 文章列表TableViewCell ui
+
+### 2020.07.31
+
+- 简单完成文章列表，包括banner
+
+- 简单完成browser
+
+- 移除SnapKit
