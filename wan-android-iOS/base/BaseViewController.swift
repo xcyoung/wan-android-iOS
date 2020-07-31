@@ -18,6 +18,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.edgesForExtendedLayout = UIRectEdge.bottom
         initView()
     }
 
