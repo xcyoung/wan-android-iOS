@@ -45,8 +45,9 @@ class ArticleViewController: PageTableViewController {
     override func configTableView() {
         super.configTableView()
         
-        self.tableView.separatorStyle = .none
-        self.tableView.separatorInset = .zero
+//        self.tableView.separatorStyle = .none
+//        self.tableView.separatorInset = .zero
+        self.tableView.separatorInset = UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 4)
         self.tableView.snp.makeConstraints { m in
             if #available(iOS 11.0, *) {
                 m.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
@@ -105,9 +106,5 @@ class ArticleViewController: PageTableViewController {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if cell .responds(to: #selector(setS))
     }
 }

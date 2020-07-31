@@ -62,18 +62,34 @@ class ArticleListItemCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectedBackgroundView = UIView.init(frame: frame)
+        selectedBackgroundView?.backgroundColor = UIColor.init(hex6: 0xf9f9f9, alpha: 1)
         self.layout()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    private func createTag(tag: Tag) {
+        let tagLabel = UILabel.init()
+        tagLabel.text = tag.name
+        tagLabel.textColor = UIColor.systemYellow
+        tagLabel.font = UIFont.systemFont(ofSize: 12)
+        tagLabel.layer.borderWidth = 1
+        tagLabel.layer.borderColor = UIColor.systemYellow.cgColor
+        tagLabel.layer.cornerRadius = 2
+        tagLabel.layoutMargins = UIEdgeInsets.init(top: 2, left: 2, bottom: 2, right: 2)
+        tagLabel.mySize = CGSize.init(width: MyLayoutSize.wrap(), height: MyLayoutSize.wrap())
+        
+        tagFlowLayout?.addSubview(tagLabel)
+    }
+    
     func layout() {
         let view = MyFlexLayout.init()
         view.myHeight = CGFloat.init(MyLayoutSize.fill())
         view.myWidth = CGFloat.init(MyLayoutSize.fill())
-        view.padding = UIEdgeInsets.init(top: 8, left: 16, bottom: 4, right: 16)
+        view.padding = UIEdgeInsets.init(top: 16, left: 16, bottom: 4, right: 16)
         view.isFlex = true
 //        view.myFlex.attrs.justify_content = MyFlexGravity_Space_Between
         view.myFlex.attrs.flex_wrap = MyFlexWrap_Wrap
@@ -84,8 +100,16 @@ class ArticleListItemCell: UITableViewCell {
         authorLabel.alignment = MyGravity_Vert_Center
         authorLabel.myWidth = CGFloat.init(MyLayoutSize.wrap())
         authorLabel.myHeight = CGFloat.init(MyLayoutSize.wrap())
-        authorLabel.myFlex.attrs.flex_grow = 2
+//        authorLabel.myFlex.attrs.flex_grow = 2
 
+        if let tagFlowLayout = tagFlowLayout {
+            tagFlowLayout.myWidth = CGFloat.init(MyLayoutSize.wrap())
+            tagFlowLayout.myHeight = CGFloat.init(MyLayoutSize.wrap())
+            tagFlowLayout.padding = UIEdgeInsets.init(top: 0, left: 4, bottom: 0, right: 0)
+            tagFlowLayout.myFlex.attrs.flex_grow = 2
+            tagFlowLayout.subviewSpace = 2
+        }
+        
         timeLabel.alignment = MyGravity_Vert_Center
         timeLabel.myWidth = CGFloat.init(MyLayoutSize.wrap())
         timeLabel.myHeight = CGFloat.init(MyLayoutSize.wrap())
@@ -103,6 +127,9 @@ class ArticleListItemCell: UITableViewCell {
         
         view.addSubview(newLabel)
         view.addSubview(authorLabel)
+        if let tagFlowLayout = tagFlowLayout {
+            view.addSubview(tagFlowLayout)
+        }
         view.addSubview(timeLabel)
         view.addSubview(titleLabel)
         view.addSubview(topLabel)
@@ -128,5 +155,15 @@ class ArticleListItemCell: UITableViewCell {
         }
         
         chapterLabel.text = "\(item.superChapterName)/\(item.chapterName)"
+        
+        tagFlowLayout?.removeAllSubviews()
+        if item.tags.count >= 2 {
+            createTag(tag: item.tags[0])
+            createTag(tag: item.tags[1])
+        } else {
+            item.tags.forEach { (tag) in
+                createTag(tag: tag)
+            }
+        }
     }
 }
