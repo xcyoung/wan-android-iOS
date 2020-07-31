@@ -17,6 +17,7 @@ class BaseViewController: UIViewController {
     public let parentView: MyFrameLayout = MyFrameLayout.init()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         initView()
     }
 

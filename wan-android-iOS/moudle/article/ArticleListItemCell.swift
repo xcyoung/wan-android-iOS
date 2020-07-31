@@ -34,7 +34,7 @@ class ArticleListItemCell: UITableViewCell {
 
     let newLabel: UILabel = {
         let label = UILabel.init()
-        label.textColor = UIColor.red
+        label.textColor = UIColor.systemRed
         label.font = UIFont.systemFont(ofSize: 12)
         label.text = "新"
         return label
