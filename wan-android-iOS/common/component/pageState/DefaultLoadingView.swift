@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Lottie
-import SnapKit
 class DefaultLoadingView: UIView, AnimationProtocol {
     func startLoading() {
         guard !loadingAnimationView.isAnimationPlaying else {
@@ -44,8 +43,8 @@ class DefaultLoadingView: UIView, AnimationProtocol {
     }
 
     private func layout() {
-        loadingAnimationView.snp.makeConstraints { m in
-            m.center.equalToSuperview()
+        if let superCenter = loadingAnimationView.superview?.center {
+            loadingAnimationView.myCenter = superCenter
         }
     }
 }

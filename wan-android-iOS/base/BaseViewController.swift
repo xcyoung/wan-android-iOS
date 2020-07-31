@@ -14,13 +14,17 @@ class BaseViewController: UIViewController {
     public var pageStateManager: PageStateManager?
     public let disposeBag = DisposeBag.init()
     public var params: [String: Any] = [:]
+    public let parentView: MyFrameLayout = MyFrameLayout.init()
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
     }
 
     open func initView() {
-        pageStateManager = PageStateManager.init(rootView: self.view)
+        parentView.myHeight = CGFloat.init(MyLayoutSize.fill())
+        parentView.myWidth = CGFloat.init(MyLayoutSize.fill())
+        self.view.addSubview(parentView)
+        pageStateManager = PageStateManager.init(rootView: self.parentView)
         configPageStateManager(pageStateManager: pageStateManager)
         pageStateManager?.layout()
     }

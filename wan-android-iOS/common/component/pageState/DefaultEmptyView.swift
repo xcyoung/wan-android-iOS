@@ -32,8 +32,8 @@ class DefaultEmptyView: UIView, AnimationProtocol {
     }
     
     private func layout() {
-        label.snp.makeConstraints { m in
-            m.center.equalToSuperview()
+        if let superCenter = label.superview?.center {
+            label.myCenter = superCenter
         }
     }
 }

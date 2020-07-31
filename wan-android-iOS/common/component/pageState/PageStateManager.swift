@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import SnapKit
+import MyLayout
 class PageStateManager: NSObject {
     private var emptyView: (UIView & AnimationProtocol)?
     private var errorView: (UIView & AnimationProtocol)?
@@ -91,17 +91,10 @@ class PageStateManager: NSObject {
             rootView.addSubview(load)
         }
 
-        emptyView?.snp.makeConstraints { m in
-            m.width.height.equalToSuperview()
-        }
-
-        errorView?.snp.makeConstraints { m in
-            m.width.height.equalToSuperview()
-        }
-
-        loadView?.snp.makeConstraints { m in
-            m.width.height.equalToSuperview()
-        }
+        emptyView?.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
+        errorView?.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
+        loadView?.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
+        
         showContent()
     }
 }

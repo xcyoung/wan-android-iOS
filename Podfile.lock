@@ -12,7 +12,6 @@ PODS:
     - Alamofire (~> 4.8)
     - RxSwift (~> 5.0)
   - RxSwift (5.1.1)
-  - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - lottie-ios (= 3.1.8)
@@ -20,7 +19,6 @@ DEPENDENCIES:
   - MyLayout
   - R.swift (= 5.0.0)
   - RxAlamofire (= 5.1.0)
-  - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -32,7 +30,6 @@ SPEC REPOS:
     - R.swift.Library
     - RxAlamofire
     - RxSwift
-    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -43,8 +40,7 @@ SPEC CHECKSUMS:
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   RxAlamofire: a2d7621de4c23a0c6e7b476b504acc32838ee341
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 2424498c685963253a92cec3b5a6768090daef8c
+PODFILE CHECKSUM: 4cf5ccc76879d0cd07c6709cbaa927930eeafc9e
 
 COCOAPODS: 1.5.3

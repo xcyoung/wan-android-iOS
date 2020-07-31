@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MJRefresh
+import MyLayout
 class ArticleViewController: PageTableViewController {
     private let articleViewModel = ArticleViewModel.init()
 
@@ -48,16 +49,19 @@ class ArticleViewController: PageTableViewController {
 //        self.tableView.separatorStyle = .none
 //        self.tableView.separatorInset = .zero
         self.tableView.separatorInset = UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 4)
-        self.tableView.snp.makeConstraints { m in
-            if #available(iOS 11.0, *) {
-                m.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-                m.left.right.equalTo(0)
-                m.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
-            } else {
-                m.edges.equalTo(self.view)
-            }
-        }
+        self.tableView.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
+//        self.tableView.snp.makeConstraints { m in
+//            if #available(iOS 11.0, *) {
+//                m.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+//                m.left.right.equalTo(0)
+//                m.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+//            } else {
+//                m.edges.equalTo(self.view)
+//            }
+//        }
         self.tableView.register(ArticleListItemCell.self, forCellReuseIdentifier: ArticleListItemCell.description())
+        
+        
     }
 
     override func getRefresh() -> MJRefreshHeader? {

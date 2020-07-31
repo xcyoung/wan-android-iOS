@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 import MyLayout
 class ViewController: BaseViewController {
     let articleViewModel = ArticleViewModel.init()

@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import MJRefresh
-import SnapKit
 class BaseTableViewController: BaseViewController {
     public let tableView: UITableView = UITableView.init(frame: CGRect.zero)
 
@@ -35,9 +34,10 @@ class BaseTableViewController: BaseViewController {
     }
     
     override func initView() {
+        super.initView()
         configRefresh()
         
-        self.view.addSubview(tableView)
+        self.parentView.addSubview(tableView)
         
         configTableView()
     }
