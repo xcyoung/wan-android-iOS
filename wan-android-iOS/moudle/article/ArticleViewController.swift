@@ -12,7 +12,7 @@ import MJRefresh
 import MyLayout
 class ArticleViewController: PageTableViewController {
     private let articleViewModel = ArticleViewModel.init()
-
+    private var banners = [ArticleBannerItem]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,7 +65,7 @@ class ArticleViewController: PageTableViewController {
 //            }
 //        }
         self.tableView.register(ArticleListItemCell.self, forCellReuseIdentifier: ArticleListItemCell.description())
-        
+        self.tableView.register(ArticleBanner.self, forHeaderFooterViewReuseIdentifier: ArticleBanner.description())
         
     }
 
@@ -94,11 +94,26 @@ class ArticleViewController: PageTableViewController {
             let contentItems = firstModel.datas
 
             self.dataSource.append(contentItems)
+            
+            self.banners.removeAll()
+            self.banners.append(contentsOf: firstModel.bannerDatas)
         } else if let listModel = result as? ArticleListModel {
             let contentItems = listModel.datas
 
             self.dataSource.append(contentItems)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.init(150)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let banner = tableView.dequeueReusableHeaderFooterView(withIdentifier: ArticleBanner.description()) as? ArticleBanner else {
+            return nil
+        }
+        banner.setItems(banners: self.banners)
+        return banner
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

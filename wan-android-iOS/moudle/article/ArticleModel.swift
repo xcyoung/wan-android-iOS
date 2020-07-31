@@ -49,9 +49,9 @@ class ArticleFirstModel: Pagination, Codable {
 
     let datas: [ArticleItem]
 
-//    let bannerDatas:
+    let bannerDatas: [ArticleBannerItem]
 
-    init(offset: Int, over: Bool, pageCount: Int, size: Int, total: Int, curPage: Int, datas: [ArticleItem]) {
+    init(offset: Int, over: Bool, pageCount: Int, size: Int, total: Int, curPage: Int, datas: [ArticleItem], bannerDatas: [ArticleBannerItem]) {
         self.offset = offset
         self.over = over
         self.pageCount = pageCount
@@ -59,6 +59,7 @@ class ArticleFirstModel: Pagination, Codable {
         self.total = total
         self.curPage = curPage
         self.datas = datas
+        self.bannerDatas = bannerDatas
     }
 
 }
@@ -111,4 +112,25 @@ class ArticleItem: NSObject, Codable {
 class Tag: NSObject, Codable {
     let name: String
     let url: String
+}
+
+class ArticleBannerItem: Codable {
+    let desc: String
+    let id: Int
+    let imagePath: String
+    let isVisible, order: Int
+    let title: String
+    let type: Int
+    let url: String
+
+    init(desc: String, id: Int, imagePath: String, isVisible: Int, order: Int, title: String, type: Int, url: String) {
+        self.desc = desc
+        self.id = id
+        self.imagePath = imagePath
+        self.isVisible = isVisible
+        self.order = order
+        self.title = title
+        self.type = type
+        self.url = url
+    }
 }

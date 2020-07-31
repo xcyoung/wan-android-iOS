@@ -18,4 +18,9 @@ class WanAndroidService: BaseService {
         let url = "article/top/json"
         return httpClient.requestByRx(url: url, method: .get)
     }
+    
+    func articleBanner() -> Observable<WanResponse<[ArticleBannerItem]>> {
+        let url = "banner/json"
+        return httpClient.requestByRx(url: url, method: .get)
+    }
 }
