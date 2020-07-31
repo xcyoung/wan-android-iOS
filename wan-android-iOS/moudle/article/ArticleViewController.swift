@@ -22,7 +22,7 @@ class ArticleViewController: PageTableViewController {
 
             self?.onLoadSuccess(result: model)
         }.disposed(by: self.disposeBag)
-        
+
         articleViewModel.articleListLiveData.asObservable().subscribe { [weak self] event in
             guard let model = event.element else {
                 return
@@ -30,7 +30,7 @@ class ArticleViewController: PageTableViewController {
 
             self?.onLoadSuccess(result: model)
         }.disposed(by: self.disposeBag)
-        
+
         articleViewModel.onRefresh(pageIndex: 0)
     }
 
@@ -44,7 +44,7 @@ class ArticleViewController: PageTableViewController {
 
     override func configTableView() {
         super.configTableView()
-        
+
 //        self.tableView.separatorStyle = .none
 //        self.tableView.separatorInset = .zero
         self.tableView.separatorInset = UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 4)
@@ -87,7 +87,7 @@ class ArticleViewController: PageTableViewController {
             self.dataSource.append(contentItems)
         } else if let listModel = result as? ArticleListModel {
             let contentItems = listModel.datas
-            
+
             self.dataSource.append(contentItems)
         }
     }
@@ -103,8 +103,17 @@ class ArticleViewController: PageTableViewController {
         cell.setModel(item: model)
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let model = self.dataSource[indexPath.section][indexPath.row] as? ArticleItem
+            else {
+                return
+        }
+
+        BrowserViewController.jump(vc: self, url: model.link)
     }
 }

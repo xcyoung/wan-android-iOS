@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 import RxSwift
+import MyLayout
 class BaseViewController: UIViewController {
     public var pageStateManager: PageStateManager?
     public let disposeBag = DisposeBag.init()
-
+    public var params: [String: Any] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
