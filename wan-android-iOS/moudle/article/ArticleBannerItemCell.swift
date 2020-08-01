@@ -11,7 +11,7 @@ import UIKit
 class ArticleBannerItemCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let image = UIImageView.init(frame: CGRect.zero)
-        image.backgroundColor = UIColor.blue
+        image.backgroundColor = UIColor.systemGray
         return image
     }()
     
@@ -27,9 +27,6 @@ class ArticleBannerItemCell: UICollectionViewCell {
     }
     
     func setModel(item: ArticleBannerItem) {
-        guard let data = try? Data.init(contentsOf: URL.init(string: item.imagePath)!) else {
-            return
-        }
-        imageView.image = UIImage.init(data: data)
+        imageView.load(item.imagePath)
     }
 }

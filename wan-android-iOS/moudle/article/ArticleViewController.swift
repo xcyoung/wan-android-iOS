@@ -104,18 +104,6 @@ class ArticleViewController: PageTableViewController {
         }
     }
 
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return CGFloat.init(150)
-//    }
-//
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        guard let banner = tableView.dequeueReusableHeaderFooterView(withIdentifier: ArticleBanner.description()) as? ArticleBanner else {
-//            return nil
-//        }
-//        banner.setItems(banners: self.banners)
-//        return banner
-//    }
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let model = self.dataSource[indexPath.section][indexPath.row] as? ArticleItem,
             let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListItemCell.description()) as? ArticleListItemCell {

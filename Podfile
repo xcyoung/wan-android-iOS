@@ -12,6 +12,7 @@ target 'wan-android-iOS' do
   pod 'R.swift',      '5.0.0'
   pod 'MJRefresh',    '3.4.3'
   pod 'MyLayout'
+  pod 'SDWebImage',   '5.0'
   # Pods for wan-android-iOS
 
 end

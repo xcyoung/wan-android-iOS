@@ -16,6 +16,7 @@ class ArticleBanner: UITableViewCell {
         bannerCollectionView.delegate = self
         bannerCollectionView.dataSource = self
         self.addSubview(bannerCollectionView)
+        self.backgroundColor = UIColor.white
     }
     
     required init?(coder: NSCoder) {
@@ -40,6 +41,8 @@ class ArticleBanner: UITableViewCell {
         banner.allowsSelection = false
         banner.allowsMultipleSelection = false
         banner.register(ArticleBannerItemCell.self, forCellWithReuseIdentifier: ArticleBannerItemCell.description())
+        
+        banner.backgroundColor = UIColor.white
         return banner
     }()
     

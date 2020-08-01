@@ -16,6 +16,7 @@
 		24F73AA424A0BA0A007A2B4D /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F73AA324A0BA0A007A2B4D /* BaseService.swift */; };
 		3A096D5724A7A36700E7FF1D /* DefaultEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A096D5624A7A36700E7FF1D /* DefaultEmptyView.swift */; };
 		3A096D5924A7A42000E7FF1D /* DefaultErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A096D5824A7A42000E7FF1D /* DefaultErrorView.swift */; };
+		3A1551D924D5206400DA1F02 /* Ext_UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551D824D5206400DA1F02 /* Ext_UIImageView.swift */; };
 		3A23DD7824A6F7D3003DD81B /* DefaultLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23DD7724A6F7D3003DD81B /* DefaultLoadingView.swift */; };
 		3A5F7334249BB4DB00A3AE68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F7333249BB4DB00A3AE68 /* AppDelegate.swift */; };
 		3A5F7336249BB4DB00A3AE68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F7335249BB4DB00A3AE68 /* SceneDelegate.swift */; };
@@ -66,6 +67,7 @@
 		24F73AA324A0BA0A007A2B4D /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		3A096D5624A7A36700E7FF1D /* DefaultEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEmptyView.swift; sourceTree = "<group>"; };
 		3A096D5824A7A42000E7FF1D /* DefaultErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultErrorView.swift; sourceTree = "<group>"; };
+		3A1551D824D5206400DA1F02 /* Ext_UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIImageView.swift; sourceTree = "<group>"; };
 		3A23DD7724A6F7D3003DD81B /* DefaultLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoadingView.swift; sourceTree = "<group>"; };
 		3A5F7330249BB4DB00A3AE68 /* wan-android-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wan-android-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5F7333249BB4DB00A3AE68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				3A79DA6E24A62650002BCD2A /* Ext_UIColor_project.swift */,
 				3A79DAAB24A62EF7002BCD2A /* Ext_LottieAnimation.swift */,
 				3AEC6DF124B19FE00072120C /* Ext_UIViewController.swift */,
+				3A1551D824D5206400DA1F02 /* Ext_UIImageView.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -466,6 +470,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +501,7 @@
 				3AEC6DF424B1A0BD0072120C /* XError.swift in Sources */,
 				3AEC6DFE24B1F84D0072120C /* ArticleModel.swift in Sources */,
 				249F683C24D3CBA20058C449 /* BrowserViewController.swift in Sources */,
+				3A1551D924D5206400DA1F02 /* Ext_UIImageView.swift in Sources */,
 				3AEEE2DC24A473BC000A10F6 /* BaseViewModel.swift in Sources */,
 				3AEC6E3B24B22AF40072120C /* ArticleViewModel.swift in Sources */,
 				3A79DA6F24A62650002BCD2A /* Ext_UIColor_project.swift in Sources */,
