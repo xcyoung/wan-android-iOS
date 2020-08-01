@@ -8,12 +8,11 @@
 
 import Foundation
 import UIKit
-class ArticleBanner: UITableViewHeaderFooterView {
+class ArticleBanner: UITableViewCell {
     private var articleBanners: [ArticleBannerItem] = []
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         bannerCollectionView.delegate = self
         bannerCollectionView.dataSource = self
         self.addSubview(bannerCollectionView)

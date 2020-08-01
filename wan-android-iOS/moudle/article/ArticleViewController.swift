@@ -12,7 +12,7 @@ import MJRefresh
 import MyLayout
 class ArticleViewController: PageTableViewController {
     private let articleViewModel = ArticleViewModel.init()
-    private var banners = [ArticleBannerItem]()
+//    private var banners = [ArticleBannerItem]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,14 +32,14 @@ class ArticleViewController: PageTableViewController {
             self?.onLoadSuccess(result: model)
         }.disposed(by: self.disposeBag)
 
-        articleViewModel.onRefresh(pageIndex: 0)
+//        articleViewModel.onRefresh(pageIndex: 0)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
+
     override func initView() {
         super.initView()
     }
@@ -65,8 +65,8 @@ class ArticleViewController: PageTableViewController {
 //            }
 //        }
         self.tableView.register(ArticleListItemCell.self, forCellReuseIdentifier: ArticleListItemCell.description())
-        self.tableView.register(ArticleBanner.self, forHeaderFooterViewReuseIdentifier: ArticleBanner.description())
-        
+        self.tableView.register(ArticleBanner.self, forCellReuseIdentifier: ArticleBanner.description())
+
     }
 
     override func getRefresh() -> MJRefreshHeader? {
@@ -91,41 +91,42 @@ class ArticleViewController: PageTableViewController {
 
     override func transformDataSource(result: Any?) {
         if let firstModel = result as? ArticleFirstModel {
-            let contentItems = firstModel.datas
-
-            self.dataSource.append(contentItems)
+            var contentItems = [Any]()
+            contentItems.append(firstModel.bannerModel)
+            contentItems.append(contentsOf: firstModel.datas)
             
-            self.banners.removeAll()
-            self.banners.append(contentsOf: firstModel.bannerDatas)
+            self.dataSource.removeAll()
+            self.dataSource.append(contentItems)
         } else if let listModel = result as? ArticleListModel {
             let contentItems = listModel.datas
 
             self.dataSource.append(contentItems)
         }
     }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat.init(150)
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let banner = tableView.dequeueReusableHeaderFooterView(withIdentifier: ArticleBanner.description()) as? ArticleBanner else {
-            return nil
-        }
-        banner.setItems(banners: self.banners)
-        return banner
-    }
+
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return CGFloat.init(150)
+//    }
+//
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        guard let banner = tableView.dequeueReusableHeaderFooterView(withIdentifier: ArticleBanner.description()) as? ArticleBanner else {
+//            return nil
+//        }
+//        banner.setItems(banners: self.banners)
+//        return banner
+//    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let model = self.dataSource[indexPath.section][indexPath.row] as? ArticleItem,
-            let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListItemCell.description()) as? ArticleListItemCell
-            else {
-                return UITableViewCell.init()
+        if let model = self.dataSource[indexPath.section][indexPath.row] as? ArticleItem,
+            let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListItemCell.description()) as? ArticleListItemCell {
+            cell.setModel(item: model)
+            return cell
+        } else if let model = self.dataSource[indexPath.section][indexPath.row] as? ArticleBannerModel, let cell = tableView.dequeueReusableCell(withIdentifier: ArticleBanner.description()) as? ArticleBanner {
+            cell.setItems(banners: model.banners)
+            return cell
+        } else {
+            return UITableViewCell.init()
         }
-
-
-        cell.setModel(item: model)
-        return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

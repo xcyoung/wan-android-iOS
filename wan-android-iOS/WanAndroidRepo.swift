@@ -57,13 +57,14 @@ class WanAndroidRepo: NSObject {
                 throw XError.init(code: a.errorCode, message: a.errorMsg)
             }
             
+            let bannerModel = ArticleBannerModel.init(banners: banner)
             let articleFirstModel = ArticleFirstModel.init(offset: data2.offset,
                 over: data2.over,
                 pageCount: data2.pageCount,
                 size: data2.size,
                 total: data2.total,
                 curPage: data2.curPage,
-                datas: articles, bannerDatas: banner)
+                datas: articles, bannerModel: bannerModel)
             let r = WanResponse<ArticleFirstModel>.init(errorCode: errorCode, errorMsg: errorMsg, data: articleFirstModel)
             return r
         }
