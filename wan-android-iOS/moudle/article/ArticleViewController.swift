@@ -13,12 +13,6 @@ import MyLayout
 class ArticleViewController: PageTableViewController {
     private let articleViewModel = ArticleViewModel.init()
     
-    private let searchBar: UISearchBar = {
-        let bar = UISearchBar.init()
-        
-        return bar
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,16 +49,16 @@ class ArticleViewController: PageTableViewController {
     override func initView() {
         super.initView()
         
-        let layout = MyLinearLayout.init()
-        layout.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
-        
-        self.searchBar.mySize = CGSize.init(width: MyLayoutSize.fill(), height: 50)
+//        let layout = MyLinearLayout.init()
+//        layout.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
+//
+//        self.searchBar.mySize = CGSize.init(width: MyLayoutSize.fill(), height: 50)
         self.tableView.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
         
-        layout.addSubview(searchBar)
-        layout.addSubview(tableView)
+//        self.parentView.addSubview(searchBar)
+        self.parentView.addSubview(tableView)
         
-        self.parentView.addSubview(layout)
+//        self.parentView.addSubview(layout)
     }
 
     override func getStrategy() -> PageStrategy? {
@@ -113,9 +107,9 @@ class ArticleViewController: PageTableViewController {
             self.dataSource.append(contentItems)
         }
     }
-
-    override func getNavigationBarHidden() -> (hidden: Bool, animated: Bool) {
-        return (hidden: true, animated: true)
+    
+    override func setNavigationBarHidden() {
+        self.setNavigationBarHiddenForSubVC()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         let window = UIWindow.init(frame: UIScreen.main.bounds)
-        window.rootViewController = UINavigationController.init(rootViewController: ArticleViewController.init())
+        window.rootViewController = UINavigationController.init(rootViewController: ArticleMainViewController.init())
         
         UINavigationBar.appearance().tintColor = UIColor.systemGreen //前景色，按钮颜色
         UINavigationBar.appearance().barTintColor = UIColor.white //背景色，导航条背景色

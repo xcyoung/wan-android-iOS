@@ -54,7 +54,7 @@ class BaseViewController: UIViewController {
         pageStateManager?.showError(msg: msg)
     }
     
-    private func setNavigationBarHidden() {
+    open func setNavigationBarHidden() {
         let hidden = getNavigationBarHidden()
         self.navigationController?.setNavigationBarHidden(hidden.hidden, animated: hidden.animated)
         if hidden.hidden {
@@ -72,5 +72,10 @@ class BaseViewController: UIViewController {
     
     open func getNavigationBarHidden() -> (hidden: Bool, animated: Bool) {
         return (hidden: false, animated: true)
+    }
+    
+    open func setNavigationBarHiddenForSubVC() {
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        parentView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
     }
 }

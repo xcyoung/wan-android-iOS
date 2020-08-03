@@ -11,6 +11,7 @@
 		240FF5BC24A0992000E3F5A8 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FF5BB24A0992000E3F5A8 /* HttpClient.swift */; };
 		240FF5BF24A0A31A00E3F5A8 /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FF5BE24A0A31A00E3F5A8 /* JsonUtils.swift */; };
 		246E951924D7BA6F0038CB1E /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E951824D7BA6F0038CB1E /* PageControl.swift */; };
+		246E960724D805110038CB1E /* ArticleMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E960624D805110038CB1E /* ArticleMainViewController.swift */; };
 		249F683C24D3CBA20058C449 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F683B24D3CBA20058C449 /* BrowserViewController.swift */; };
 		249F683E24D40DD50058C449 /* ArticleBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F683D24D40DD50058C449 /* ArticleBanner.swift */; };
 		24F73AA424A0BA0A007A2B4D /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F73AA324A0BA0A007A2B4D /* BaseService.swift */; };
@@ -64,6 +65,7 @@
 		240FF5BB24A0992000E3F5A8 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		240FF5BE24A0A31A00E3F5A8 /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
 		246E951824D7BA6F0038CB1E /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		246E960624D805110038CB1E /* ArticleMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleMainViewController.swift; sourceTree = "<group>"; };
 		249F683B24D3CBA20058C449 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		249F683D24D40DD50058C449 /* ArticleBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBanner.swift; sourceTree = "<group>"; };
 		24F73AA324A0BA0A007A2B4D /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				3AEC6DFD24B1F84D0072120C /* ArticleModel.swift */,
 				3AEC6E3A24B22AF40072120C /* ArticleViewModel.swift */,
 				3A70932A24B4C8F200DCF916 /* ArticleViewController.swift */,
+				246E960624D805110038CB1E /* ArticleMainViewController.swift */,
 				3A70932C24B4CE4100DCF916 /* ArticleListItemCell.swift */,
 				249F683D24D40DD50058C449 /* ArticleBanner.swift */,
 			);
@@ -512,6 +515,7 @@
 				3AEC6DF024B182570072120C /* PageTableViewController.swift in Sources */,
 				3A70932B24B4C8F200DCF916 /* ArticleViewController.swift in Sources */,
 				3AEC6DF424B1A0BD0072120C /* XError.swift in Sources */,
+				246E960724D805110038CB1E /* ArticleMainViewController.swift in Sources */,
 				3AEC6DFE24B1F84D0072120C /* ArticleModel.swift in Sources */,
 				249F683C24D3CBA20058C449 /* BrowserViewController.swift in Sources */,
 				3A1551D924D5206400DA1F02 /* Ext_UIImageView.swift in Sources */,
