@@ -17,14 +17,17 @@ class BaseViewController: UIViewController {
     public let parentView: MyFrameLayout = MyFrameLayout.init()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.edgesForExtendedLayout = UIRectEdge.bottom
+        
         initView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavigationBarHidden()
+    }
+    
     open func initView() {
-        parentView.myHeight = CGFloat.init(MyLayoutSize.fill())
-        parentView.myWidth = CGFloat.init(MyLayoutSize.fill())
+        
         self.view.addSubview(parentView)
         pageStateManager = PageStateManager.init(rootView: self.parentView)
         configPageStateManager(pageStateManager: pageStateManager)
@@ -49,5 +52,25 @@ class BaseViewController: UIViewController {
 
     open func showError(msg: String = "") {
         pageStateManager?.showError(msg: msg)
+    }
+    
+    private func setNavigationBarHidden() {
+        let hidden = getNavigationBarHidden()
+        self.navigationController?.setNavigationBarHidden(hidden.hidden, animated: hidden.animated)
+        if hidden.hidden {
+            if #available(iOS 11.0, *) {
+                let insets = UIApplication.shared.delegate?.window??.safeAreaInsets ?? UIEdgeInsets.zero
+                parentView.frame = CGRect.init(x: insets.left, y: insets.top, width: UIScreen.main.bounds.width - insets.left - insets.right, height: UIScreen.main.bounds.height - insets.bottom)
+            } else {
+                parentView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            }
+        } else {
+            self.edgesForExtendedLayout = UIRectEdge.bottom
+            parentView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        }
+    }
+    
+    open func getNavigationBarHidden() -> (hidden: Bool, animated: Bool) {
+        return (hidden: false, animated: true)
     }
 }

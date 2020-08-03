@@ -37,8 +37,6 @@ class BaseTableViewController: BaseViewController {
         super.initView()
         configRefresh()
         
-        self.parentView.addSubview(tableView)
-        
         configTableView()
     }
 

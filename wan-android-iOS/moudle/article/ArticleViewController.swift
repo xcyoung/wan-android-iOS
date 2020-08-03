@@ -12,7 +12,13 @@ import MJRefresh
 import MyLayout
 class ArticleViewController: PageTableViewController {
     private let articleViewModel = ArticleViewModel.init()
-//    private var banners = [ArticleBannerItem]()
+    
+    private let searchBar: UISearchBar = {
+        let bar = UISearchBar.init()
+        
+        return bar
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,17 +37,26 @@ class ArticleViewController: PageTableViewController {
 
             self?.onLoadSuccess(result: model)
         }.disposed(by: self.disposeBag)
-
-//        articleViewModel.onRefresh(pageIndex: 0)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+//        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func initView() {
         super.initView()
+        
+        let layout = MyLinearLayout.init()
+        layout.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
+        
+        self.searchBar.mySize = CGSize.init(width: MyLayoutSize.fill(), height: 50)
+        self.tableView.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
+        
+        layout.addSubview(searchBar)
+        layout.addSubview(tableView)
+        
+        self.parentView.addSubview(layout)
     }
 
     override func getStrategy() -> PageStrategy? {
@@ -51,22 +66,9 @@ class ArticleViewController: PageTableViewController {
     override func configTableView() {
         super.configTableView()
 
-//        self.tableView.separatorStyle = .none
-//        self.tableView.separatorInset = .zero
         self.tableView.separatorInset = UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 4)
-        self.tableView.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
-//        self.tableView.snp.makeConstraints { m in
-//            if #available(iOS 11.0, *) {
-//                m.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-//                m.left.right.equalTo(0)
-//                m.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
-//            } else {
-//                m.edges.equalTo(self.view)
-//            }
-//        }
         self.tableView.register(ArticleListItemCell.self, forCellReuseIdentifier: ArticleListItemCell.description())
         self.tableView.register(ArticleBanner.self, forCellReuseIdentifier: ArticleBanner.description())
-
     }
 
     override func getRefresh() -> MJRefreshHeader? {
@@ -104,6 +106,10 @@ class ArticleViewController: PageTableViewController {
         }
     }
 
+    override func getNavigationBarHidden() -> (hidden: Bool, animated: Bool) {
+        return (hidden: true, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let model = self.dataSource[indexPath.section][indexPath.row] as? ArticleItem,
             let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListItemCell.description()) as? ArticleListItemCell {
