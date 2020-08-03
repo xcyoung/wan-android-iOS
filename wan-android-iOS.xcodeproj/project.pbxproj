@@ -10,6 +10,7 @@
 		141FF16139F1CA82F4ABD033 /* Pods_wan_android_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40469D52B98502D7F32F8EAA /* Pods_wan_android_iOS.framework */; };
 		240FF5BC24A0992000E3F5A8 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FF5BB24A0992000E3F5A8 /* HttpClient.swift */; };
 		240FF5BF24A0A31A00E3F5A8 /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240FF5BE24A0A31A00E3F5A8 /* JsonUtils.swift */; };
+		246E951924D7BA6F0038CB1E /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E951824D7BA6F0038CB1E /* PageControl.swift */; };
 		249F683C24D3CBA20058C449 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F683B24D3CBA20058C449 /* BrowserViewController.swift */; };
 		249F683E24D40DD50058C449 /* ArticleBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F683D24D40DD50058C449 /* ArticleBanner.swift */; };
 		24F73AA424A0BA0A007A2B4D /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F73AA324A0BA0A007A2B4D /* BaseService.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		240FF5BB24A0992000E3F5A8 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		240FF5BE24A0A31A00E3F5A8 /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
+		246E951824D7BA6F0038CB1E /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		249F683B24D3CBA20058C449 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		249F683D24D40DD50058C449 /* ArticleBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBanner.swift; sourceTree = "<group>"; };
 		24F73AA324A0BA0A007A2B4D /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		3A1551DC24D6A34B00DA1F02 /* banner */ = {
 			isa = PBXGroup;
 			children = (
+				246E951824D7BA6F0038CB1E /* PageControl.swift */,
 				3A1551DA24D6994600DA1F02 /* XBanner.swift */,
 				3A1551DD24D6A37000DA1F02 /* XBannerItemCell.swift */,
 			);
@@ -528,6 +531,7 @@
 				3AEEE2DA24A46EC9000A10F6 /* BaseViewController.swift in Sources */,
 				3A1551DE24D6A37000DA1F02 /* XBannerItemCell.swift in Sources */,
 				3A90B0EF24A5996C00651342 /* ToastOperation.swift in Sources */,
+				246E951924D7BA6F0038CB1E /* PageControl.swift in Sources */,
 				3AEC6DEE24B17E6D0072120C /* WanAndroidPageStrategy.swift in Sources */,
 				3AEC6DF224B19FE00072120C /* Ext_UIViewController.swift in Sources */,
 				3ACF902124A650A100648C9A /* PageStateManager.swift in Sources */,

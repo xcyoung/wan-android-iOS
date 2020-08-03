@@ -11,7 +11,9 @@ import UIKit
 class XBanner: UIView {
     override init(frame: CGRect) {
         self.collectionView = UICollectionView.init(frame: frame, collectionViewLayout: flowLayout)
+        self.pageControl = PageControl.init(frame: CGRect(x: 0.0, y: frame.height - 40, width: frame.width, height: 40))
         super.init(frame: frame)
+        registerNotification()
         setupSubView()
     }
 
@@ -23,6 +25,7 @@ class XBanner: UIView {
         super.layoutSubviews()
         collectionView.frame = bounds
         flowLayout.itemSize = CGSize(width: bounds.width, height: bounds.height)
+        pageControl.frame = CGRect(x: 0.0, y: frame.height - 20, width: frame.width, height: 20)
     }
 
     public var timeInterval: TimeInterval = 2.0
@@ -50,6 +53,8 @@ class XBanner: UIView {
 
     private let collectionView: UICollectionView
 
+    private let pageControl: PageControl
+    
     private func setupSubView() {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
@@ -58,8 +63,17 @@ class XBanner: UIView {
         collectionView.register(XBannerItemCell.self, forCellWithReuseIdentifier: XBannerItemCell.description())
         collectionView.backgroundColor = UIColor.white
 
+        let size = CGSize(width: 15.0, height: 3.0)
+        let path = UIBezierPath.init(roundedRect: CGRect.init(x: 0, y: 0, width: size.width, height: size.height), cornerRadius: 10)
+        pageControl.setPath(path, for: .normal)
+        pageControl.setPath(path, for: .selected)
+        pageControl.setFillColor(UIColor(white: 0.0, alpha: 0.3), for: .normal)
+        pageControl.setFillColor(UIColor.systemRed, for: .selected)
+        pageControl.itemSpacing = 14.0
+        
         addSubview(collectionView)
-
+        addSubview(pageControl)
+        
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -88,6 +102,39 @@ class XBanner: UIView {
             collectionView.setContentOffset(point, animated: true)
         }
     }
+    
+    private func timerPause() {
+        timer?.fireDate = Date.distantFuture
+    }
+    
+    private func timerRestart() {
+        timer?.fireDate = Date() + timeInterval
+    }
+
+    private func registerNotification() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(registerNoti(_:)), name: Notification.Name("UIApplicationDidBecomeActiveNotification"), object: nil)
+        notificationCenter.addObserver(self, selector: #selector(registerNoti(_:)), name: Notification.Name("UIApplicationDidEnterBackgroundNotification"), object: nil)
+    }
+    
+    @objc private func registerNoti(_ notification: Notification) {
+        if notification.name == Notification.Name("UIApplicationDidBecomeActiveNotification") {
+            timerRestart()
+        } else {
+            timerPause()
+        }
+    }
+    
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        if newSuperview == nil {
+            destoryTimer()
+        }
+    }
+    
+    deinit {
+        destoryTimer()
+    }
 }
 
 extension XBanner {
@@ -100,6 +147,7 @@ extension XBanner {
             destoryTimer()
         }
         totalCount = items.count * 1024
+        pageControl.numberOfPages = items.count
         collectionView.reloadData()
         let indexPath = IndexPath.init(item: totalCount / 2, section: 0)
         if scrollDirection == .vertical {
@@ -127,13 +175,22 @@ extension XBanner: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let index = getCurrentIndex()
-//        if index != self.curIndex {
-//            let realIndex = getRealIndex(index)
-//
-//        }
+        if index != self.curIndex {
+            let realIndex = getRealIndex(index)
+            pageControl.currentPage = realIndex
+        }
         curIndex = index
     }
 
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        timerPause()
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        resetPosition()
+        timerRestart()
+    }
+    
     private func getRealIndex(_ orginIndex: Int) -> Int {
         let itemCount = self.items.count
         return orginIndex % itemCount
@@ -151,5 +208,14 @@ extension XBanner: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
             index = Int((collectionView.contentOffset.x + flowLayout.itemSize.width * 0.5) / flowLayout.itemSize.width)
         }
         return max(0, index)
+    }
+
+    private func resetPosition() {
+        let indexPath = IndexPath.init(item: curIndex, section: 0)
+        if scrollDirection == .vertical {
+            collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+        } else {
+            collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+        }
     }
 }

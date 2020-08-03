@@ -56,3 +56,13 @@ https://github.com/manondidi/swiftArch
 - 简单完成browser
 
 - 移除SnapKit
+
+### 2020.08.03
+
+- 加入XBanner轮播图
+
+  参考项目：
+
+  https://github.com/SilongLi/GuidePageView
+
+  https://github.com/gltwy/LTAutoScrollView
