@@ -37,6 +37,14 @@ class ArticleViewController: PageTableViewController {
 
             self?.onLoadSuccess(result: model)
         }.disposed(by: self.disposeBag)
+        
+        articleViewModel.errorLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let error = event.element as? XError else {
+                return
+            }
+            
+            self?.onLoadFail(error)
+        }.disposed(by: self.disposeBag)
     }
 
     override func viewWillAppear(_ animated: Bool) {

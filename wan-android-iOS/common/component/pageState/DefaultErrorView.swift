@@ -23,6 +23,7 @@ class DefaultErrorView: UIView, AnimationProtocol {
         label.text = "Error"
 
         super.init(frame: frame)
+        self.backgroundColor = UIColor.white
         addSubview(label)
         layout()
     }

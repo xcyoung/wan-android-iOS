@@ -9,5 +9,6 @@
 import Foundation
 import RxSwift
 class BaseViewModel: NSObject {
+    public let errorLiveData = RxLiveData<XError?>.init(defalutValue: nil)
     public let disposeBag = DisposeBag.init()
 }

@@ -80,14 +80,18 @@ class PageTableViewController: BaseTableViewController {
     }
     
     open func onLoadFail(_ error: XError? = nil){
-        if(self.dataSource.count == 0) {
-            showError()
+        if self.pageStrategy?.pageInfo.isFirstPage() == true {
+            self.refreshing(isBegin: false)
         } else {
-            if let e = error {
-                self.toastError(error: e)
-            } else {
-                self.toast(message: "加载失败")
-            }
+            self.loading(isBegin: false)
+        }
+//        if(self.dataSource.count == 0) {
+//            showError()
+//        }
+        if let e = error {
+            self.toastError(error: e)
+        } else {
+            self.toast(message: "加载失败")
         }
     }
 }

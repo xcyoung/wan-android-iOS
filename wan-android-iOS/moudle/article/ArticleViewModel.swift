@@ -15,8 +15,8 @@ class ArticleViewModel: BaseViewModel {
     func onRefresh(pageIndex: Int) {
         repo.articleAll().subscribe(HttpObserverType.init(success: { [weak self] response in
             self?.articleFirstListLiveData.value = response.data
-        }, error: { (error) in
-                print(error)
+        }, error: { [weak self] (error) in
+            self?.errorLiveData.value = error
             })
         ).disposed(by: disposeBag)
     }
@@ -24,8 +24,8 @@ class ArticleViewModel: BaseViewModel {
     func onLoad(pageIndex: Int) {
         repo.articleList(pageIndex: pageIndex).subscribe(HttpObserverType.init(success: { [weak self] (response) in
             self?.articleListLiveData.value = response.data
-        }, error: { (error) in
-            print(error)
+        }, error: { [weak self] (error) in
+            self?.errorLiveData.value = error
         })).disposed(by: disposeBag)
     }
 }
