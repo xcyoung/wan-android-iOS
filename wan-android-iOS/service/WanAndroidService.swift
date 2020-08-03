@@ -13,14 +13,19 @@ class WanAndroidService: BaseService {
         let url = "article/list/\(pageIndex)/json"
         return httpClient.requestByRx(url: url, method: .get)
     }
-    
+
     func articleTop() -> Observable<WanResponse<[ArticleItem]>> {
         let url = "article/top/json"
         return httpClient.requestByRx(url: url, method: .get)
     }
-    
+
     func articleBanner() -> Observable<WanResponse<[ArticleBannerItem]>> {
         let url = "banner/json"
+        return httpClient.requestByRx(url: url, method: .get)
+    }
+
+    func treeList() -> Observable<WanResponse<[TreeListModel]>> {
+        let url = "tree/json"
         return httpClient.requestByRx(url: url, method: .get)
     }
 }

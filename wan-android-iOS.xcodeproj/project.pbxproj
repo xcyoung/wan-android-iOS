@@ -20,6 +20,10 @@
 		3A1551D924D5206400DA1F02 /* Ext_UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551D824D5206400DA1F02 /* Ext_UIImageView.swift */; };
 		3A1551DB24D6994600DA1F02 /* XBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551DA24D6994600DA1F02 /* XBanner.swift */; };
 		3A1551DE24D6A37000DA1F02 /* XBannerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551DD24D6A37000DA1F02 /* XBannerItemCell.swift */; };
+		3A1551E124D8592100DA1F02 /* TreeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551E024D8592100DA1F02 /* TreeListViewController.swift */; };
+		3A1551E324D85AEE00DA1F02 /* TreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551E224D85AEE00DA1F02 /* TreeModel.swift */; };
+		3A1551E524D85C0500DA1F02 /* TreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551E424D85C0500DA1F02 /* TreeViewModel.swift */; };
+		3A1551E724D8606500DA1F02 /* TreeListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551E624D8606500DA1F02 /* TreeListItemCell.swift */; };
 		3A23DD7824A6F7D3003DD81B /* DefaultLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23DD7724A6F7D3003DD81B /* DefaultLoadingView.swift */; };
 		3A5F7334249BB4DB00A3AE68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F7333249BB4DB00A3AE68 /* AppDelegate.swift */; };
 		3A5F7336249BB4DB00A3AE68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F7335249BB4DB00A3AE68 /* SceneDelegate.swift */; };
@@ -74,6 +78,10 @@
 		3A1551D824D5206400DA1F02 /* Ext_UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIImageView.swift; sourceTree = "<group>"; };
 		3A1551DA24D6994600DA1F02 /* XBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBanner.swift; sourceTree = "<group>"; };
 		3A1551DD24D6A37000DA1F02 /* XBannerItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBannerItemCell.swift; sourceTree = "<group>"; };
+		3A1551E024D8592100DA1F02 /* TreeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListViewController.swift; sourceTree = "<group>"; };
+		3A1551E224D85AEE00DA1F02 /* TreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeModel.swift; sourceTree = "<group>"; };
+		3A1551E424D85C0500DA1F02 /* TreeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewModel.swift; sourceTree = "<group>"; };
+		3A1551E624D8606500DA1F02 /* TreeListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListItemCell.swift; sourceTree = "<group>"; };
 		3A23DD7724A6F7D3003DD81B /* DefaultLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoadingView.swift; sourceTree = "<group>"; };
 		3A5F7330249BB4DB00A3AE68 /* wan-android-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wan-android-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5F7333249BB4DB00A3AE68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +183,17 @@
 				3A1551DD24D6A37000DA1F02 /* XBannerItemCell.swift */,
 			);
 			path = banner;
+			sourceTree = "<group>";
+		};
+		3A1551DF24D8584B00DA1F02 /* tree */ = {
+			isa = PBXGroup;
+			children = (
+				3A1551E024D8592100DA1F02 /* TreeListViewController.swift */,
+				3A1551E424D85C0500DA1F02 /* TreeViewModel.swift */,
+				3A1551E224D85AEE00DA1F02 /* TreeModel.swift */,
+				3A1551E624D8606500DA1F02 /* TreeListItemCell.swift */,
+			);
+			path = tree;
 			sourceTree = "<group>";
 		};
 		3A5F7327249BB4DB00A3AE68 = {
@@ -301,6 +320,7 @@
 			children = (
 				249F683A24D3CB6C0058C449 /* browser */,
 				3AEC6DFA24B1F7630072120C /* article */,
+				3A1551DF24D8584B00DA1F02 /* tree */,
 				3AEC6DFB24B1F7DE0072120C /* Pagination.swift */,
 			);
 			path = moudle;
@@ -503,9 +523,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ACD1A3124A79A2400081C46 /* AnimationProtocol.swift in Sources */,
+				3A1551E724D8606500DA1F02 /* TreeListItemCell.swift in Sources */,
 				3A5F7338249BB4DB00A3AE68 /* ViewController.swift in Sources */,
 				249F683E24D40DD50058C449 /* ArticleBanner.swift in Sources */,
 				3ACC1B3C24A8EB75001F69EB /* BaseTableViewController.swift in Sources */,
+				3A1551E324D85AEE00DA1F02 /* TreeModel.swift in Sources */,
 				3AEC6D8524B040070072120C /* PageStrategy.swift in Sources */,
 				3A096D5724A7A36700E7FF1D /* DefaultEmptyView.swift in Sources */,
 				3AB1A82424B369ED009F9596 /* HttpObserverType.swift in Sources */,
@@ -533,9 +555,11 @@
 				3AEC6D8324B018570072120C /* WanResponse.swift in Sources */,
 				3AEC6D8724B041A60072120C /* PageInfo.swift in Sources */,
 				3AEEE2DA24A46EC9000A10F6 /* BaseViewController.swift in Sources */,
+				3A1551E524D85C0500DA1F02 /* TreeViewModel.swift in Sources */,
 				3A1551DE24D6A37000DA1F02 /* XBannerItemCell.swift in Sources */,
 				3A90B0EF24A5996C00651342 /* ToastOperation.swift in Sources */,
 				246E951924D7BA6F0038CB1E /* PageControl.swift in Sources */,
+				3A1551E124D8592100DA1F02 /* TreeListViewController.swift in Sources */,
 				3AEC6DEE24B17E6D0072120C /* WanAndroidPageStrategy.swift in Sources */,
 				3AEC6DF224B19FE00072120C /* Ext_UIViewController.swift in Sources */,
 				3ACF902124A650A100648C9A /* PageStateManager.swift in Sources */,

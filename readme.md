@@ -66,3 +66,9 @@ https://github.com/manondidi/swiftArch
   https://github.com/SilongLi/GuidePageView
 
   https://github.com/gltwy/LTAutoScrollView
+
+- 优化XBanner
+
+- 重写ArticleViewController结构
+
+- 加入体系模块
