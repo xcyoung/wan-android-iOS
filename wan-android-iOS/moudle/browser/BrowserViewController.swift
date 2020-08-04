@@ -39,9 +39,11 @@ class BrowserViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = URL(string: self.url)
-        let urlRequest = URLRequest(url: url!)
-        webView.load(urlRequest)
+        
+        if let url = URL(string: self.url) {
+            let urlRequest = URLRequest(url: url)
+            webView.load(urlRequest)
+        }
     }
 
     override func initView() {

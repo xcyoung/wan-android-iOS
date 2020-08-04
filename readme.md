@@ -72,3 +72,9 @@ https://github.com/manondidi/swiftArch
 - 重写ArticleViewController结构
 
 - 加入体系模块
+
+### 2020.08.04
+
+- 完善体系模块
+
+- 添加导航模块

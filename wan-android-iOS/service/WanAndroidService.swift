@@ -33,4 +33,9 @@ class WanAndroidService: BaseService {
         let url = "article/list/\(pageIndex)/json?cid=\(id)"
         return httpClient.requestByRx(url: url, method: .get)
     }
+    
+    func naviList() -> Observable<WanResponse<[NaviListModel]>> {
+        let url = "navi/json"
+        return httpClient.requestByRx(url: url, method: .get)
+    }
 }

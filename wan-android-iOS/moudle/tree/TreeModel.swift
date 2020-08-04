@@ -23,3 +23,9 @@ struct TreeListModel: Codable {
         case userControlSetTop, visible
     }
 }
+
+struct NaviListModel: Codable {
+    let articles: [ArticleItem]
+    let cid: Int
+    let name: String
+}
