@@ -73,4 +73,8 @@ class WanAndroidRepo: NSObject {
     func treeList() -> Observable<WanResponse<[TreeListModel]>> {
         return service.treeList()
     }
+    
+    func treeSubList(pageIndex: Int, id: Int) -> Observable<WanResponse<ArticleListModel>> {
+        return service.treeSubList(pageIndex: pageIndex, id: id)
+    }
 }

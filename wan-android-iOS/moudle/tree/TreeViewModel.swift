@@ -11,6 +11,7 @@ class TreeViewModel: BaseViewModel {
     private let repo = WanAndroidRepo.shared
 
     let treeListLiveData = RxLiveData<[TreeListModel]>.init(defalutValue: [])
+    let treeSubListLiveData = RxLiveData<ArticleListModel?>.init(defalutValue: nil)
     func treeList() {
         repo.treeList().subscribe(HttpObserverType.init(success: { [weak self] (response) in
             self?.treeListLiveData.value = response.data ?? []
@@ -18,5 +19,13 @@ class TreeViewModel: BaseViewModel {
                 self?.errorLiveData.value = error
             })
         ).disposed(by: disposeBag)
+    }
+
+    func treeSubList(pageIndex: Int, id: Int) {
+        repo.treeSubList(pageIndex: pageIndex, id: id).subscribe(HttpObserverType.init(success: { [weak self] (response) in
+            self?.treeSubListLiveData.value = response.data
+        }, error: { [weak self] (error) in
+                self?.errorLiveData.value = error
+            })).disposed(by: disposeBag)
     }
 }

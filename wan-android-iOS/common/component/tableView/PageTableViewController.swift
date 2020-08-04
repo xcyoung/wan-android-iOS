@@ -18,7 +18,7 @@ class PageTableViewController: BaseTableViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        self.refreshing(isBegin: true)
+//        self.refreshing(isBegin: true)
     }
     
     override func initView() {

@@ -28,4 +28,9 @@ class WanAndroidService: BaseService {
         let url = "tree/json"
         return httpClient.requestByRx(url: url, method: .get)
     }
+
+    func treeSubList(pageIndex: Int, id: Int) -> Observable<WanResponse<ArticleListModel>> {
+        let url = "article/list/\(pageIndex)/json?cid=\(id)"
+        return httpClient.requestByRx(url: url, method: .get)
+    }
 }
