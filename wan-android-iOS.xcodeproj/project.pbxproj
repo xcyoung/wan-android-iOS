@@ -29,6 +29,8 @@
 		3A1551E324D85AEE00DA1F02 /* TreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551E224D85AEE00DA1F02 /* TreeModel.swift */; };
 		3A1551E524D85C0500DA1F02 /* TreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551E424D85C0500DA1F02 /* TreeViewModel.swift */; };
 		3A1551E724D8606500DA1F02 /* TreeListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551E624D8606500DA1F02 /* TreeListItemCell.swift */; };
+		3A1551E924D9ACBE00DA1F02 /* TreeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551E824D9ACBE00DA1F02 /* TreeMainViewController.swift */; };
+		3A1551EB24D9BBD700DA1F02 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551EA24D9BBD700DA1F02 /* HomeViewController.swift */; };
 		3A23DD7824A6F7D3003DD81B /* DefaultLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23DD7724A6F7D3003DD81B /* DefaultLoadingView.swift */; };
 		3A5F7334249BB4DB00A3AE68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F7333249BB4DB00A3AE68 /* AppDelegate.swift */; };
 		3A5F7336249BB4DB00A3AE68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F7335249BB4DB00A3AE68 /* SceneDelegate.swift */; };
@@ -92,6 +94,8 @@
 		3A1551E224D85AEE00DA1F02 /* TreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeModel.swift; sourceTree = "<group>"; };
 		3A1551E424D85C0500DA1F02 /* TreeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewModel.swift; sourceTree = "<group>"; };
 		3A1551E624D8606500DA1F02 /* TreeListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListItemCell.swift; sourceTree = "<group>"; };
+		3A1551E824D9ACBE00DA1F02 /* TreeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeMainViewController.swift; sourceTree = "<group>"; };
+		3A1551EA24D9BBD700DA1F02 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3A23DD7724A6F7D3003DD81B /* DefaultLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoadingView.swift; sourceTree = "<group>"; };
 		3A5F7330249BB4DB00A3AE68 /* wan-android-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wan-android-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5F7333249BB4DB00A3AE68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				3A1551E224D85AEE00DA1F02 /* TreeModel.swift */,
 				3A1551E624D8606500DA1F02 /* TreeListItemCell.swift */,
 				24BB74A024D8FCE700EC0BD5 /* TreeListHeaderView.swift */,
+				3A1551E824D9ACBE00DA1F02 /* TreeMainViewController.swift */,
 			);
 			path = tree;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				249F683A24D3CB6C0058C449 /* browser */,
 				3AEC6DFA24B1F7630072120C /* article */,
 				3A1551DF24D8584B00DA1F02 /* tree */,
+				3A1551EA24D9BBD700DA1F02 /* HomeViewController.swift */,
 				3AEC6DFB24B1F7DE0072120C /* Pagination.swift */,
 			);
 			path = moudle;
@@ -546,6 +552,7 @@
 				3AEC6D8524B040070072120C /* PageStrategy.swift in Sources */,
 				3A096D5724A7A36700E7FF1D /* DefaultEmptyView.swift in Sources */,
 				3AB1A82424B369ED009F9596 /* HttpObserverType.swift in Sources */,
+				3A1551E924D9ACBE00DA1F02 /* TreeMainViewController.swift in Sources */,
 				3A23DD7824A6F7D3003DD81B /* DefaultLoadingView.swift in Sources */,
 				3A90B0EA24A481EA00651342 /* Toast.swift in Sources */,
 				3A90B0E324A4781200651342 /* RxLiveData.swift in Sources */,
@@ -555,6 +562,7 @@
 				246E960724D805110038CB1E /* ArticleMainViewController.swift in Sources */,
 				3AEC6DFE24B1F84D0072120C /* ArticleModel.swift in Sources */,
 				249F683C24D3CBA20058C449 /* BrowserViewController.swift in Sources */,
+				3A1551EB24D9BBD700DA1F02 /* HomeViewController.swift in Sources */,
 				24BB74A324D93A8C00EC0BD5 /* NaviListViewController.swift in Sources */,
 				3A1551D924D5206400DA1F02 /* Ext_UIImageView.swift in Sources */,
 				3AEEE2DC24A473BC000A10F6 /* BaseViewModel.swift in Sources */,

@@ -118,7 +118,9 @@ class TreeListViewController: PageTableViewController {
         }
     }
 
-
+    override func setNavigationBarHidden() {
+        self.setNavigationBarHiddenForSubVC()
+    }
 }
 
 extension TreeListViewController {
