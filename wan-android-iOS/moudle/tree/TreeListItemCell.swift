@@ -12,14 +12,20 @@ import UIKit
 class TreeListItemCell: UITableViewCell {
     private let label: UILabel = {
         let label = UILabel.init()
-        label.font = UIFont.systemFont(ofSize: 12)
+//        label.textColor = UIColor.gray
+//        label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        label.frame = CGRect.init(x: 10, y: 0, width: frame.width - 10, height: frame.height)
+        backgroundColor = UIColor.init(hex6: 0xf9f9f9, alpha: 1)
+        
+        selectedBackgroundView = UIView.init(frame: frame)
+        selectedBackgroundView?.backgroundColor = UIColor.init(hex6: 0xf9f9f9, alpha: 1)
+        
+        label.frame = CGRect.init(x: 10, y: 0, width: frame.width - 10, height: frame.height - 0.5)
         self.addSubview(label)
     }
     
@@ -29,5 +35,15 @@ class TreeListItemCell: UITableViewCell {
     
     func setModel(item: TreeListModel) {
         label.text = item.name
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {        
+        if selected {
+            label.textColor = UIColor.systemGreen
+            label.font = UIFont.systemFont(ofSize: 14)
+        } else {
+            label.textColor = UIColor.gray
+            label.font = UIFont.systemFont(ofSize: 12)
+        }
     }
 }
