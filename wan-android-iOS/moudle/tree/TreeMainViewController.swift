@@ -62,8 +62,8 @@ class TreeMainViewController: BaseViewController {
         self.naviListViewController.view.isHidden = true
     }
 
-    override func getNavigationBarHidden() -> (hidden: Bool, animated: Bool) {
-        return (hidden: true, animated: true)
+    override func setNavigationBarHidden() {
+        self.setNavigationBarHiddenForSubVC()
     }
 
     @objc private func onSegmentValueChange(sender: UISegmentedControl) {

@@ -78,3 +78,7 @@ https://github.com/manondidi/swiftArch
 - 完善体系模块
 
 - 添加导航模块
+
+### 2020.08.06
+
+- 加入Home页面

@@ -39,6 +39,8 @@ class ArticleViewController: PageTableViewController {
             
             self?.onLoadFail(error)
         }.disposed(by: self.disposeBag)
+        
+        articleViewModel.onRefresh(pageIndex: 0)
     }
 
     override func viewWillAppear(_ animated: Bool) {
