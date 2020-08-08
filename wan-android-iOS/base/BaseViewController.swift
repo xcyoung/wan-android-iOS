@@ -68,6 +68,12 @@ class BaseViewController: UIViewController {
             self.edgesForExtendedLayout = UIRectEdge.bottom
             parentView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }
+//        children.forEach { (vc) in
+//            if vc is BaseViewController,
+//                let child = vc as? BaseViewController {
+//                child.setNavigationBarHiddenForSubVC()
+//            }
+//        }
     }
     
     open func getNavigationBarHidden() -> (hidden: Bool, animated: Bool) {

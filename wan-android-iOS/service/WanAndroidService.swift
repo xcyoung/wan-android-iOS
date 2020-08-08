@@ -48,4 +48,14 @@ class WanAndroidService: BaseService {
         let url = "wxarticle/list/\(id)/\(pageIndex)/json"
         return httpClient.requestByRx(url: url, method: .get)
     }
+    
+    func projectTreeList() -> Observable<WanResponse<[ProjectListModel]>> {
+        let url = "project/tree/json"
+        return httpClient.requestByRx(url: url, method: .get)
+    }
+    
+    func projectList(id: Int, pageIndex: Int) -> Observable<WanResponse<ArticleListModel>> {
+        let url = "project/list/\(pageIndex)/json?cid=\(id)"
+        return httpClient.requestByRx(url: url, method: .get)
+    }
 }

@@ -89,4 +89,12 @@ class WanAndroidRepo: NSObject {
     func officialList(id: Int, pageIndex: Int) -> Observable<WanResponse<ArticleListModel>> {
         return service.officialList(id: id, pageIndex: pageIndex)
     }
+    
+    func projectTreeList() -> Observable<WanResponse<[ProjectListModel]>> {
+        return service.projectTreeList()
+    }
+    
+    func projectList(id: Int, pageIndex: Int) -> Observable<WanResponse<ArticleListModel>> {
+        return service.projectList(id: id, pageIndex: pageIndex)
+    }
 }

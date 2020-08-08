@@ -12,8 +12,8 @@ import MyLayout
 class HomeViewController: BaseViewController {
     private let tabBar: UITabBar = {
         var items = [UITabBarItem]()
-        let titles = ["首页", "体系", "公众号"]
-        for i in 0...2 {
+        let titles = ["首页", "体系", "公众号", "项目"]
+        for i in 0...3 {
             let tabItem = UITabBarItem.init()
             tabItem.title = titles[i]
             tabItem.tag = i
@@ -25,16 +25,14 @@ class HomeViewController: BaseViewController {
         tabBar.barTintColor = UIColor.white
 //        tabBar.tintColor = UIColor.white
         tabBar.isTranslucent = false
-        
+
         tabBar.selectedItem = items[0]
         return tabBar
     }()
 
     private let contentView: UIView = UIView.init()
 
-    private let article = ArticleMainViewController.init()
-    private let tree = TreeMainViewController.init()
-    private let official = OfficialChapterViewController.init()
+    private var subVCMap: [Int: BaseViewController] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.delegate = self
@@ -49,21 +47,9 @@ class HomeViewController: BaseViewController {
         self.view.addSubview(self.contentView)
         self.view.addSubview(self.tabBar)
         
-        self.article.view.frame = CGRect.init(x: 0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height)
-        self.tree.view.frame = CGRect.init(x: 0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height)
-        self.official.view.frame = CGRect.init(x: 0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height)
-        
-        addChild(article)
-        addChild(tree)
-        addChild(official)
-        self.contentView.addSubview(self.article.view)
-        self.contentView.addSubview(self.tree.view)
-        self.contentView.addSubview(self.official.view)
-        self.article.view.isHidden = false
-        self.tree.view.isHidden = true
-        self.official.view.isHidden = true
+        self.showSubViewController(index: 0)
     }
-    
+
     override func getNavigationBarHidden() -> (hidden: Bool, animated: Bool) {
         return (hidden: true, animated: true)
     }
@@ -71,26 +57,37 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController: UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        switch item.tag {
-        case 0:
-            self.article.view.isHidden = false
-            self.tree.view.isHidden = true
-            self.official.view.isHidden = true
-            break
-        case 1:
-            self.article.view.isHidden = true
-            self.tree.view.isHidden = false
-            self.official.view.isHidden = true
-            break
-        case 2:
-            self.article.view.isHidden = true
-            self.tree.view.isHidden = true
-            self.official.view.isHidden = false
-            break
-        default:
-            self.article.view.isHidden = true
-            self.tree.view.isHidden = true
-            self.official.view.isHidden = true
+        showSubViewController(index: item.tag)
+    }
+    
+    func showSubViewController(index: Int) {
+        if self.subVCMap[index] == nil {
+            let vc: BaseViewController
+            switch index {
+            case 0:
+                vc = ArticleMainViewController.init()
+                break
+            case 1:
+                vc = TreeMainViewController.init()
+                break
+            case 2:
+                vc = OfficialChapterViewController.init()
+                break
+            default:
+                vc = ProjectTreeViewController.init()
+                break
+            }
+            vc.view.frame = CGRect.init(x: 0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height)
+            self.contentView.addSubview(vc.view)
+            vc.beginAppearanceTransition(true, animated: true)
+            subVCMap[index] = vc
+        }
+        subVCMap.forEach { (key: Int, value: BaseViewController) in
+            if key == index {
+                value.view.isHidden = false
+            } else {
+                value.view.isHidden = true
+            }
         }
     }
 }

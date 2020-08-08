@@ -35,6 +35,10 @@
 		3A1551F224DE588000DA1F02 /* OfficialChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551F124DE588000DA1F02 /* OfficialChapterViewController.swift */; };
 		3A15522F24DE9C0F00DA1F02 /* OfficialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15522E24DE9C0F00DA1F02 /* OfficialViewModel.swift */; };
 		3A15523124DEFADD00DA1F02 /* OfficialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15523024DEFADD00DA1F02 /* OfficialViewController.swift */; };
+		3A15523424DF063D00DA1F02 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15523324DF063D00DA1F02 /* ProjectModel.swift */; };
+		3A15523624DF06D400DA1F02 /* ProjectTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15523524DF06D400DA1F02 /* ProjectTreeViewController.swift */; };
+		3A15523824DF076F00DA1F02 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15523724DF076F00DA1F02 /* ProjectViewModel.swift */; };
+		3A15523A24DF081800DA1F02 /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15523924DF081800DA1F02 /* ProjectListViewController.swift */; };
 		3A23DD7824A6F7D3003DD81B /* DefaultLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23DD7724A6F7D3003DD81B /* DefaultLoadingView.swift */; };
 		3A5F7334249BB4DB00A3AE68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F7333249BB4DB00A3AE68 /* AppDelegate.swift */; };
 		3A5F7336249BB4DB00A3AE68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F7335249BB4DB00A3AE68 /* SceneDelegate.swift */; };
@@ -104,6 +108,10 @@
 		3A1551F124DE588000DA1F02 /* OfficialChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialChapterViewController.swift; sourceTree = "<group>"; };
 		3A15522E24DE9C0F00DA1F02 /* OfficialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialViewModel.swift; sourceTree = "<group>"; };
 		3A15523024DEFADD00DA1F02 /* OfficialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialViewController.swift; sourceTree = "<group>"; };
+		3A15523324DF063D00DA1F02 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
+		3A15523524DF06D400DA1F02 /* ProjectTreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTreeViewController.swift; sourceTree = "<group>"; };
+		3A15523724DF076F00DA1F02 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
+		3A15523924DF081800DA1F02 /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
 		3A23DD7724A6F7D3003DD81B /* DefaultLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoadingView.swift; sourceTree = "<group>"; };
 		3A5F7330249BB4DB00A3AE68 /* wan-android-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wan-android-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5F7333249BB4DB00A3AE68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +242,17 @@
 			path = official;
 			sourceTree = "<group>";
 		};
+		3A15523224DF056500DA1F02 /* project */ = {
+			isa = PBXGroup;
+			children = (
+				3A15523324DF063D00DA1F02 /* ProjectModel.swift */,
+				3A15523524DF06D400DA1F02 /* ProjectTreeViewController.swift */,
+				3A15523724DF076F00DA1F02 /* ProjectViewModel.swift */,
+				3A15523924DF081800DA1F02 /* ProjectListViewController.swift */,
+			);
+			path = project;
+			sourceTree = "<group>";
+		};
 		3A5F7327249BB4DB00A3AE68 = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +380,7 @@
 				3AEC6DFA24B1F7630072120C /* article */,
 				3A1551DF24D8584B00DA1F02 /* tree */,
 				3A1551EE24DE4F5F00DA1F02 /* official */,
+				3A15523224DF056500DA1F02 /* project */,
 				3A1551EA24D9BBD700DA1F02 /* HomeViewController.swift */,
 				3AEC6DFB24B1F7DE0072120C /* Pagination.swift */,
 			);
@@ -567,11 +587,13 @@
 			files = (
 				3ACD1A3124A79A2400081C46 /* AnimationProtocol.swift in Sources */,
 				3A1551E724D8606500DA1F02 /* TreeListItemCell.swift in Sources */,
+				3A15523424DF063D00DA1F02 /* ProjectModel.swift in Sources */,
 				3A5F7338249BB4DB00A3AE68 /* ViewController.swift in Sources */,
 				249F683E24D40DD50058C449 /* ArticleBanner.swift in Sources */,
 				3ACC1B3C24A8EB75001F69EB /* BaseTableViewController.swift in Sources */,
 				3A15523124DEFADD00DA1F02 /* OfficialViewController.swift in Sources */,
 				3A1551E324D85AEE00DA1F02 /* TreeModel.swift in Sources */,
+				3A15523A24DF081800DA1F02 /* ProjectListViewController.swift in Sources */,
 				3AEC6D8524B040070072120C /* PageStrategy.swift in Sources */,
 				3A096D5724A7A36700E7FF1D /* DefaultEmptyView.swift in Sources */,
 				3AB1A82424B369ED009F9596 /* HttpObserverType.swift in Sources */,
@@ -596,6 +618,7 @@
 				3AEE1C8924A5C18F00660388 /* ToastView.swift in Sources */,
 				3A90B0E724A47C6F00651342 /* Ext_UIApplication.swift in Sources */,
 				3A81D5E024AB973A000DEDEB /* R.generated.swift in Sources */,
+				3A15523624DF06D400DA1F02 /* ProjectTreeViewController.swift in Sources */,
 				3A79DAAC24A62EF7002BCD2A /* Ext_LottieAnimation.swift in Sources */,
 				3AEC6DFC24B1F7DE0072120C /* Pagination.swift in Sources */,
 				3A90B0EC24A4858E00651342 /* Ext_UIColor_Hex.swift in Sources */,
@@ -617,6 +640,7 @@
 				3A096D5924A7A42000E7FF1D /* DefaultErrorView.swift in Sources */,
 				3A5F7334249BB4DB00A3AE68 /* AppDelegate.swift in Sources */,
 				3AEC6DEC24B17D1A0072120C /* WanAndroidNumberPageInfo.swift in Sources */,
+				3A15523824DF076F00DA1F02 /* ProjectViewModel.swift in Sources */,
 				24F73AA424A0BA0A007A2B4D /* BaseService.swift in Sources */,
 				240FF5BF24A0A31A00E3F5A8 /* JsonUtils.swift in Sources */,
 				24BB74A924D9555800EC0BD5 /* NaviListHeaderView.swift in Sources */,
