@@ -82,3 +82,9 @@ https://github.com/manondidi/swiftArch
 ### 2020.08.06
 
 - 加入Home页面
+
+### 2020.08.09
+
+- 引入XLPagerTabStrip
+
+- 加入公众号模块

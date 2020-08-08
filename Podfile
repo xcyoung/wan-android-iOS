@@ -13,6 +13,7 @@ target 'wan-android-iOS' do
   pod 'MJRefresh',    '3.4.3'
   pod 'MyLayout'
   pod 'SDWebImage',   '5.0'
+  pod 'XLPagerTabStrip', '8.1.0'
   # Pods for wan-android-iOS
 
 end

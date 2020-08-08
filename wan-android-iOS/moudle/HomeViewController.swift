@@ -12,15 +12,13 @@ import MyLayout
 class HomeViewController: BaseViewController {
     private let tabBar: UITabBar = {
         var items = [UITabBarItem]()
-        let tabItem = UITabBarItem.init()
-        tabItem.title = "首页"
-        tabItem.tag = 0
-        items.append(tabItem)
-
-        let tabItem2 = UITabBarItem.init()
-        tabItem2.title = "体系"
-        tabItem2.tag = 1
-        items.append(tabItem2)
+        let titles = ["首页", "体系", "公众号"]
+        for i in 0...2 {
+            let tabItem = UITabBarItem.init()
+            tabItem.title = titles[i]
+            tabItem.tag = i
+            items.append(tabItem)
+        }
 
         let tabBar = UITabBar.init()
         tabBar.setItems(items, animated: true)
@@ -28,7 +26,7 @@ class HomeViewController: BaseViewController {
 //        tabBar.tintColor = UIColor.white
         tabBar.isTranslucent = false
         
-        tabBar.selectedItem = tabItem
+        tabBar.selectedItem = items[0]
         return tabBar
     }()
 
@@ -36,7 +34,7 @@ class HomeViewController: BaseViewController {
 
     private let article = ArticleMainViewController.init()
     private let tree = TreeMainViewController.init()
-    
+    private let official = OfficialChapterViewController.init()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.delegate = self
@@ -51,15 +49,19 @@ class HomeViewController: BaseViewController {
         self.view.addSubview(self.contentView)
         self.view.addSubview(self.tabBar)
         
-        self.article.view.frame = CGRect.init(x: 0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.width)
+        self.article.view.frame = CGRect.init(x: 0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height)
         self.tree.view.frame = CGRect.init(x: 0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height)
+        self.official.view.frame = CGRect.init(x: 0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height)
         
         addChild(article)
         addChild(tree)
+        addChild(official)
         self.contentView.addSubview(self.article.view)
         self.contentView.addSubview(self.tree.view)
+        self.contentView.addSubview(self.official.view)
         self.article.view.isHidden = false
         self.tree.view.isHidden = true
+        self.official.view.isHidden = true
     }
     
     override func getNavigationBarHidden() -> (hidden: Bool, animated: Bool) {
@@ -73,14 +75,22 @@ extension HomeViewController: UITabBarDelegate {
         case 0:
             self.article.view.isHidden = false
             self.tree.view.isHidden = true
+            self.official.view.isHidden = true
             break
         case 1:
             self.article.view.isHidden = true
             self.tree.view.isHidden = false
+            self.official.view.isHidden = true
+            break
+        case 2:
+            self.article.view.isHidden = true
+            self.tree.view.isHidden = true
+            self.official.view.isHidden = false
             break
         default:
             self.article.view.isHidden = true
             self.tree.view.isHidden = true
+            self.official.view.isHidden = true
         }
     }
 }
