@@ -47,9 +47,11 @@ class TreeMainViewController: BaseViewController {
         self.segment.mySize = CGSize.init(width: UIScreen.main.bounds.width / 2, height: CGFloat.init(MyLayoutSize.wrap()))
 
 
-        self.treeListViewController.view.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
-        self.naviListViewController.view.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
-
+        self.treeListViewController.view.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
+        self.treeListViewController.view.weight = 2
+        self.naviListViewController.view.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
+        self.naviListViewController.view.weight = 2
+        
         self.toolbar.addSubview(self.segment)
         layout.addSubview(self.toolbar)
         addChild(self.treeListViewController)
