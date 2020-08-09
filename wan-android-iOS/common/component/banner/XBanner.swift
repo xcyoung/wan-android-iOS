@@ -68,7 +68,7 @@ class XBanner: UIView {
         pageControl.setPath(path, for: .normal)
         pageControl.setPath(path, for: .selected)
         pageControl.setFillColor(UIColor(white: 0.0, alpha: 0.3), for: .normal)
-        pageControl.setFillColor(UIColor.systemRed, for: .selected)
+        pageControl.setFillColor(UIColor.systemGreen, for: .selected)
         pageControl.itemSpacing = 14.0
         
         addSubview(collectionView)

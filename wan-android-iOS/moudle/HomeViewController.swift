@@ -13,9 +13,14 @@ class HomeViewController: BaseViewController {
     private let tabBar: UITabBar = {
         var items = [UITabBarItem]()
         let titles = ["首页", "体系", "公众号", "项目"]
+        let images = [R.image.wan_ic_home(),
+            R.image.wan_ic_tree(),
+            R.image.wan_ic_official(),
+            R.image.wan_ic_project()]
         for i in 0...3 {
             let tabItem = UITabBarItem.init()
             tabItem.title = titles[i]
+            tabItem.image = images[i]
             tabItem.tag = i
             items.append(tabItem)
         }
@@ -23,7 +28,7 @@ class HomeViewController: BaseViewController {
         let tabBar = UITabBar.init()
         tabBar.setItems(items, animated: true)
         tabBar.barTintColor = UIColor.white
-//        tabBar.tintColor = UIColor.white
+        tabBar.tintColor = UIColor.systemGreen
         tabBar.isTranslucent = false
 
         tabBar.selectedItem = items[0]
@@ -40,15 +45,15 @@ class HomeViewController: BaseViewController {
 
     override func initView() {
         super.initView()
-        
+
         let layout = MyLinearLayout.init()
         layout.orientation = MyOrientation_Vert
         layout.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
-        
+
         self.contentView.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
         self.contentView.weight = 2
         self.tabBar.mySize = CGSize.init(width: MyLayoutSize.fill(), height: 50)
-        
+
         layout.addSubview(self.contentView)
         layout.addSubview(self.tabBar)
         self.parentView.addSubview(layout)
@@ -64,7 +69,7 @@ extension HomeViewController: UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         showSubViewController(index: item.tag)
     }
-    
+
     func showSubViewController(index: Int) {
         if self.subVCMap[index] == nil {
             let vc: BaseViewController

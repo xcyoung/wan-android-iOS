@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([
                 .strokeColor: UIColor.gray,
                 .foregroundColor: UIColor.gray,
-                .font: UIFont.systemFont(ofSize: 16)
+                .font: UIFont.systemFont(ofSize: 14)
             ], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([
                 .strokeColor: UIColor.systemGreen,
