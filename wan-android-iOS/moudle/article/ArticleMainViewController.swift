@@ -54,7 +54,4 @@ class ArticleMainViewController: BaseViewController {
         self.searchBar.addSubview(self.searchTips)
     }
     
-    override func setNavigationBarHidden() {
-        self.setNavigationBarHiddenForSubVC()
-    }
 }

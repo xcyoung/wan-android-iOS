@@ -85,9 +85,6 @@ class OfficialViewController: PageTableViewController {
         }
     }
 
-    override func setNavigationBarHidden() {
-        self.setNavigationBarHiddenForSubVC()
-    }
 }
 
 extension OfficialViewController {

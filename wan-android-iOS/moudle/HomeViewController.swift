@@ -41,12 +41,17 @@ class HomeViewController: BaseViewController {
     override func initView() {
         super.initView()
         
-        self.contentView.frame = CGRect.init(x: 0, y: 20, width: self.view.frame.width, height: self.view.frame.height - 50 - 20)
-        self.tabBar.frame = CGRect.init(x: 0, y: self.view.frame.height - 50, width: self.view.frame.width, height: 50)
-
-        self.view.addSubview(self.contentView)
-        self.view.addSubview(self.tabBar)
+        let layout = MyLinearLayout.init()
+        layout.orientation = MyOrientation_Vert
+        layout.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
         
+        self.contentView.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
+        self.contentView.weight = 2
+        self.tabBar.mySize = CGSize.init(width: MyLayoutSize.fill(), height: 50)
+        
+        layout.addSubview(self.contentView)
+        layout.addSubview(self.tabBar)
+        self.parentView.addSubview(layout)
         self.showSubViewController(index: 0)
     }
 

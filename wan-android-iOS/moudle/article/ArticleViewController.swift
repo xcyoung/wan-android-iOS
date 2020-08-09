@@ -110,10 +110,6 @@ class ArticleViewController: PageTableViewController {
         }
     }
     
-    override func setNavigationBarHidden() {
-        self.setNavigationBarHiddenForSubVC()
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let model = self.dataSource[indexPath.section][indexPath.row] as? ArticleItem,
             let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListItemCell.description()) as? ArticleListItemCell {

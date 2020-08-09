@@ -85,9 +85,6 @@ class ProjectListViewController: PageTableViewController {
         }
     }
 
-    override func setNavigationBarHidden() {
-        self.setNavigationBarHiddenForSubVC()
-    }
 }
 
 extension ProjectListViewController {

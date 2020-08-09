@@ -54,10 +54,7 @@ class NaviListViewController: BaseViewController {
 
         self.parentView.addSubview(collectionView)
     }
-    
-    override func setNavigationBarHidden() {
-        self.setNavigationBarHiddenForSubVC()
-    }
+
 }
 
 extension NaviListViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {

@@ -23,7 +23,7 @@ class OfficialChapterViewController: BaseViewController {
         vc.automaticallyAdjustsScrollViewInsets = false
         vc.settings.style.buttonBarBackgroundColor = UIColor.clear
 
-        vc.settings.style.buttonBarLeftContentInset = 0
+        vc.settings.style.buttonBarLeftContentInset = 8
         vc.settings.style.buttonBarRightContentInset = 0
 
         vc.settings.style.selectedBarBackgroundColor = UIColor.systemGreen
@@ -75,15 +75,12 @@ class OfficialChapterViewController: BaseViewController {
 
     func updatePager() {
         pagerTabStrip.willMove(toParent: self)
-//        self.pagerTabStrip.view.mySize
+        self.pagerTabStrip.view.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
         self.parentView.addSubview(pagerTabStrip.view)
         self.addChild(pagerTabStrip)
         pagerTabStrip.didMove(toParent: self)
     }
     
-    override func setNavigationBarHidden() {
-        self.setNavigationBarHiddenForSubVC()
-    }
 }
 
 extension OfficialChapterViewController: PagerTabStripDataSource {
