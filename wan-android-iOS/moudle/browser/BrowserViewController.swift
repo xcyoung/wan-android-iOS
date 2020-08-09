@@ -12,9 +12,7 @@ import WebKit
 import MyLayout
 class BrowserViewController: BaseViewController {
     class func jump(vc: UIViewController, url: String) {
-        let target = BrowserViewController.init()
-        target.params["url"] = url
-        vc.navigationController?.pushViewController(target, animated: true)
+        RouterCenter.shared.goToBrowser(url: url)
     }
 
     private var url: String {

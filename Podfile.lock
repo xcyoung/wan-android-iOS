@@ -15,6 +15,7 @@ PODS:
   - SDWebImage (5.0.0):
     - SDWebImage/Core (= 5.0.0)
   - SDWebImage/Core (5.0.0)
+  - URLNavigator (2.3.0)
   - XLPagerTabStrip (8.1.0)
 
 DEPENDENCIES:
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - R.swift (= 5.0.0)
   - RxAlamofire (= 5.1.0)
   - SDWebImage (= 5.0)
+  - URLNavigator (= 2.3.0)
   - XLPagerTabStrip (= 8.1.0)
 
 SPEC REPOS:
@@ -37,6 +39,7 @@ SPEC REPOS:
     - RxAlamofire
     - RxSwift
     - SDWebImage
+    - URLNavigator
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
@@ -49,8 +52,9 @@ SPEC CHECKSUMS:
   RxAlamofire: a2d7621de4c23a0c6e7b476b504acc32838ee341
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
+  URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
 
-PODFILE CHECKSUM: 2f3f2f6824c0824f5b0e9c2b1efaef87b9da4535
+PODFILE CHECKSUM: 92ef940fde8729ad2081deb9a1c40406c4762041
 
 COCOAPODS: 1.5.3

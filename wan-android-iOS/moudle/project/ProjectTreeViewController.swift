@@ -25,7 +25,7 @@ class ProjectTreeViewController: BaseViewController {
         vc.settings.style.buttonBarBackgroundColor = UIColor.clear
 
         vc.settings.style.buttonBarLeftContentInset = 8
-        vc.settings.style.buttonBarRightContentInset = 0
+        vc.settings.style.buttonBarRightContentInset = 8
 
         vc.settings.style.selectedBarBackgroundColor = UIColor.systemGreen
         vc.settings.style.selectedBarHeight = 3

@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        RouterCenter.shared.initialize()
+        
         let window = UIWindow.init(frame: UIScreen.main.bounds)
         window.rootViewController = UINavigationController.init(rootViewController: HomeViewController.init())
 
