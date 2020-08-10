@@ -92,3 +92,7 @@ https://github.com/manondidi/swiftArch
 - 加入项目模块
 
 - 引入URLNavigator实现路由模块
+
+### 2020.08.10
+
+- 添加AppIcon
