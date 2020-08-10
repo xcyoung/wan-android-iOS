@@ -97,4 +97,4 @@ https://github.com/manondidi/swiftArch
 
 - 添加AppIcon
 
-- 添加LaunchSreen
+- 添加LaunchScreen
