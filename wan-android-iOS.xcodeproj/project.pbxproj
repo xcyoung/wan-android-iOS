@@ -40,13 +40,13 @@
 		3A15523824DF076F00DA1F02 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15523724DF076F00DA1F02 /* ProjectViewModel.swift */; };
 		3A15523A24DF081800DA1F02 /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15523924DF081800DA1F02 /* ProjectListViewController.swift */; };
 		3A15523D24DFB0DD00DA1F02 /* RouterCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15523C24DFB0DD00DA1F02 /* RouterCenter.swift */; };
+		3A15523E24E1A43E00DA1F02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5F733E249BB4DD00A3AE68 /* LaunchScreen.storyboard */; };
 		3A23DD7824A6F7D3003DD81B /* DefaultLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23DD7724A6F7D3003DD81B /* DefaultLoadingView.swift */; };
 		3A5F7334249BB4DB00A3AE68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F7333249BB4DB00A3AE68 /* AppDelegate.swift */; };
 		3A5F7336249BB4DB00A3AE68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F7335249BB4DB00A3AE68 /* SceneDelegate.swift */; };
 		3A5F7338249BB4DB00A3AE68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F7337249BB4DB00A3AE68 /* ViewController.swift */; };
 		3A5F733B249BB4DB00A3AE68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5F7339249BB4DB00A3AE68 /* Main.storyboard */; };
 		3A5F733D249BB4DD00A3AE68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A5F733C249BB4DD00A3AE68 /* Assets.xcassets */; };
-		3A5F7340249BB4DD00A3AE68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5F733E249BB4DD00A3AE68 /* LaunchScreen.storyboard */; };
 		3A70932B24B4C8F200DCF916 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70932A24B4C8F200DCF916 /* ArticleViewController.swift */; };
 		3A70932D24B4CE4100DCF916 /* ArticleListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70932C24B4CE4100DCF916 /* ArticleListItemCell.swift */; };
 		3A79DA6B24A609D3002BCD2A /* animation in Resources */ = {isa = PBXBuildFile; fileRef = 3A79DA6A24A609D3002BCD2A /* animation */; };
@@ -492,7 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A79DA6B24A609D3002BCD2A /* animation in Resources */,
-				3A5F7340249BB4DD00A3AE68 /* LaunchScreen.storyboard in Resources */,
+				3A15523E24E1A43E00DA1F02 /* LaunchScreen.storyboard in Resources */,
 				3A5F733D249BB4DD00A3AE68 /* Assets.xcassets in Resources */,
 				3A5F733B249BB4DB00A3AE68 /* Main.storyboard in Resources */,
 			);
