@@ -57,8 +57,8 @@ class BaseViewController: UIViewController {
         pageStateManager?.showLoading()
     }
 
-    open func showError(msg: String = "") {
-        pageStateManager?.showError(msg: msg)
+    open func showError(error: XError? = nil) {
+        pageStateManager?.showError(error: error)
     }
 //
 //    open func setNavigationBarHidden() {

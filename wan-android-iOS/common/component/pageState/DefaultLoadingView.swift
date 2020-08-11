@@ -36,6 +36,7 @@ class DefaultLoadingView: UIView, AnimationProtocol {
         super.init(frame: frame)
         addSubview(loadingAnimationView)
         layout()
+        self.backgroundColor = UIColor.white
     }
 
     required init?(coder: NSCoder) {
@@ -43,8 +44,12 @@ class DefaultLoadingView: UIView, AnimationProtocol {
     }
 
     private func layout() {
-        if let superCenter = loadingAnimationView.superview?.center {
-            loadingAnimationView.myCenter = superCenter
-        }
+        let loadingSize = CGFloat.init(200)
+        loadingAnimationView.frame = CGRect.init(x: (frame.width - loadingSize) / 2, y: (frame.height - loadingSize) / 2, width: loadingSize, height: loadingSize)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layout()
     }
 }

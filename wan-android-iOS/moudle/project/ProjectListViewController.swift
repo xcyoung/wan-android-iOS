@@ -28,6 +28,18 @@ class ProjectListViewController: PageTableViewController {
             weakSelf.onLoadSuccess(result: model)
         }).disposed(by: disposeBag)
 
+        projectViewModel?.errorLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let error = event.element as? XError else {
+                return
+            }
+            
+            if self?.pageStrategy?.pageInfo.isFirstPage() == true {
+                self?.showError(error: error)
+            } else {
+                self?.toastError(error: error)
+            }
+        }.disposed(by: disposeBag)
+        
         projectViewModel?.projectList(id: model?.id ?? 0, pageIndex: 0)
     }
 

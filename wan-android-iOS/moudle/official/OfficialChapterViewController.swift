@@ -28,7 +28,7 @@ class OfficialChapterViewController: BaseViewController {
 
         vc.settings.style.selectedBarBackgroundColor = UIColor.systemGreen
         vc.settings.style.selectedBarHeight = 3
-        
+
         vc.settings.style.buttonBarItemFont = UIFont.boldSystemFont(ofSize: 15)
         vc.settings.style.buttonBarItemLeftRightMargin = 4
         vc.settings.style.buttonBarItemBackgroundColor = UIColor.clear
@@ -49,9 +49,18 @@ class OfficialChapterViewController: BaseViewController {
             self?.chapters.removeAll()
             self?.chapters.append(contentsOf: list)
             self?.updatePager()
+            self?.showContent()
         }.disposed(by: disposeBag)
 
+        officialViewModel.errorLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let error = event.element as? XError else {
+                return
+            }
 
+            self?.showError(error: error)
+        }.disposed(by: disposeBag)
+
+        showLoading()
         officialViewModel.officialChaptersList()
     }
 
@@ -80,7 +89,7 @@ class OfficialChapterViewController: BaseViewController {
         self.addChild(pagerTabStrip)
         pagerTabStrip.didMove(toParent: self)
     }
-    
+
 }
 
 extension OfficialChapterViewController: PagerTabStripDataSource {

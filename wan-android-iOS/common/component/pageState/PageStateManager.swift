@@ -11,7 +11,7 @@ import UIKit
 import MyLayout
 class PageStateManager: NSObject {
     private var emptyView: (UIView & AnimationProtocol)?
-    private var errorView: (UIView & AnimationProtocol)?
+    private var errorView: (UIView & AnimationProtocol & ErrorViewProtocol)?
     private var loadView: (UIView & AnimationProtocol)?
     private let rootView: UIView
 
@@ -54,7 +54,7 @@ class PageStateManager: NSObject {
         emptyView?.startLoading()
     }
 
-    public func showError(msg: String) {
+    public func showError(error: XError? = nil) {
         loadView?.stopLoading()
         emptyView?.stopLoading()
         emptyView?.isHidden = true
@@ -62,6 +62,7 @@ class PageStateManager: NSObject {
         loadView?.isHidden = true
         bringCoverToFront()
         errorView?.startLoading()
+        errorView?.setError(error: error)
     }
 
     public func showLoading() {
@@ -74,7 +75,7 @@ class PageStateManager: NSObject {
         loadView?.startLoading()
     }
 
-    public func setStateView(emptyView: (UIView & AnimationProtocol)?, errorView: (UIView & AnimationProtocol)?, loadView: (UIView & AnimationProtocol)?) {
+    public func setStateView(emptyView: (UIView & AnimationProtocol)?, errorView: (UIView & AnimationProtocol & ErrorViewProtocol)?, loadView: (UIView & AnimationProtocol)?) {
         self.emptyView = emptyView
         self.errorView = errorView
         self.loadView = loadView

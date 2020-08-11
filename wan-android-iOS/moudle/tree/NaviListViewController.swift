@@ -41,9 +41,18 @@ class NaviListViewController: BaseViewController {
             self?.collectionView.reloadData()
         }.disposed(by: disposeBag)
         
+        treeViewModel.errorLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let error = event.element as? XError else {
+                return
+            }
+
+            self?.showError(error: error)
+        }.disposed(by: disposeBag)
+        
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
+        self.showLoading()
         self.treeViewModel.naviList()
     }
 

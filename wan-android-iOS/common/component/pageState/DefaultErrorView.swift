@@ -8,7 +8,11 @@
 
 import Foundation
 import UIKit
-class DefaultErrorView: UIView, AnimationProtocol {
+protocol ErrorViewProtocol {
+    func setError(error: XError?)
+}
+
+class DefaultErrorView: UIView, AnimationProtocol, ErrorViewProtocol {
     let label = UILabel.init()
 
     func startLoading() {
@@ -26,6 +30,7 @@ class DefaultErrorView: UIView, AnimationProtocol {
         self.backgroundColor = UIColor.white
         addSubview(label)
         layout()
+        self.backgroundColor = UIColor.white
     }
 
     required init?(coder: NSCoder) {
@@ -33,8 +38,16 @@ class DefaultErrorView: UIView, AnimationProtocol {
     }
 
     private func layout() {
-        if let superCenter = label.superview?.center {
-            label.myCenter = superCenter
-        }
+        let loadingSize = CGFloat.init(200)
+        label.frame = CGRect.init(x: (frame.width - loadingSize) / 2, y: (frame.height - loadingSize) / 2, width: loadingSize, height: loadingSize)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layout()
+    }
+    
+    func setError(error: XError?) {
+        label.text = error?.localizedDescription ?? ""
     }
 }

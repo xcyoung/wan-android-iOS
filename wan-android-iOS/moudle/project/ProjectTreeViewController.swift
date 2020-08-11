@@ -52,7 +52,14 @@ class ProjectTreeViewController: BaseViewController {
             self?.updatePager()
         }.disposed(by: disposeBag)
 
+        projectViewModel.errorLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let error = event.element as? XError else {
+                return
+            }
 
+            self?.showError(error: error)
+        }.disposed(by: disposeBag)
+        
         projectViewModel.projectTreeList()
     }
 

@@ -53,6 +53,14 @@ class TreeListViewController: PageTableViewController {
             self?.onLoadSuccess(result: model)
         }.disposed(by: disposeBag)
 
+        treeViewModel.errorLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let error = event.element as? XError else {
+                return
+            }
+
+            self?.onLoadFail(error)
+        }.disposed(by: disposeBag)
+        
         treeViewModel.treeList()
     }
 

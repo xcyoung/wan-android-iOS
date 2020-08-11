@@ -19,6 +19,7 @@ class PageTableViewController: BaseTableViewController {
         self.tableView.delegate = self
         
 //        self.refreshing(isBegin: true)
+        self.showLoading()
     }
     
     override func initView() {
@@ -85,10 +86,9 @@ class PageTableViewController: BaseTableViewController {
         } else {
             self.loading(isBegin: false)
         }
-//        if(self.dataSource.count == 0) {
-//            showError()
-//        }
-        if let e = error {
+        if self.dataSource.count == 0 {
+            showError(error: error)
+        } else if let e = error {
             self.toastError(error: e)
         } else {
             self.toast(message: "加载失败")
