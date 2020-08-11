@@ -98,3 +98,7 @@ https://github.com/manondidi/swiftArch
 - 添加AppIcon
 
 - 添加LaunchScreen
+
+### 2020.08.12
+
+- 优化Loading、Error、Empty布局
