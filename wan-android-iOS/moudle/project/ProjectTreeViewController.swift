@@ -47,6 +47,11 @@ class ProjectTreeViewController: BaseViewController {
                 return
             }
 
+            if list.isEmpty {
+                self?.showEmpty()
+                return
+            }
+            
             self?.tree.removeAll()
             self?.tree.append(contentsOf: list)
             self?.updatePager()

@@ -46,6 +46,11 @@ class OfficialChapterViewController: BaseViewController {
                 return
             }
 
+            if list.isEmpty {
+                self?.showEmpty()
+                return
+            }
+            
             self?.chapters.removeAll()
             self?.chapters.append(contentsOf: list)
             self?.updatePager()

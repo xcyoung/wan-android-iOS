@@ -36,9 +36,15 @@ class NaviListViewController: BaseViewController {
                 return
             }
             
+            if model.isEmpty {
+                self?.showEmpty()
+                return
+            }
+            
             self?.naviList.removeAll()
             self?.naviList.append(contentsOf: model)
             self?.collectionView.reloadData()
+            self?.showContent()
         }.disposed(by: disposeBag)
         
         treeViewModel.errorLiveData.asObservable().subscribe { [weak self] (event) in

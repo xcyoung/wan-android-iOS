@@ -25,6 +25,7 @@ class DefaultEmptyView: UIView, AnimationProtocol {
         super.init(frame: frame)
         addSubview(label)
         layout()
+        self.backgroundColor = UIColor.white
     }
     
     required init?(coder: NSCoder) {
@@ -32,8 +33,12 @@ class DefaultEmptyView: UIView, AnimationProtocol {
     }
     
     private func layout() {
-        if let superCenter = label.superview?.center {
-            label.myCenter = superCenter
-        }
+        let loadingSize = CGFloat.init(200)
+        label.frame = CGRect.init(x: (frame.width - loadingSize) / 2, y: (frame.height - loadingSize) / 2, width: loadingSize, height: loadingSize)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layout()
     }
 }
