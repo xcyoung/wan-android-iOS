@@ -40,7 +40,7 @@ class ProjectListViewController: PageTableViewController {
             }
         }.disposed(by: disposeBag)
         
-        projectViewModel?.projectList(id: model?.id ?? 0, pageIndex: 0)
+        loadData()
     }
 
     override func initView() {

@@ -125,7 +125,11 @@ class TreeListViewController: PageTableViewController {
             self.dataSource.append(contentItems)
         }
     }
-
+    
+    override func retry() {
+        showLoading()
+        treeViewModel.treeList()
+    }
 }
 
 extension TreeListViewController {

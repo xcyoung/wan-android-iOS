@@ -95,6 +95,10 @@ class OfficialChapterViewController: BaseViewController {
         pagerTabStrip.didMove(toParent: self)
     }
 
+    override func retry() {
+        showLoading()
+        officialViewModel.officialChaptersList()
+    }
 }
 
 extension OfficialChapterViewController: PagerTabStripDataSource {

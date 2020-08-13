@@ -19,7 +19,7 @@ class PageTableViewController: BaseTableViewController {
         self.tableView.delegate = self
         
 //        self.refreshing(isBegin: true)
-        self.showLoading()
+        showLoading()
     }
     
     override func initView() {
@@ -93,6 +93,11 @@ class PageTableViewController: BaseTableViewController {
         } else {
             self.toast(message: "加载失败")
         }
+    }
+    
+    override func retry() {
+        showLoading()
+        loadData()
     }
 }
 

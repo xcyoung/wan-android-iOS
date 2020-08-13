@@ -69,7 +69,11 @@ class NaviListViewController: BaseViewController {
 
         self.parentView.addSubview(collectionView)
     }
-
+    
+    override func retry() {
+        self.showLoading()
+        self.treeViewModel.naviList()
+    }
 }
 
 extension NaviListViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {

@@ -40,7 +40,7 @@ class OfficialViewController: PageTableViewController {
             }
         }.disposed(by: disposeBag)
         
-        officialViewModel?.officialList(id: model?.id ?? 0, pageIndex: 0)
+        loadData()
     }
 
     override func initView() {

@@ -9,7 +9,19 @@
 import Foundation
 import UIKit
 class DefaultEmptyView: UIView, AnimationProtocol {
-    let label = UILabel.init()
+    let statusImageView: UIImageView = {
+        let img = UIImageView.init()
+        img.image = R.image.wan_img_empty_status()
+        return img
+    }()
+    let label: UILabel = {
+        let label = UILabel.init()
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = UIColor.black
+        label.textAlignment = .center
+        return label
+    }()
     
     func startLoading() {
         //
@@ -24,6 +36,7 @@ class DefaultEmptyView: UIView, AnimationProtocol {
         
         super.init(frame: frame)
         addSubview(label)
+        addSubview(statusImageView)
         layout()
         self.backgroundColor = UIColor.white
     }
@@ -33,8 +46,8 @@ class DefaultEmptyView: UIView, AnimationProtocol {
     }
     
     private func layout() {
-        let loadingSize = CGFloat.init(200)
-        label.frame = CGRect.init(x: (frame.width - loadingSize) / 2, y: (frame.height - loadingSize) / 2, width: loadingSize, height: loadingSize)
+       let loadingSize = CGFloat.init(200)
+        statusImageView.frame = CGRect.init(x: (frame.width - 250) / 2, y: (frame.height - loadingSize) / 2, width: 250, height: loadingSize)
     }
     
     override func layoutSubviews() {

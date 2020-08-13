@@ -42,7 +42,11 @@ class BaseViewController: UIViewController {
     }
 
     open func configPageStateManager(pageStateManager: PageStateManager?) {
-        pageStateManager?.setStateView(emptyView: DefaultEmptyView.init(), errorView: DefaultErrorView.init(), loadView: DefaultLoadingView.init())
+        let errorView = DefaultErrorView.init()
+        errorView.onStatusClickCallback = { [weak self] in
+            self?.retry()
+        }
+        pageStateManager?.setStateView(emptyView: DefaultEmptyView.init(), errorView: errorView, loadView: DefaultLoadingView.init())
     }
 
     open func showContent() {
@@ -91,4 +95,8 @@ class BaseViewController: UIViewController {
 ////        self.navigationController?.setNavigationBarHidden(true, animated: false)
 //        parentView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
 //    }
+    
+    open func retry() {
+        
+    }
 }

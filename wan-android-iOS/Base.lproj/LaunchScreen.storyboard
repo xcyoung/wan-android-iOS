@@ -50,6 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="wan_img_splash" width="445" height="322"/>
+        <image name="wan_img_splash" width="1142" height="841"/>
     </resources>
 </document>

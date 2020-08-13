@@ -51,7 +51,7 @@ class ProjectTreeViewController: BaseViewController {
                 self?.showEmpty()
                 return
             }
-            
+
             self?.tree.removeAll()
             self?.tree.append(contentsOf: list)
             self?.updatePager()
@@ -64,7 +64,8 @@ class ProjectTreeViewController: BaseViewController {
 
             self?.showError(error: error)
         }.disposed(by: disposeBag)
-        
+
+        showLoading()
         projectViewModel.projectTreeList()
     }
 
@@ -94,6 +95,10 @@ class ProjectTreeViewController: BaseViewController {
         pagerTabStrip.didMove(toParent: self)
     }
 
+    override func retry() {
+        showLoading()
+        projectViewModel.projectTreeList()
+    }
 }
 
 extension ProjectTreeViewController: PagerTabStripDataSource {
