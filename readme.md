@@ -102,3 +102,7 @@ https://github.com/manondidi/swiftArch
 ### 2020.08.12
 
 - 优化Loading、Error、Empty布局
+
+### 2020.08.13
+
+- Error、Empty逻辑优化，加入重置机制
