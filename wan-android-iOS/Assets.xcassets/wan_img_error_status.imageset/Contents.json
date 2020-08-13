@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "wan_img_error_status.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
