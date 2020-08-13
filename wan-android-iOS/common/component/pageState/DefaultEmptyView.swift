@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 class DefaultEmptyView: UIView, AnimationProtocol {
+    public var onStatusClickCallback: (() -> Void)?
     let statusImageView: UIImageView = {
         let img = UIImageView.init()
         img.image = R.image.wan_img_empty_status()
@@ -39,6 +40,10 @@ class DefaultEmptyView: UIView, AnimationProtocol {
         addSubview(statusImageView)
         layout()
         self.backgroundColor = UIColor.white
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(onStatusTap(_:)))
+        statusImageView.isUserInteractionEnabled = true
+        statusImageView.addGestureRecognizer(tap)
     }
     
     required init?(coder: NSCoder) {
@@ -53,5 +58,9 @@ class DefaultEmptyView: UIView, AnimationProtocol {
     override func layoutSubviews() {
         super.layoutSubviews()
         layout()
+    }
+    
+    @objc private func onStatusTap(_ recognizer: UIGestureRecognizer) {
+        onStatusClickCallback?()
     }
 }

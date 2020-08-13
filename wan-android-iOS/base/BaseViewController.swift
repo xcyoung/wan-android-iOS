@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
     public let parentView: MyFrameLayout = MyFrameLayout.init()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         initView()
     }
 
@@ -30,7 +30,7 @@ class BaseViewController: UIViewController {
             self.edgesForExtendedLayout = UIRectEdge.bottom
         }
     }
-    
+
     open func initView() {
         parentView.myWidth = CGFloat.init(MyLayoutSize.fill())
         parentView.myHeight = CGFloat.init(MyLayoutSize.fill())
@@ -46,7 +46,12 @@ class BaseViewController: UIViewController {
         errorView.onStatusClickCallback = { [weak self] in
             self?.retry()
         }
-        pageStateManager?.setStateView(emptyView: DefaultEmptyView.init(), errorView: errorView, loadView: DefaultLoadingView.init())
+
+        let emptyView = DefaultEmptyView.init()
+        emptyView.onStatusClickCallback = { [weak self] in
+            self?.retry()
+        }
+        pageStateManager?.setStateView(emptyView: emptyView, errorView: errorView, loadView: DefaultLoadingView.init())
     }
 
     open func showContent() {
@@ -86,17 +91,17 @@ class BaseViewController: UIViewController {
 ////            }
 ////        }
 //    }
-    
+
     open func getNavigationBarHidden() -> (hidden: Bool, animated: Bool) {
         return (hidden: false, animated: true)
     }
-    
+
 //    open func setNavigationBarHiddenForSubVC() {
 ////        self.navigationController?.setNavigationBarHidden(true, animated: false)
 //        parentView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
 //    }
-    
+
     open func retry() {
-        
+
     }
 }
