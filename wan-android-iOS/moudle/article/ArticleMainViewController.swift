@@ -52,6 +52,12 @@ class ArticleMainViewController: BaseViewController {
         
         self.searchTips.mySize = CGSize.init(width: MyLayoutSize.wrap(), height: MyLayoutSize.wrap())
         self.searchBar.addSubview(self.searchTips)
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(onSearchBarClick(_:)))
+        searchBar.addGestureRecognizer(tap)
     }
     
+    @objc private func onSearchBarClick(_ sender: UIGestureRecognizer) {
+        toast(message: "还未实现哟～")
+    }
 }
