@@ -26,13 +26,13 @@ class OfficialChapterViewController: BaseViewController {
         vc.settings.style.buttonBarLeftContentInset = 8
         vc.settings.style.buttonBarRightContentInset = 8
 
-        vc.settings.style.selectedBarBackgroundColor = UIColor.systemGreen
+        vc.settings.style.selectedBarBackgroundColor = UIColor.project.primary
         vc.settings.style.selectedBarHeight = 3
 
         vc.settings.style.buttonBarItemFont = UIFont.boldSystemFont(ofSize: 15)
         vc.settings.style.buttonBarItemLeftRightMargin = 4
         vc.settings.style.buttonBarItemBackgroundColor = UIColor.clear
-        vc.settings.style.buttonBarItemTitleColor = UIColor.systemGreen
+        vc.settings.style.buttonBarItemTitleColor = UIColor.project.primary
         vc.settings.style.buttonBarItemsShouldFillAvailiableWidth = false
 
         return vc
@@ -83,7 +83,7 @@ class OfficialChapterViewController: BaseViewController {
             guard changeCurrentIndex == true else { return }
 
             oldCell?.label.textColor = UIColor.gray
-            newCell?.label.textColor = UIColor.systemGreen
+            newCell?.label.textColor = UIColor.project.primary
         }
     }
 

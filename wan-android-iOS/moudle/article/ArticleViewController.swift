@@ -70,7 +70,9 @@ class ArticleViewController: PageTableViewController {
     override func configTableView() {
         super.configTableView()
 
-        self.tableView.separatorInset = UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 4)
+//        self.tableView.separatorInset = UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 4)
+        self.tableView.separatorInset = .zero
+        self.tableView.separatorStyle = .none
         self.tableView.register(ArticleListItemCell.self, forCellReuseIdentifier: ArticleListItemCell.description())
         self.tableView.register(ArticleBanner.self, forCellReuseIdentifier: ArticleBanner.description())
     }
@@ -124,7 +126,7 @@ class ArticleViewController: PageTableViewController {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 158
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

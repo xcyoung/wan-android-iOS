@@ -106,3 +106,9 @@ https://github.com/manondidi/swiftArch
 ### 2020.08.13
 
 - Error、Empty逻辑优化，加入重置机制
+
+### 2020.08.20
+
+- 主题色配置，文章item样式修改
+
+- 文章页深色模式适配

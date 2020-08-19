@@ -39,7 +39,7 @@ class TreeListItemCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {        
         if selected {
-            label.textColor = UIColor.systemGreen
+            label.textColor = UIColor.project.primary
             label.font = UIFont.systemFont(ofSize: 14)
         } else {
             label.textColor = UIColor.gray

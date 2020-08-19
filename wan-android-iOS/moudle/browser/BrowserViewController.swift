@@ -30,7 +30,7 @@ class BrowserViewController: BaseViewController {
 
     private let progressView: UIView = {
         let progress = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 2))
-        progress.backgroundColor = UIColor.systemGreen
+        progress.backgroundColor = UIColor.project.primary
         return progress
     }()
 
