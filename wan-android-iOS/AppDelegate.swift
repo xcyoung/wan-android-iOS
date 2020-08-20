@@ -36,10 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .foregroundColor: UIColor.project.primary,
                 .font: UIFont.systemFont(ofSize: 16)
             ], for: .selected)
-        window.backgroundColor = UIColor.project.background
+        window.backgroundColor = UIColor.project.appBackground
         window.makeKeyAndVisible()
         self.window = window
-        print("AppDelegate:\(window)")
         return true
     }
 }

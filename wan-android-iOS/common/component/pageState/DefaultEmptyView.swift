@@ -39,7 +39,6 @@ class DefaultEmptyView: UIView, AnimationProtocol {
         addSubview(label)
         addSubview(statusImageView)
         layout()
-        self.backgroundColor = UIColor.white
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(onStatusTap(_:)))
         statusImageView.isUserInteractionEnabled = true

@@ -35,7 +35,7 @@ class Project: NSObject {
         return color
     }
 
-    private class func modeColor(light: UInt32, dark: UInt32) -> UIColor {
+    class func modeColor(light: UInt32, dark: UInt32) -> UIColor {
         let color: UIColor
         if #available(iOS 13, *) {
             color = UIColor { (trainCollection) -> UIColor in
@@ -66,5 +66,7 @@ class Project: NSObject {
     
     let text: UIColor = Project.modeColor(light: 0xff000000, dark: 0xffffffff)
     let background: UIColor = Project.modeColor(light: 0xfff5f5f5, dark: 0xFF1C1C1D)
+    let appBackground: UIColor = Project.modeColor(light: 0xfff5f5f5, dark: 0xff000000)
+    let appBar: UIColor = Project.modeColor(light: 0xFFFFFFFF, dark: 0xFF1C1C1D)
     let item: UIColor = Project.modeColor(light: 0xffffffff, dark: 0xff000000)
 }

@@ -13,7 +13,7 @@ class ArticleMainViewController: BaseViewController {
 
     private let searchBar: MyFrameLayout = {
         let view = MyFrameLayout.init()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.project.appBar
         view.layer.cornerRadius = 10
         view.myVertMargin = CGFloat.init(4)
         view.myHorzMargin = CGFloat.init(8)
@@ -30,8 +30,6 @@ class ArticleMainViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor.init(hex6: 0xf9f9f9, alpha: 1)
     }
 
     override func initView() {

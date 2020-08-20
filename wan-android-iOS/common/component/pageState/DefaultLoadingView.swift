@@ -36,7 +36,6 @@ class DefaultLoadingView: UIView, AnimationProtocol {
         super.init(frame: frame)
         addSubview(loadingAnimationView)
         layout()
-        self.backgroundColor = UIColor.white
     }
 
     required init?(coder: NSCoder) {
