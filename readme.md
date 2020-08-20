@@ -112,3 +112,11 @@ https://github.com/manondidi/swiftArch
 - 主题色配置，文章item样式修改
 
 - 文章页深色模式适配
+
+### 2020.08.21
+
+- LaunchScreen深色模式适配
+
+- 通用ui的深色模式适配
+
+- 体系列表ui重写
