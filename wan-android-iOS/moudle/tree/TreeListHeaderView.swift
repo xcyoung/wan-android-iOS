@@ -12,8 +12,8 @@ import UIKit
 class TreeListHeaderView: UITableViewHeaderFooterView {
     private let label: UILabel = {
         let label = UILabel.init()
-        label.textColor = UIColor.black
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = UIColor.gray
+        label.font = UIFont.systemFont(ofSize: 10)
         return label
     }()
     
@@ -21,8 +21,7 @@ class TreeListHeaderView: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         
         self.backgroundView = UIView.init(frame: frame)
-        self.backgroundView?.backgroundColor = UIColor.white
-//        self.contentView.backgroundColor = UIColor.white
+        self.backgroundView?.backgroundColor = UIColor.project.item
         self.contentView.addSubview(label)
     }
     

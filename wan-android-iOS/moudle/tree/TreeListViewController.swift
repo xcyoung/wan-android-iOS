@@ -22,7 +22,7 @@ class TreeListViewController: PageTableViewController {
     private var lastSelectedTreeTime: TimeInterval = 0
     private let treeTableView: UITableView = {
         let tableView = UITableView.init()
-        tableView.separatorStyle = .singleLine
+        tableView.separatorStyle = .none
         tableView.register(TreeListItemCell.self, forCellReuseIdentifier: TreeListItemCell.description())
         tableView.register(TreeListHeaderView.self, forHeaderFooterViewReuseIdentifier: TreeListHeaderView.description())
         return tableView
@@ -72,7 +72,7 @@ class TreeListViewController: PageTableViewController {
         layout.isFlex = true
 
         treeTableView.mySize = CGSize.init(width: MyLayoutSize.wrap(), height: MyLayoutSize.fill())
-        treeTableView.myFlex.attrs.flex_grow = 2
+        treeTableView.myFlex.attrs.flex_grow = 1.5
         tableView.mySize = CGSize.init(width: MyLayoutSize.wrap(), height: MyLayoutSize.fill())
         tableView.myFlex.attrs.flex_grow = 3
 
@@ -88,8 +88,10 @@ class TreeListViewController: PageTableViewController {
     override func configTableView() {
         super.configTableView()
 
-        self.tableView.separatorInset = UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 4)
-        self.tableView.register(ArticleListItemCell.self, forCellReuseIdentifier: ArticleListItemCell.description())
+        self.tableView.separatorStyle = .none
+//        self.tableView.estimatedRowHeight = 158
+//        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.register(TreeSubListItemCell.self, forCellReuseIdentifier: TreeSubListItemCell.description())
     }
 
     override func getRefresh() -> MJRefreshHeader? {
@@ -166,7 +168,7 @@ extension TreeListViewController {
                 return cell
             }
         } else if let model = self.dataSource[indexPath.section][indexPath.row] as? ArticleItem,
-            let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListItemCell.description()) as? ArticleListItemCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TreeSubListItemCell.description()) as? TreeSubListItemCell {
             cell.setModel(item: model)
             return cell
         }
@@ -204,7 +206,7 @@ extension TreeListViewController {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if tableView == treeTableView {
-            return 50
+            return 25
         } else {
             return 0
         }
@@ -212,9 +214,9 @@ extension TreeListViewController {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == treeTableView {
-            return 45
+            return 40
         } else {
-            return 150
+            return 104
         }
     }
 }

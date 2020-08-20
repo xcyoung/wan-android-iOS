@@ -12,21 +12,32 @@ import UIKit
 class TreeListItemCell: UITableViewCell {
     private let label: UILabel = {
         let label = UILabel.init()
-//        label.textColor = UIColor.gray
-//        label.font = UIFont.systemFont(ofSize: 12)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private let selectedLabel: UILabel = {
+        let label = UILabel.init()
+        label.backgroundColor = UIColor.project.primary
         return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = UIColor.init(hex6: 0xf9f9f9, alpha: 1)
+        self.contentView.addSubview(label)
+        self.contentView.addSubview(selectedLabel)
         
-        selectedBackgroundView = UIView.init(frame: frame)
-        selectedBackgroundView?.backgroundColor = UIColor.init(hex6: 0xf9f9f9, alpha: 1)
+        setSelected(false, animated: true)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let selectedLabelHeight = frame.height / 3
+        selectedLabel.frame = CGRect.init(x: 0, y: (frame.height - selectedLabelHeight) / 2, width: 5, height: selectedLabelHeight)
         
         label.frame = CGRect.init(x: 10, y: 0, width: frame.width - 10, height: frame.height - 0.5)
-        self.addSubview(label)
     }
     
     required init?(coder: NSCoder) {
@@ -39,11 +50,15 @@ class TreeListItemCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {        
         if selected {
+            contentView.backgroundColor = UIColor.project.item
             label.textColor = UIColor.project.primary
             label.font = UIFont.systemFont(ofSize: 14)
+            selectedLabel.isHidden = false
         } else {
-            label.textColor = UIColor.gray
+            contentView.backgroundColor = UIColor.project.background
+            label.textColor = UIColor.project.text
             label.font = UIFont.systemFont(ofSize: 12)
+            selectedLabel.isHidden = true
         }
     }
 }
