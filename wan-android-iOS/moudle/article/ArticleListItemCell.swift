@@ -84,12 +84,14 @@ class ArticleListItemCell: UITableViewCell {
     func layout() {
         let view = MyFlexLayout.init()
         view.myHeight = CGFloat.init(150)
-        view.myWidth = CGFloat.init(MyLayoutSize.fill())
+        view.myWidth = UIScreen.main.bounds.width - 8
         view.padding = UIEdgeInsets.init(top: 16, left: 16, bottom: 4, right: 16)
         view.myTop = CGFloat.init(8)
+        view.myLeading = CGFloat.init(4)
+        view.myTrailing = CGFloat.init(4)
         view.isFlex = true
-//        view.myFlex.attrs.justify_content = MyFlexGravity_Space_Between
         view.myFlex.attrs.flex_wrap = MyFlexWrap_Wrap
+        view.layer.cornerRadius = CGFloat.init(8)
         
         newLabel.layoutMargins = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 4)
         newLabel.mySize = CGSize.init(width: 20, height: MyLayoutSize.wrap())
@@ -97,7 +99,6 @@ class ArticleListItemCell: UITableViewCell {
         authorLabel.alignment = MyGravity_Vert_Center
         authorLabel.myWidth = CGFloat.init(MyLayoutSize.wrap())
         authorLabel.myHeight = CGFloat.init(MyLayoutSize.wrap())
-//        authorLabel.myFlex.attrs.flex_grow = 2
 
         if let tagFlowLayout = tagFlowLayout {
             tagFlowLayout.myWidth = CGFloat.init(MyLayoutSize.wrap())
