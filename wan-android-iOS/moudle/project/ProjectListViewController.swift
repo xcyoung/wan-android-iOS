@@ -60,7 +60,7 @@ class ProjectListViewController: PageTableViewController {
     override func configTableView() {
         super.configTableView()
 
-        self.tableView.separatorInset = UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 4)
+        self.tableView.separatorStyle = .none
         self.tableView.register(ArticleListItemCell.self, forCellReuseIdentifier: ArticleListItemCell.description())
     }
 
@@ -119,7 +119,7 @@ extension ProjectListViewController {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 158
     }
 }
 
