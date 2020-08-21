@@ -22,7 +22,7 @@ class NaviListItemCell: UICollectionViewCell {
         
         self.label.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height)
         self.layer.cornerRadius = frame.height / 2
-        self.backgroundColor = UIColor.init(white: 0.5, alpha: 1)
+        self.backgroundColor = UIColor.project.primary
         
         self.addSubview(label)
     }

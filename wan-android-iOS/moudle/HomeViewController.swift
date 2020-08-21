@@ -27,7 +27,7 @@ class HomeViewController: BaseViewController {
 
         let tabBar = UITabBar.init()
         tabBar.setItems(items, animated: true)
-        tabBar.barTintColor = UIColor.project.appBar
+        tabBar.barTintColor = UIColor.project.item
         tabBar.tintColor = UIColor.project.primary
         tabBar.isTranslucent = false
 

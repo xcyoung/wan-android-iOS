@@ -66,6 +66,8 @@
 		3AE5D47424ED811400499935 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D47324ED811400499935 /* TagView.swift */; };
 		3AE5D47624ED87F600499935 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D47524ED87F600499935 /* PaddingLabel.swift */; };
 		3AE5D4B324EEC0E500499935 /* TreeSubListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D4B224EEC0E500499935 /* TreeSubListItemCell.swift */; };
+		3AE5D57324EFCC1500499935 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D57224EFCC1400499935 /* NavViewController.swift */; };
+		3AE5D57524EFCD1A00499935 /* NaviItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D57424EFCD1A00499935 /* NaviItemCell.swift */; };
 		3AEC6D8324B018570072120C /* WanResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8224B018570072120C /* WanResponse.swift */; };
 		3AEC6D8524B040070072120C /* PageStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8424B040070072120C /* PageStrategy.swift */; };
 		3AEC6D8724B041A60072120C /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8624B041A60072120C /* PageInfo.swift */; };
@@ -145,6 +147,8 @@
 		3AE5D47324ED811400499935 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		3AE5D47524ED87F600499935 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		3AE5D4B224EEC0E500499935 /* TreeSubListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeSubListItemCell.swift; sourceTree = "<group>"; };
+		3AE5D57224EFCC1400499935 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
+		3AE5D57424EFCD1A00499935 /* NaviItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviItemCell.swift; sourceTree = "<group>"; };
 		3AEC6D8224B018570072120C /* WanResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanResponse.swift; sourceTree = "<group>"; };
 		3AEC6D8424B040070072120C /* PageStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStrategy.swift; sourceTree = "<group>"; };
 		3AEC6D8624B041A60072120C /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 		3A1551DF24D8584B00DA1F02 /* tree */ = {
 			isa = PBXGroup;
 			children = (
+				3AE5D57224EFCC1400499935 /* NavViewController.swift */,
+				3AE5D57424EFCD1A00499935 /* NaviItemCell.swift */,
 				24BB74A224D93A8C00EC0BD5 /* NaviListViewController.swift */,
 				24BB74A424D93F8000EC0BD5 /* NaviListItemCell.swift */,
 				24BB74A824D9555800EC0BD5 /* NaviListHeaderView.swift */,
@@ -641,6 +647,7 @@
 				3AE5D47624ED87F600499935 /* PaddingLabel.swift in Sources */,
 				3AEC6D8724B041A60072120C /* PageInfo.swift in Sources */,
 				3AEEE2DA24A46EC9000A10F6 /* BaseViewController.swift in Sources */,
+				3AE5D57524EFCD1A00499935 /* NaviItemCell.swift in Sources */,
 				3A1551E524D85C0500DA1F02 /* TreeViewModel.swift in Sources */,
 				3A1551DE24D6A37000DA1F02 /* XBannerItemCell.swift in Sources */,
 				3A90B0EF24A5996C00651342 /* ToastOperation.swift in Sources */,
@@ -664,6 +671,7 @@
 				3A70932D24B4CE4100DCF916 /* ArticleListItemCell.swift in Sources */,
 				3AEC6DF624B1F3760072120C /* WanAndroidRepo.swift in Sources */,
 				240FF5BC24A0992000E3F5A8 /* HttpClient.swift in Sources */,
+				3AE5D57324EFCC1500499935 /* NavViewController.swift in Sources */,
 				3A5F7336249BB4DB00A3AE68 /* SceneDelegate.swift in Sources */,
 				3A15522F24DE9C0F00DA1F02 /* OfficialViewModel.swift in Sources */,
 				3AE5D4B324EEC0E500499935 /* TreeSubListItemCell.swift in Sources */,

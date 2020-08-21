@@ -12,7 +12,7 @@ import UIKit
 class NaviListHeaderView: UICollectionReusableView {
     private let label: UILabel = {
         let label = UILabel.init()
-        label.textColor = UIColor.black
+        label.textColor = UIColor.project.text
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
@@ -20,7 +20,7 @@ class NaviListHeaderView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = UIColor.project.item
         self.addSubview(label)
     }
 

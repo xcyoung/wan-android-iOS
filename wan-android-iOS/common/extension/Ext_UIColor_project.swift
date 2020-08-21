@@ -57,7 +57,7 @@ class Project: NSObject {
     let green: UIColor = Project.make("#00BFA6")
     
     let primary: UIColor = Project.modeColor(light: 0xFF00BFA6, dark: 0xFF6c63ff)
-    let lightPrimary: UIColor = Project.modeColor(light: 0xFF5df2d7, dark: 0xFFa491ff)
+    let lightPrimary: UIColor = Project.modeColor(light: 0xFF4DE9D4, dark: 0xFFa491ff)
     let darkPrimary: UIColor = Project.modeColor(light: 0xFF008e77, dark: 0xFF2838cb)
     
     let secondary: UIColor = Project.modeColor(light: 0xFFFF6A00, dark: 0xffFFD449)

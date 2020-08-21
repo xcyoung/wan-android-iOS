@@ -22,7 +22,7 @@ class NaviListViewController: BaseViewController {
         layout.minimumInteritemSpacing = 2
         
         let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.init(hex6: 0xf9f9f9, alpha: 1)
+        collectionView.backgroundColor = UIColor.project.background
         collectionView.register(NaviListItemCell.self, forCellWithReuseIdentifier: NaviListItemCell.description())
         collectionView.register(NaviListHeaderView.self, forSupplementaryViewOfKind: NaviListHeaderView.description(), withReuseIdentifier: NaviListHeaderView.description())
         return collectionView
