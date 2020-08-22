@@ -95,7 +95,7 @@ class TreeListViewController: PageTableViewController {
     }
 
     override func getRefresh() -> MJRefreshHeader? {
-        return MJRefreshStateHeader.init()
+        return MJRefreshNormalHeader.init()
     }
 
     override func getFooter() -> MJRefreshFooter? {

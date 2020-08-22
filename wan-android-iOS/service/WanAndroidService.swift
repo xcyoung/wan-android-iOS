@@ -58,4 +58,9 @@ class WanAndroidService: BaseService {
         let url = "project/list/\(pageIndex)/json?cid=\(id)"
         return httpClient.requestByRx(url: url, method: .get)
     }
+    
+    func collectInside(id: Int) -> Observable<WanResponse<Empty>> {
+        let url = "lg/collect/\(id)/json"
+        return httpClient.requestByRx(url: url, method: .post)
+    }
 }

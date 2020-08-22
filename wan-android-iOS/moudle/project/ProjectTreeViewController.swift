@@ -65,7 +65,7 @@ class ProjectTreeViewController: BaseViewController {
             self?.showError(error: error)
         }.disposed(by: disposeBag)
 
-        showLoading()
+        showEmpty()
         projectViewModel.projectTreeList()
     }
 

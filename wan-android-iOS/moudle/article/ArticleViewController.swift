@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 import MJRefresh
 import MyLayout
+import Lottie
 class ArticleViewController: PageTableViewController {
     private let articleViewModel = ArticleViewModel.init()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,36 +32,47 @@ class ArticleViewController: PageTableViewController {
 
             self?.onLoadSuccess(result: model)
         }.disposed(by: self.disposeBag)
-        
+
+        articleViewModel.collectionArticleLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let model = event.element,
+                let index = self?.dataSource[0].firstIndex(where: { ($0 as? ArticleItem)?.id == model.id }),
+                index < (self?.dataSource[0].count ?? 0),
+                let item = self?.dataSource[0][index] as? ArticleItem
+                else {
+                    return
+            }
+
+            if model.isSuccess {
+                item.zan = 1
+            } else {
+                item.zan = 0
+                if let cell = self?.tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) as? ArticleListItemCell {
+                    cell.updateLikeState(isLike: false, animated: true)
+                }
+            }
+
+        }.disposed(by: self.disposeBag)
+
         articleViewModel.errorLiveData.asObservable().subscribe { [weak self] (event) in
             guard let error = event.element as? XError else {
                 return
             }
-            
+
             self?.onLoadFail(error)
         }.disposed(by: self.disposeBag)
-        
+
         loadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func initView() {
         super.initView()
-        
-//        let layout = MyLinearLayout.init()
-//        layout.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
-//
-//        self.searchBar.mySize = CGSize.init(width: MyLayoutSize.fill(), height: 50)
         self.tableView.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
-        
-//        self.parentView.addSubview(searchBar)
+
         self.parentView.addSubview(tableView)
-        
-//        self.parentView.addSubview(layout)
     }
 
     override func getStrategy() -> PageStrategy? {
@@ -78,7 +90,7 @@ class ArticleViewController: PageTableViewController {
     }
 
     override func getRefresh() -> MJRefreshHeader? {
-        return MJRefreshStateHeader.init()
+        return MJRefreshNormalHeader.init()
     }
 
     override func getFooter() -> MJRefreshFooter? {
@@ -102,7 +114,7 @@ class ArticleViewController: PageTableViewController {
             var contentItems = [Any]()
             contentItems.append(firstModel.bannerModel)
             contentItems.append(contentsOf: firstModel.datas)
-            
+
             self.dataSource.removeAll()
             self.dataSource.append(contentItems)
         } else if let listModel = result as? ArticleListModel {
@@ -111,11 +123,12 @@ class ArticleViewController: PageTableViewController {
             self.dataSource.append(contentItems)
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let model = self.dataSource[indexPath.section][indexPath.row] as? ArticleItem,
             let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListItemCell.description()) as? ArticleListItemCell {
             cell.setModel(item: model)
+            cell.addRecognizerToLikeBtn(onLikeBtnClick(_:), index: indexPath.row)
             return cell
         } else if let model = self.dataSource[indexPath.section][indexPath.row] as? ArticleBannerModel, let cell = tableView.dequeueReusableCell(withIdentifier: ArticleBanner.description()) as? ArticleBanner {
             cell.setItems(banners: model.banners)
@@ -136,5 +149,16 @@ class ArticleViewController: PageTableViewController {
         }
 
         BrowserViewController.jump(vc: self, url: model.link)
+    }
+
+    @objc private func onLikeBtnClick(_ index: Int) {
+        if index < dataSource[0].count,
+            let model = dataSource[0][index] as? ArticleItem {
+            if model.zan == 1 {
+//                model.zan = 0
+            } else {
+                articleViewModel.collectionInside(id: model.id)
+            }
+        }
     }
 }

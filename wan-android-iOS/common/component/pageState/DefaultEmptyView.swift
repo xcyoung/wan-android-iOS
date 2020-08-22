@@ -19,7 +19,7 @@ class DefaultEmptyView: UIView, AnimationProtocol {
         let label = UILabel.init()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = UIColor.black
+        label.textColor = UIColor.project.text
         label.textAlignment = .center
         return label
     }()

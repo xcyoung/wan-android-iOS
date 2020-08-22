@@ -56,7 +56,7 @@ class WanAndroidRepo: NSObject {
             } else {
                 throw XError.init(code: a.errorCode, message: a.errorMsg)
             }
-            
+
             let bannerModel = ArticleBannerModel.init(banners: banner)
             let articleFirstModel = ArticleFirstModel.init(offset: data2.offset,
                 over: data2.over,
@@ -69,32 +69,36 @@ class WanAndroidRepo: NSObject {
             return r
         }
     }
-    
+
     func treeList() -> Observable<WanResponse<[TreeListModel]>> {
         return service.treeList()
     }
-    
+
     func treeSubList(pageIndex: Int, id: Int) -> Observable<WanResponse<ArticleListModel>> {
         return service.treeSubList(pageIndex: pageIndex, id: id)
     }
-    
+
     func naviList() -> Observable<WanResponse<[NaviListModel]>> {
         return service.naviList()
     }
-    
+
     func officialChaptersList() -> Observable<WanResponse<[OfficialListModel]>> {
         return service.officialChaptersList()
     }
-    
+
     func officialList(id: Int, pageIndex: Int) -> Observable<WanResponse<ArticleListModel>> {
         return service.officialList(id: id, pageIndex: pageIndex)
     }
-    
+
     func projectTreeList() -> Observable<WanResponse<[ProjectListModel]>> {
         return service.projectTreeList()
     }
-    
+
     func projectList(id: Int, pageIndex: Int) -> Observable<WanResponse<ArticleListModel>> {
         return service.projectList(id: id, pageIndex: pageIndex)
+    }
+
+    func collectInside(id: Int) -> Observable<WanResponse<Empty>> {
+        return service.collectInside(id: id)
     }
 }

@@ -65,7 +65,7 @@ class OfficialChapterViewController: BaseViewController {
             self?.showError(error: error)
         }.disposed(by: disposeBag)
 
-        showLoading()
+        showEmpty()
         officialViewModel.officialChaptersList()
     }
 

@@ -90,7 +90,8 @@ class ArticleItem: NSObject, Codable {
     let superChapterName: String
     let tags: [Tag]
     let title: String
-    let type, userID, visible, zan: Int
+    let type, userID, visible: Int
+    var zan: Int
 
     enum CodingKeys: String, CodingKey {
         case apkLink, audit, author, canEdit

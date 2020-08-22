@@ -29,6 +29,6 @@ public class RxLiveData<Element> {
     public func asObservable() -> Observable<Element> {
         return variable.asObservable()
             .observeOn(MainScheduler.instance)
-            .subscribeOn(MainScheduler.instance)
+            .subscribeOn(ConcurrentMainScheduler.instance)
     }
 }

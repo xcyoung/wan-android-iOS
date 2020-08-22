@@ -34,6 +34,13 @@ class HttpClient: NSObject {
         pathParams: Dictionary<String, String> = [:],
         params: Dictionary<String, Any> = [:]) -> Observable<T> {
         var requestUrl = baseUrl + url
+        
+//        let cookie = HTTPCookie.init(properties: [
+//            HTTPCookiePropertyKey.value : "loginUserName=xcyoung",
+//            HTTPCookiePropertyKey.value : "loginUserPassword=xcyoung",
+//        ])
+//        Alamofire.SessionManager.default.session.configuration.httpCookieStorage?.setCookie(cookie!)
+        
         for (key, value) in pathParams {
             requestUrl = requestUrl.replacingOccurrences(of: "{\(key)}", with: "\(value)")
         }
