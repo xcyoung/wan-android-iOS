@@ -16,7 +16,7 @@ class AccountViewController: BaseViewController {
     private let logoView: AnimationView = {
         let view: AnimationView = AnimationView.init()
 
-        let animation = Animation.nameWithMode("android_logo", subdirectory: "animation/android_logo")
+        let animation = Animation.named("android_logo", subdirectory: "animation/android_logo")
 
         view.animation = animation
         view.contentMode = .scaleAspectFit
@@ -59,6 +59,7 @@ class AccountViewController: BaseViewController {
         layout.myFlex.attrs.flex_direction = MyFlexDirection_Column
 
         logoView.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
+        logoView.myTop = CGFloat.init(30)
 //        logoView.myBottom = CGFloat.init(10)
         logoView.myFlex.attrs.flex_grow = 1
 

@@ -120,3 +120,11 @@ https://github.com/manondidi/swiftArch
 - 通用ui的深色模式适配
 
 - 体系列表ui重写
+
+### 2020.08.22
+
+- 添加收藏功能逻辑
+
+- 账号页面，添加登录、注册功能
+
+- 引入IQKeyboardManagerSwift用于软键盘管理
