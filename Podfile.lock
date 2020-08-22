@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
+  - IQKeyboardManagerSwift (6.5.0)
   - lottie-ios (3.1.8)
   - MJRefresh (3.4.3)
   - MyLayout (1.9.1)
@@ -19,6 +20,7 @@ PODS:
   - XLPagerTabStrip (8.1.0)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift (= 6.5.0)
   - lottie-ios (= 3.1.8)
   - MJRefresh (= 3.4.3)
   - MyLayout
@@ -31,6 +33,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - IQKeyboardManagerSwift
     - lottie-ios
     - MJRefresh
     - MyLayout
@@ -44,6 +47,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  IQKeyboardManagerSwift: 6cd19976c6e871907c4ed9127c2d3affdd4defc2
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   MyLayout: 6e44860ef5a857cf50178c68e01099c0926cd7c7
@@ -55,6 +59,6 @@ SPEC CHECKSUMS:
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
 
-PODFILE CHECKSUM: 92ef940fde8729ad2081deb9a1c40406c4762041
+PODFILE CHECKSUM: 5e3f6b10444d810fa24a146253bc91946420e40b
 
 COCOAPODS: 1.5.3

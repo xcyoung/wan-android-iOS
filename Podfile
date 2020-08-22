@@ -15,6 +15,7 @@ target 'wan-android-iOS' do
   pod 'SDWebImage',   '5.0'
   pod 'XLPagerTabStrip', '8.1.0'
   pod 'URLNavigator', '2.3.0'
+  pod 'IQKeyboardManagerSwift', '6.5.0'
   # Pods for wan-android-iOS
 
 end

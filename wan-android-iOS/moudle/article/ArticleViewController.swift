@@ -49,6 +49,7 @@ class ArticleViewController: PageTableViewController {
                 if let cell = self?.tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) as? ArticleListItemCell {
                     cell.updateLikeState(isLike: false, animated: true)
                 }
+                self?.goToAccount()
             }
 
         }.disposed(by: self.disposeBag)
@@ -160,5 +161,13 @@ class ArticleViewController: PageTableViewController {
                 articleViewModel.collectionInside(id: model.id)
             }
         }
+    }
+    
+    private func goToAccount() {
+        let accountViewController = AccountViewController.init()
+        let accountNavigationVC = UINavigationController.init(rootViewController: accountViewController)
+//        accountNavigationVC.navigationBar.barStyle = .blackTranslucent
+        accountNavigationVC.modalPresentationStyle = .fullScreen
+        self.present(accountNavigationVC, animated: true, completion: nil)
     }
 }
