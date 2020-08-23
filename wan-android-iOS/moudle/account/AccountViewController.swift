@@ -170,9 +170,6 @@ class AccountViewController: BaseViewController {
         let btn = UIButton.init()
         btn.setTitle("注册", for: .normal)
         btn.setTitleColor(UIColor.project.primary, for: .normal)
-        btn.layer.cornerRadius = 15
-        btn.backgroundColor = UIColor.project.background
-        btn.contentEdgeInsets = .init(top: 8, left: 0, bottom: 8, right: 0)
         return btn
     }
 
@@ -195,8 +192,9 @@ class AccountViewController: BaseViewController {
                 options: [],
                 animations: {
                     btn.frame = targetRect
-                    selectVC.view.isHidden = true
+                    selectVC.view.alpha = 0
                 }) { (_) in
+                selectVC.view.isHidden = true
                 signInVC.view.isHidden = false
                 btn.removeFromSuperview()
             }
@@ -218,14 +216,15 @@ class AccountViewController: BaseViewController {
             btn.frame = btn1Rect
             let targetRect = btn2Rect
             UIView.animate(withDuration: 0.7,
-                delay: 0.3,
+                delay: 0.2,
                 options: [],
                 animations: {
                     btn.frame = targetRect
-                    btn.backgroundColor = UIColor.project.primary
-                    btn.setTitleColor(UIColor.project.item, for: .normal)
-                    selectVC.view.isHidden = true
+                    selectVC.view.alpha = 0
                 }) { (_) in
+                selectVC.view.isHidden = true
+                btn.backgroundColor = UIColor.project.primary
+                btn.setTitleColor(UIColor.project.item, for: .normal)
                 signUpVC.view.isHidden = false
                 btn.removeFromSuperview()
             }
@@ -252,6 +251,7 @@ class AccountViewController: BaseViewController {
                 animations: {
                     btn.frame = targetRect
                     signInVC.view.isHidden = true
+                    selectVC.view.alpha = 1
                 }) { (_) in
                 selectVC.view.isHidden = false
                 btn.removeFromSuperview()
@@ -282,6 +282,7 @@ class AccountViewController: BaseViewController {
                     btn.backgroundColor = UIColor.project.background
                     btn.setTitleColor(UIColor.project.primary, for: .normal)
                     signUpVC.view.isHidden = true
+                    selectVC.view.alpha = 1
                 }) { (_) in
                 selectVC.view.isHidden = false
                 btn.removeFromSuperview()
