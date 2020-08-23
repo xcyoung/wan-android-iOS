@@ -123,6 +123,7 @@ class ArticleViewController: PageTableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListItemCell.description()) as? ArticleListItemCell {
             cell.setModel(item: model)
             cell.addRecognizerToLikeBtn(onLikeBtnClick(_:), index: indexPath.row)
+            cell.addRecognizerToShareBtn(onShareBtnClick(_:), index: indexPath.row)
             return cell
         } else if let model = self.dataSource[indexPath.section][indexPath.row] as? ArticleBannerModel, let cell = tableView.dequeueReusableCell(withIdentifier: ArticleBanner.description()) as? ArticleBanner {
             cell.setItems(banners: model.banners)
@@ -155,6 +156,15 @@ class ArticleViewController: PageTableViewController {
             }
         }
 //        goToAccount()
+    }
+
+    @objc private func onShareBtnClick(_ index: Int) {
+        if index < dataSource[0].count,
+            let model = dataSource[0][index] as? ArticleItem {
+            let activityViewController = UIActivityViewController.init(activityItems: [model.link], applicationActivities: [])
+
+            UIApplication.shared.getMainWindow()?.rootViewController?.present(activityViewController, animated: true, completion: nil)
+        }
     }
 
     private func goToAccount() {

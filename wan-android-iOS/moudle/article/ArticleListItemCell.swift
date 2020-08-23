@@ -12,7 +12,8 @@ import MyLayout
 import Lottie
 class ArticleListItemCell: UITableViewCell {
     private var onLike: ((_ index: Int) -> Void)?
-
+    private var onShared: ((_ index: Int) -> Void)?
+    
     let authorLabel: UILabel = {
         let label = UILabel.init()
         label.textColor = UIColor.project.text
@@ -72,6 +73,14 @@ class ArticleListItemCell: UITableViewCell {
 
         btn.animation = animation
         btn.contentMode = .scaleAspectFit
+        return btn
+    }()
+    
+    let shardBtn: UIButton = {
+        let btn = UIButton.init(type: .system)
+        btn.setImage(R.image.wan_ic_back_share(), for: .normal)
+        btn.tintColor = UIColor.project.text
+        btn.contentEdgeInsets = .init(top: 2, left: 2, bottom: 2, right: 2)
         return btn
     }()
 
@@ -139,6 +148,10 @@ class ArticleListItemCell: UITableViewCell {
         likeBtn.mySize = CGSize.init(width: 30, height: 30)
         likeBtn.addTarget(self, action: #selector(onLikeBtnClick(_:)), for: .touchUpInside)
 
+        shardBtn.mySize = CGSize.init(width: 30, height: 30)
+        shardBtn.myLeading = CGFloat.init(4)
+        shardBtn.addTarget(self, action: #selector(onShareBtnClick(_:)), for: .touchUpInside)
+        
         view.addSubview(newLabel)
         view.addSubview(authorLabel)
         if let tagFlowLayout = tagFlowLayout {
@@ -149,6 +162,7 @@ class ArticleListItemCell: UITableViewCell {
         view.addSubview(topLabel)
         view.addSubview(chapterLabel)
         view.addSubview(likeBtn)
+        view.addSubview(shardBtn)
         self.contentView.backgroundColor = UIColor.project.background
         view.backgroundColor = UIColor.project.item
 
@@ -191,6 +205,11 @@ class ArticleListItemCell: UITableViewCell {
         likeBtn.tag = index
     }
 
+    func addRecognizerToShareBtn(_ onShare: @escaping (_ i: Int) -> Void, index: Int) {
+        self.onShared = onShare
+        shardBtn.tag = index
+    }
+    
     func updateLikeState(isLike: Bool, animated: Bool = false) {
         likeBtn.setIsOn(isLike, animated: animated)
     }
@@ -198,5 +217,10 @@ class ArticleListItemCell: UITableViewCell {
     @objc private func onLikeBtnClick(_ recognizer: UIGestureRecognizer) {
         let index = self.likeBtn.tag
         self.onLike?(index)
+    }
+    
+    @objc private func onShareBtnClick(_ sender: UIButton) {
+        let index = sender.tag
+        self.onShared?(index)
     }
 }
