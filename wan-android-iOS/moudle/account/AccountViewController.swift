@@ -31,8 +31,9 @@ class AccountViewController: BaseViewController {
     }()
 
     private let closeBtn: UIButton = {
-        let btn = UIButton.init()
-        btn.backgroundColor = UIColor.project.text
+        let btn = UIButton.init(type: .system)
+        btn.setImage(R.image.wan_ic_back_arrow_left(), for: .normal)
+        btn.tintColor = UIColor.project.primary
         return btn
     }()
 

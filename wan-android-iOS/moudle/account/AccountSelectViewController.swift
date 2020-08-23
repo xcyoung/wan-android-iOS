@@ -14,7 +14,7 @@ class AccountSelectViewController: BaseViewController {
     private let accountViewModel: AccountViewModel
 
     private let signInBtn: UIButton = {
-        let btn = UIButton.init()
+        let btn = UIButton.init(type: .system)
         btn.setTitle("登录", for: .normal)
         btn.setTitleColor(UIColor.project.item, for: .normal)
         btn.layer.cornerRadius = 15
@@ -24,7 +24,7 @@ class AccountSelectViewController: BaseViewController {
     }()
 
     private let signUpBtn: UIButton = {
-        let btn = UIButton.init()
+        let btn = UIButton.init(type: .system)
         btn.setTitle("注册", for: .normal)
         btn.setTitleColor(UIColor.project.primary, for: .normal)
         btn.layer.cornerRadius = 15
