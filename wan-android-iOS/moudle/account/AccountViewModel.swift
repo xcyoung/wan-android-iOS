@@ -16,10 +16,24 @@ enum AccountView: Int {
 
 class AccountViewModel: BaseViewModel {
     let viewSwtichLiveData = RxLiveData<(from: AccountView, to: AccountView)>.init(defalutValue: (from: .select, to: .select))
-
+    let dismissLiveData = RxLiveData<Bool>.init(defalutValue: false)
     private var accountView: AccountView = .select
     func onViewSwtich(accountView: AccountView) {
         viewSwtichLiveData.value = (from: self.accountView, to: accountView)
         self.accountView = accountView
+    }
+
+    func goBack() {
+        switch accountView {
+        case .select:
+            dismissLiveData.value = true
+            break
+        case .signIn, .signUp:
+            onViewSwtich(accountView: .select)
+            break
+//        default:
+//            onViewSwtich(accountView: .select)
+//            break
+        }
     }
 }

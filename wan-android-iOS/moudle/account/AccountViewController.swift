@@ -30,14 +30,35 @@ class AccountViewController: BaseViewController {
         return view
     }()
 
+    private let closeBtn: UIButton = {
+        let btn = UIButton.init()
+        btn.backgroundColor = UIColor.project.text
+        return btn
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.parentView.removeFromSuperview()
 
         accountViewModel.viewSwtichLiveData.asObservable().subscribe { [weak self] (event) in
             guard let model = event.element else {
                 return
             }
-            self?.transition(from: model.from, to: model.to)
+
+            if model.from == .select {
+                self?.normal2Edit(to: model.to)
+            } else {
+                self?.edit2Normal(from: model.from)
+            }
+        }.disposed(by: disposeBag)
+
+        accountViewModel.dismissLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let isDismiss = event.element, isDismiss else {
+                return
+            }
+
+            self?.dismiss(animated: true, completion: nil)
         }.disposed(by: disposeBag)
 
         showSubViewController(index: AccountView.signIn.rawValue, shouldShow: false)
@@ -47,30 +68,36 @@ class AccountViewController: BaseViewController {
         logoView.play(fromProgress: 0, toProgress: 1, loopMode: .loop, completion: nil)
 
         self.view.backgroundColor = UIColor.project.background
+
+        self.closeBtn.addTarget(self, action: #selector(onCloseClick(_:)), for: .touchUpInside)
     }
 
     override func initView() {
         super.initView()
 
-        let layout = MyFlexLayout.init()
-        layout.isFlex = true
-        layout.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
-        layout.myFlex.attrs.flex_wrap = MyFlexWrap_Wrap
-        layout.myFlex.attrs.flex_direction = MyFlexDirection_Column
+        self.closeBtn.frame = CGRect.init(x: self.view.frame.minX + 16, y: self.view.frame.minY + 20 + 16, width: 30, height: 30)
+        self.normalLayout()
+        self.view.addSubview(logoView)
+        self.view.addSubview(accountViewLayout)
+        self.view.addSubview(closeBtn)
+    }
 
-        logoView.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
-        logoView.myTop = CGFloat.init(30)
-//        logoView.myBottom = CGFloat.init(10)
-        logoView.myFlex.attrs.flex_grow = 1
+    func normalLayout() {
+        let totalWidth = self.view.frame.width
+        let totalHeight = self.view.frame.height - 20
+        let logoHeight = totalHeight * 2 / 3
+        logoView.frame = CGRect.init(x: 0, y: 20, width: totalWidth, height: logoHeight)
+        accountViewLayout.frame = CGRect.init(x: 0, y: logoHeight + 20, width: totalWidth, height: totalHeight - logoHeight)
 
-        layout.addSubview(logoView)
+    }
 
-        accountViewLayout.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
-        accountViewLayout.myFlex.attrs.flex_grow = 4
-
-        layout.addSubview(accountViewLayout)
-
-        parentView.addSubview(layout)
+    func editLayout() {
+        let totalWidth = self.view.frame.width
+        let totalHeight = self.view.frame.height - 20
+        let logoHeight = totalHeight / 4
+        let logoWidth = totalWidth / 3
+        logoView.frame = CGRect.init(x: (totalWidth - logoWidth) / 2, y: 20, width: logoWidth, height: logoHeight)
+        accountViewLayout.frame = CGRect.init(x: 0, y: logoHeight + 20, width: totalWidth, height: totalHeight - logoHeight)
     }
 
     func showSubViewController(index: Int, shouldShow: Bool = true) {
@@ -94,7 +121,6 @@ class AccountViewController: BaseViewController {
 //            self.addChild(vc)
             self.accountViewLayout.addSubview(vc.view)
             subVCMap[index] = vc
-//            vc.view.isHidden = false
         }
         if shouldShow {
             subVCMap.forEach { (key: Int, value: BaseViewController) in
@@ -104,9 +130,20 @@ class AccountViewController: BaseViewController {
                     value.view.isHidden = true
                 }
             }
+        } else {
+            subVCMap[index]?.view.isHidden = false
         }
     }
 
+    /*
+     动画路径:
+     select -> signIn or signUp
+        1、normalLayout()   ps: logoHeight:accountViewHeight = 2:1
+        2、transition(from: AccountView, to: AccountView)
+     signIn or signUp -> select
+        1、editLayout()   ps: logoHeight:accountViewHeight = 1:3
+        2、transition(from: AccountView, to: AccountView)
+     */
     func transition(from: AccountView, to: AccountView) {
         if from == .select && to == .signIn {
             self.select2SignIn()
@@ -154,7 +191,7 @@ class AccountViewController: BaseViewController {
             btn.frame = btn1Rect
             let targetRect = btn2Rect
             UIView.animate(withDuration: 0.7,
-                delay: 0,
+                delay: 0.2,
                 options: [],
                 animations: {
                     btn.frame = targetRect
@@ -181,10 +218,9 @@ class AccountViewController: BaseViewController {
             btn.frame = btn1Rect
             let targetRect = btn2Rect
             UIView.animate(withDuration: 0.7,
-                delay: 0,
+                delay: 0.3,
                 options: [],
                 animations: {
-
                     btn.frame = targetRect
                     btn.backgroundColor = UIColor.project.primary
                     btn.setTitleColor(UIColor.project.item, for: .normal)
@@ -211,12 +247,11 @@ class AccountViewController: BaseViewController {
             btn.frame = btn2Rect
             let targetRect = btn1Rect
             UIView.animate(withDuration: 0.7,
-                delay: 0,
+                delay: 0.2,
                 options: [],
                 animations: {
                     btn.frame = targetRect
                     signInVC.view.isHidden = true
-
                 }) { (_) in
                 selectVC.view.isHidden = false
                 btn.removeFromSuperview()
@@ -240,7 +275,7 @@ class AccountViewController: BaseViewController {
             btn.frame = btn2Rect
             let targetRect = btn1Rect
             UIView.animate(withDuration: 0.7,
-                delay: 0,
+                delay: 0.2,
                 options: [],
                 animations: {
                     btn.frame = targetRect
@@ -252,6 +287,36 @@ class AccountViewController: BaseViewController {
                 btn.removeFromSuperview()
             }
         }
+    }
+
+    func normal2Edit(to: AccountView) {
+        UIView.animate(withDuration: 0.5,
+            delay: 0,
+            options: [],
+            animations: { [weak self] in
+                self?.editLayout()
+            }, completion: { [weak self] (success) in
+                if success {
+                    self?.transition(from: .select, to: to)
+                }
+            })
+    }
+
+    func edit2Normal(from: AccountView) {
+        UIView.animate(withDuration: 0.5,
+            delay: 0,
+            options: [],
+            animations: { [weak self] in
+                self?.normalLayout()
+            }, completion: { [weak self] (success) in
+                if success {
+                    self?.transition(from: from, to: .select)
+                }
+            })
+    }
+
+    @objc private func onCloseClick(_ sender: UIButton) {
+        self.accountViewModel.goBack()
     }
 
     override func getNavigationBarHidden() -> (hidden: Bool, animated: Bool) {

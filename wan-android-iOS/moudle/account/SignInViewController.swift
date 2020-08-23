@@ -71,7 +71,6 @@ class SignInViewController: BaseViewController {
         let layout = MyLinearLayout.init()
         layout.orientation = MyOrientation_Vert
         layout.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
-//        layout.gravity = MyGravity_Center
         
         userNameTextFeild.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
         userNameTextFeild.myTop = CGFloat.init(8)
@@ -84,7 +83,7 @@ class SignInViewController: BaseViewController {
         passwordTextFeild.myLeading = CGFloat.init(32)
         
         signInBtn.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
-        signInBtn.myTop = CGFloat.init(16)
+        signInBtn.myTop = CGFloat.init(32)
         signInBtn.myTrailing = CGFloat.init(32)
         signInBtn.myLeading = CGFloat.init(32)
         
@@ -99,6 +98,6 @@ class SignInViewController: BaseViewController {
     }
     
     @objc private func onSignInClick(_ sender: UIButton) {
-        accountViewModel.onViewSwtich(accountView: .select)
+        
     }
 }

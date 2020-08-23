@@ -74,7 +74,7 @@
 		3AE5D57E24F1216900499935 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D57D24F1216900499935 /* AccountViewModel.swift */; };
 		3AE5D58024F15E6100499935 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D57F24F15E6100499935 /* SignInViewController.swift */; };
 		3AE5D58224F1713400499935 /* CurrencyUnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D58124F1713400499935 /* CurrencyUnderLineTextField.swift */; };
-		3AE5D58424F17D9E00499935 /* SignUpViewControlle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D58324F17D9E00499935 /* SignUpViewControlle.swift */; };
+		3AE5D58424F17D9E00499935 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D58324F17D9E00499935 /* SignUpViewController.swift */; };
 		3AEC6D8324B018570072120C /* WanResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8224B018570072120C /* WanResponse.swift */; };
 		3AEC6D8524B040070072120C /* PageStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8424B040070072120C /* PageStrategy.swift */; };
 		3AEC6D8724B041A60072120C /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8624B041A60072120C /* PageInfo.swift */; };
@@ -162,7 +162,7 @@
 		3AE5D57D24F1216900499935 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		3AE5D57F24F15E6100499935 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3AE5D58124F1713400499935 /* CurrencyUnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUnderLineTextField.swift; sourceTree = "<group>"; };
-		3AE5D58324F17D9E00499935 /* SignUpViewControlle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewControlle.swift; sourceTree = "<group>"; };
+		3AE5D58324F17D9E00499935 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3AEC6D8224B018570072120C /* WanResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanResponse.swift; sourceTree = "<group>"; };
 		3AEC6D8424B040070072120C /* PageStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStrategy.swift; sourceTree = "<group>"; };
 		3AEC6D8624B041A60072120C /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
@@ -413,7 +413,7 @@
 				3AE5D57924F1101800499935 /* AccountViewController.swift */,
 				3AE5D57B24F1146400499935 /* AccountSelectViewController.swift */,
 				3AE5D57F24F15E6100499935 /* SignInViewController.swift */,
-				3AE5D58324F17D9E00499935 /* SignUpViewControlle.swift */,
+				3AE5D58324F17D9E00499935 /* SignUpViewController.swift */,
 				3AE5D57D24F1216900499935 /* AccountViewModel.swift */,
 			);
 			path = account;
@@ -668,7 +668,7 @@
 				24BB74A324D93A8C00EC0BD5 /* NaviListViewController.swift in Sources */,
 				3A1551F024DE4FA800DA1F02 /* OfficialModel.swift in Sources */,
 				3A1551D924D5206400DA1F02 /* Ext_UIImageView.swift in Sources */,
-				3AE5D58424F17D9E00499935 /* SignUpViewControlle.swift in Sources */,
+				3AE5D58424F17D9E00499935 /* SignUpViewController.swift in Sources */,
 				3AEEE2DC24A473BC000A10F6 /* BaseViewModel.swift in Sources */,
 				3AEC6E3B24B22AF40072120C /* ArticleViewModel.swift in Sources */,
 				3A79DA6F24A62650002BCD2A /* Ext_UIColor_project.swift in Sources */,
