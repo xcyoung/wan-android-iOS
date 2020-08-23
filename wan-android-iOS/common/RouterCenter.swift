@@ -16,7 +16,7 @@ class RouterCenter: NSObject {
 
     enum Path: String, CaseIterable {
         case browser = "/browser"
-
+        case account = "/account"
         func absolutePath() -> String {
             return "xWanAndroid://me.xcyoung.com" + self.rawValue
         }
@@ -52,6 +52,11 @@ class RouterCenter: NSObject {
             let paramUrl = queryParameters["url"]
             target.params["url"] = paramUrl
             return target
+        case Path.account.rawValue:
+            let target = AccountViewController.init()
+            let accountNavigationVC = UINavigationController.init(rootViewController: target)
+            accountNavigationVC.modalPresentationStyle = .fullScreen
+            return accountNavigationVC
         default:
             return nil
         }
@@ -63,5 +68,9 @@ class RouterCenter: NSObject {
 
     func goToBrowser(url: String) {
         navigator.push("\(Path.browser.absolutePath())?url=\(url)")
+    }
+    
+    func goToAccount() {
+        navigator.present(Path.account.absolutePath())
     }
 }

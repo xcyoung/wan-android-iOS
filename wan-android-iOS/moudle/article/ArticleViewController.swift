@@ -146,23 +146,19 @@ class ArticleViewController: PageTableViewController {
     }
 
     @objc private func onLikeBtnClick(_ index: Int) {
-//        if index < dataSource[0].count,
-//            let model = dataSource[0][index] as? ArticleItem {
-//            if model.collect {
-//                articleViewModel.unCollectionInside(id: model.id)
-//            } else {
-//                articleViewModel.collectionInside(id: model.id)
-//            }
-//        }
-        goToAccount()
+        if index < dataSource[0].count,
+            let model = dataSource[0][index] as? ArticleItem {
+            if model.collect {
+                articleViewModel.unCollectionInside(id: model.id)
+            } else {
+                articleViewModel.collectionInside(id: model.id)
+            }
+        }
+//        goToAccount()
     }
 
     private func goToAccount() {
-        let accountViewController = AccountViewController.init()
-        let accountNavigationVC = UINavigationController.init(rootViewController: accountViewController)
-//        accountNavigationVC.navigationBar.barStyle = .blackTranslucent
-        accountNavigationVC.modalPresentationStyle = .fullScreen
-        self.present(accountNavigationVC, animated: true, completion: nil)
+        RouterCenter.shared.goToAccount()
     }
 
     /*
