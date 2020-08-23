@@ -75,6 +75,7 @@
 		3AE5D58024F15E6100499935 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D57F24F15E6100499935 /* SignInViewController.swift */; };
 		3AE5D58224F1713400499935 /* CurrencyUnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D58124F1713400499935 /* CurrencyUnderLineTextField.swift */; };
 		3AE5D58424F17D9E00499935 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D58324F17D9E00499935 /* SignUpViewController.swift */; };
+		3AE5D58624F25A0C00499935 /* Ext_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D58524F25A0C00499935 /* Ext_UIView.swift */; };
 		3AEC6D8324B018570072120C /* WanResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8224B018570072120C /* WanResponse.swift */; };
 		3AEC6D8524B040070072120C /* PageStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8424B040070072120C /* PageStrategy.swift */; };
 		3AEC6D8724B041A60072120C /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8624B041A60072120C /* PageInfo.swift */; };
@@ -163,6 +164,7 @@
 		3AE5D57F24F15E6100499935 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3AE5D58124F1713400499935 /* CurrencyUnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUnderLineTextField.swift; sourceTree = "<group>"; };
 		3AE5D58324F17D9E00499935 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3AE5D58524F25A0C00499935 /* Ext_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIView.swift; sourceTree = "<group>"; };
 		3AEC6D8224B018570072120C /* WanResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanResponse.swift; sourceTree = "<group>"; };
 		3AEC6D8424B040070072120C /* PageStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStrategy.swift; sourceTree = "<group>"; };
 		3AEC6D8624B041A60072120C /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				3A79DAAB24A62EF7002BCD2A /* Ext_LottieAnimation.swift */,
 				3AEC6DF124B19FE00072120C /* Ext_UIViewController.swift */,
 				3A1551D824D5206400DA1F02 /* Ext_UIImageView.swift */,
+				3AE5D58524F25A0C00499935 /* Ext_UIView.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				3A23DD7824A6F7D3003DD81B /* DefaultLoadingView.swift in Sources */,
 				3A90B0EA24A481EA00651342 /* Toast.swift in Sources */,
 				3A90B0E324A4781200651342 /* RxLiveData.swift in Sources */,
+				3AE5D58624F25A0C00499935 /* Ext_UIView.swift in Sources */,
 				3AE5D57C24F1146400499935 /* AccountSelectViewController.swift in Sources */,
 				3AEC6DF024B182570072120C /* PageTableViewController.swift in Sources */,
 				3A70932B24B4C8F200DCF916 /* ArticleViewController.swift in Sources */,

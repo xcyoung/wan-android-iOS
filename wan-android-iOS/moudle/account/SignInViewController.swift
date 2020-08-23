@@ -44,9 +44,10 @@ class SignInViewController: BaseViewController {
         let btn = UIButton.init(type: .system)
         btn.setTitle("登录", for: .normal)
         btn.setTitleColor(UIColor.project.item, for: .normal)
-        btn.layer.cornerRadius = 15
+        btn.layer.cornerRadius = 22.5
         btn.backgroundColor = UIColor.project.primary
         btn.contentEdgeInsets = .init(top: 8, left: 0, bottom: 8, right: 0)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         return btn
     }()
 
@@ -82,7 +83,7 @@ class SignInViewController: BaseViewController {
         passwordTextFeild.myTrailing = CGFloat.init(32)
         passwordTextFeild.myLeading = CGFloat.init(32)
 
-        signInBtn.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
+        signInBtn.mySize = CGSize.init(width: MyLayoutSize.fill(), height: 45)
         signInBtn.myTop = CGFloat.init(32)
         signInBtn.myTrailing = CGFloat.init(32)
         signInBtn.myLeading = CGFloat.init(32)

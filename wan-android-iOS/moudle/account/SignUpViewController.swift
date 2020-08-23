@@ -58,9 +58,10 @@ class SignUpViewController: BaseViewController {
         let btn = UIButton.init(type: .system)
         btn.setTitle("注册", for: .normal)
         btn.setTitleColor(UIColor.project.item, for: .normal)
-        btn.layer.cornerRadius = 15
+        btn.layer.cornerRadius = 22.5
         btn.backgroundColor = UIColor.project.primary
         btn.contentEdgeInsets = .init(top: 8, left: 0, bottom: 8, right: 0)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         return btn
     }()
     
@@ -101,7 +102,7 @@ class SignUpViewController: BaseViewController {
         repasswordTextFeild.myTrailing = CGFloat.init(32)
         repasswordTextFeild.myLeading = CGFloat.init(32)
         
-        signUpBtn.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
+        signUpBtn.mySize = CGSize.init(width: MyLayoutSize.fill(), height: 45)
         signUpBtn.myTop = CGFloat.init(32)
         signUpBtn.myTrailing = CGFloat.init(32)
         signUpBtn.myLeading = CGFloat.init(32)

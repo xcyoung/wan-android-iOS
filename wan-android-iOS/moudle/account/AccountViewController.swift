@@ -69,7 +69,7 @@ class AccountViewController: BaseViewController {
 
             self?.dismiss(animated: true, completion: nil)
         }.disposed(by: disposeBag)
-        
+
         accountViewModel.signUpSuccessLiveData.asObservable().subscribe { [weak self] (event) in
             guard let isSuccess = event.element, isSuccess else {
                 return
@@ -77,7 +77,7 @@ class AccountViewController: BaseViewController {
 
             self?.accountViewModel.goBack()
         }.disposed(by: disposeBag)
-        
+
         accountViewModel.errorLiveData.asObservable().subscribe { [weak self] (event) in
             guard let element = event.element,
                 let error = element else {
@@ -101,7 +101,10 @@ class AccountViewController: BaseViewController {
     override func initView() {
         super.initView()
 
-        self.closeBtn.frame = CGRect.init(x: self.view.frame.minX + 16, y: self.view.frame.minY + 20 + 16, width: 30, height: 30)
+        self.closeBtn.frame = CGRect.init(x: self.view.frame.minX + 16,
+            y: self.view.frame.minY + self.view.getMainWindowSafeAreaInsets().top + 16,
+            width: 30,
+            height: 30)
         self.normalLayout()
         self.view.addSubview(logoView)
         self.view.addSubview(accountViewLayout)
@@ -109,21 +112,22 @@ class AccountViewController: BaseViewController {
     }
 
     func normalLayout() {
-        let totalWidth = self.view.frame.width
-        let totalHeight = self.view.frame.height - 20
+        let insets = self.view.getMainWindowSafeAreaInsets()
+        let totalWidth: CGFloat = self.view.frame.width - insets.left - insets.right
+        let totalHeight: CGFloat = self.view.frame.height - insets.bottom
         let logoHeight = totalHeight * 2 / 3
-        logoView.frame = CGRect.init(x: 0, y: 20, width: totalWidth, height: logoHeight)
-        accountViewLayout.frame = CGRect.init(x: 0, y: logoHeight + 20, width: totalWidth, height: totalHeight - logoHeight)
-
+        logoView.frame = CGRect.init(x: 0, y: insets.top, width: totalWidth, height: logoHeight)
+        accountViewLayout.frame = CGRect.init(x: 0, y: logoHeight + insets.top, width: totalWidth, height: totalHeight - logoHeight)
     }
 
     func editLayout() {
-        let totalWidth = self.view.frame.width
-        let totalHeight = self.view.frame.height - 20
-        let logoHeight = totalHeight / 4
-        let logoWidth = totalWidth / 3
-        logoView.frame = CGRect.init(x: (totalWidth - logoWidth) / 2, y: 20, width: logoWidth, height: logoHeight)
-        accountViewLayout.frame = CGRect.init(x: 0, y: logoHeight + 20, width: totalWidth, height: totalHeight - logoHeight)
+        let insets = self.view.getMainWindowSafeAreaInsets()
+        let totalWidth: CGFloat = self.view.frame.width - insets.left - insets.right
+        let totalHeight: CGFloat = self.view.frame.height - insets.bottom
+        let logoHeight = totalHeight / 3
+        let logoWidth = totalWidth / 2
+        logoView.frame = CGRect.init(x: (totalWidth - logoWidth) / 2, y: insets.top, width: logoWidth, height: logoHeight)
+        accountViewLayout.frame = CGRect.init(x: 0, y: logoHeight + insets.top, width: totalWidth, height: totalHeight - logoHeight)
     }
 
     func showSubViewController(index: Int, shouldShow: Bool = true) {
@@ -167,7 +171,7 @@ class AccountViewController: BaseViewController {
         1、normalLayout()   ps: logoHeight:accountViewHeight = 2:1
         2、transition(from: AccountView, to: AccountView)
      signIn or signUp -> select
-        1、editLayout()   ps: logoHeight:accountViewHeight = 1:3
+        1、editLayout()   ps: logoHeight:accountViewHeight = 1:2
         2、transition(from: AccountView, to: AccountView)
      */
     func transition(from: AccountView, to: AccountView) {
@@ -186,9 +190,10 @@ class AccountViewController: BaseViewController {
         let btn = UIButton.init()
         btn.setTitle("登录", for: .normal)
         btn.setTitleColor(UIColor.project.item, for: .normal)
-        btn.layer.cornerRadius = 15
+        btn.layer.cornerRadius = 22.5
         btn.backgroundColor = UIColor.project.primary
         btn.contentEdgeInsets = .init(top: 8, left: 0, bottom: 8, right: 0)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         return btn
     }
 
@@ -196,6 +201,7 @@ class AccountViewController: BaseViewController {
         let btn = UIButton.init()
         btn.setTitle("注册", for: .normal)
         btn.setTitleColor(UIColor.project.primary, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         return btn
     }
 
