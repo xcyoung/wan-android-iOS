@@ -102,6 +102,10 @@ class WanAndroidRepo: NSObject {
         return service.collectInside(id: id)
     }
     
+    func unCollectionInside(id: Int) -> Observable<WanResponse<Empty>> {
+        return service.unCollectionInside(id: id)
+    }
+    
     func signIn(userName: String, password: String) -> Observable<WanResponse<Empty>> {
         return service.signIn(userName: userName, password: password)
     }

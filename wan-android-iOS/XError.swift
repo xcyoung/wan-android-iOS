@@ -26,3 +26,10 @@ class XError: NSError {
         self.message = message
     }
 }
+
+enum ErrorCode: Int {
+    case success = 0
+    case loginInvalid = -1001
+    
+    case unkowned = -1
+}

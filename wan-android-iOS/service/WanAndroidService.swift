@@ -64,6 +64,11 @@ class WanAndroidService: BaseService {
         return httpClient.requestByRx(url: url, method: .post)
     }
 
+    func unCollectionInside(id: Int) -> Observable<WanResponse<Empty>> {
+        let url = "lg/uncollect_originId/\(id)/json"
+        return httpClient.requestByRx(url: url, method: .post)
+    }
+    
     func signIn(userName: String, password: String) -> Observable<WanResponse<Empty>> {
         let url = "user/login"
         let body = [

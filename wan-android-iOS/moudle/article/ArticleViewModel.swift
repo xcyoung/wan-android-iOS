@@ -12,7 +12,8 @@ class ArticleViewModel: BaseViewModel {
 
     let articleFirstListLiveData = RxLiveData<ArticleFirstModel?>.init(defalutValue: nil)
     let articleListLiveData = RxLiveData<ArticleListModel?>.init(defalutValue: nil)
-    let collectionArticleLiveData = RxLiveData<(isSuccess: Bool, id: Int)>.init(defalutValue: (isSuccess: false, id: -1))
+    let collectionArticleLiveData = RxLiveData<(error: XError?, id: Int)>.init(defalutValue: (error: nil, id: -1))
+    let unCollectionArticleLiveData = RxLiveData<(error: XError?, id: Int)>.init(defalutValue: (error: nil, id: -1))
     func onRefresh(pageIndex: Int) {
         repo.articleAll().subscribe(HttpObserverType.init(success: { [weak self] response in
             self?.articleFirstListLiveData.value = response.data
@@ -32,10 +33,17 @@ class ArticleViewModel: BaseViewModel {
 
     func collectionInside(id: Int) {
         repo.collectInside(id: id).subscribe(HttpObserverType.init(success: { [weak self] (response) in
-            self?.collectionArticleLiveData.value = (isSuccess: true, id: id)
+            self?.collectionArticleLiveData.value = (error: nil, id: id)
         }, error: { [weak self] (error) in
-                self?.collectionArticleLiveData.value = (isSuccess: false, id: id)
-                self?.errorLiveData.value = error
+                self?.collectionArticleLiveData.value = (error: error, id: id)
+            })).disposed(by: disposeBag)
+    }
+
+    func unCollectionInside(id: Int) {
+        repo.unCollectionInside(id: id).subscribe(HttpObserverType.init(success: { [weak self] (response) in
+            self?.unCollectionArticleLiveData.value = (error: nil, id: id)
+        }, error: { [weak self] (error) in
+                self?.unCollectionArticleLiveData.value = (error: error, id: id)
             })).disposed(by: disposeBag)
     }
 }

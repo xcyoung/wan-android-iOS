@@ -20,7 +20,7 @@ class HttpObserverType<E>: ObserverType where E: Codable {
     func on(_ event: Event<WanResponse<E>>) {
         switch event {
         case .next(let element):
-            if element.errorCode == 0 {
+            if element.errorCode == ErrorCode.success.rawValue {
                 success(element)
             } else {
                 onError(XError.init(code: element.errorCode, message: element.errorMsg))

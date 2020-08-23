@@ -34,24 +34,17 @@ class ArticleViewController: PageTableViewController {
         }.disposed(by: self.disposeBag)
 
         articleViewModel.collectionArticleLiveData.asObservable().subscribe { [weak self] (event) in
-            guard let model = event.element,
-                let index = self?.dataSource[0].firstIndex(where: { ($0 as? ArticleItem)?.id == model.id }),
-                index < (self?.dataSource[0].count ?? 0),
-                let item = self?.dataSource[0][index] as? ArticleItem
-                else {
-                    return
+            guard let model = event.element else {
+                return
             }
+            self?.collectionHandle(isCollect: true, model: model)
+        }.disposed(by: self.disposeBag)
 
-            if model.isSuccess {
-                item.collect = true
-            } else {
-                item.collect = false
-                if let cell = self?.tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) as? ArticleListItemCell {
-                    cell.updateLikeState(isLike: false, animated: true)
-                }
-                self?.goToAccount()
+        articleViewModel.unCollectionArticleLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let model = event.element else {
+                return
             }
-
+            self?.collectionHandle(isCollect: false, model: model)
         }.disposed(by: self.disposeBag)
 
         articleViewModel.errorLiveData.asObservable().subscribe { [weak self] (event) in
@@ -156,20 +149,43 @@ class ArticleViewController: PageTableViewController {
         if index < dataSource[0].count,
             let model = dataSource[0][index] as? ArticleItem {
             if model.collect {
-                
+                articleViewModel.unCollectionInside(id: model.id)
             } else {
                 articleViewModel.collectionInside(id: model.id)
             }
         }
-        
-//        goToAccount()
     }
-    
+
     private func goToAccount() {
         let accountViewController = AccountViewController.init()
         let accountNavigationVC = UINavigationController.init(rootViewController: accountViewController)
 //        accountNavigationVC.navigationBar.barStyle = .blackTranslucent
         accountNavigationVC.modalPresentationStyle = .fullScreen
         self.present(accountNavigationVC, animated: true, completion: nil)
+    }
+
+    /*
+        @param isCollect 要更新成 收藏 or 取消收藏
+     */
+    private func collectionHandle(isCollect: Bool, model: (error: XError?, id: Int)) {
+        guard let index = dataSource[0].firstIndex(where: { ($0 as? ArticleItem)?.id == model.id }),
+            index < (dataSource[0].count),
+            let item = dataSource[0][index] as? ArticleItem
+            else {
+                return
+        }
+
+        if let error = model.error {
+            item.collect = !isCollect
+            if let cell = tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) as? ArticleListItemCell {
+                cell.updateLikeState(isLike: !isCollect, animated: true)
+            }
+            if error.code == ErrorCode.loginInvalid.rawValue {
+                goToAccount()
+            }
+            toastError(error: error)
+        } else {
+            item.collect = isCollect
+        }
     }
 }
