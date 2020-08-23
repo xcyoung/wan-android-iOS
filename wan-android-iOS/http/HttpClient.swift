@@ -40,7 +40,7 @@ class HttpClient: NSObject {
         }
 
         getCookie()
-        
+
         #if DEBUG
             return requestString(method, requestUrl, parameters: params, encoding: encoding, headers: self.headers)
                 .debug()
@@ -54,7 +54,8 @@ class HttpClient: NSObject {
             }
         #else
             return requestString(method, requestUrl, parameters: params, encoding: encoding, headers: self.headers)
-                .map { (response, jsonString) -> T in
+                .map { [weak self] (response, jsonString) -> T in
+                    self?.saveCookie(response: response)
                     if let model: T = JsonUtils.jsonParse(jsonStr: jsonString) {
                         return model
                     } else {
