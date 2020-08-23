@@ -20,6 +20,7 @@
 		24BB74A724D94F2200EC0BD5 /* LeftEqualFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BB74A624D94F2200EC0BD5 /* LeftEqualFlowLayout.swift */; };
 		24BB74A924D9555800EC0BD5 /* NaviListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BB74A824D9555800EC0BD5 /* NaviListHeaderView.swift */; };
 		24F73AA424A0BA0A007A2B4D /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F73AA324A0BA0A007A2B4D /* BaseService.swift */; };
+		3A019AD424F2B62900AB9CD0 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A019AD324F2B62900AB9CD0 /* AccountModel.swift */; };
 		3A096D5724A7A36700E7FF1D /* DefaultEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A096D5624A7A36700E7FF1D /* DefaultEmptyView.swift */; };
 		3A096D5924A7A42000E7FF1D /* DefaultErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A096D5824A7A42000E7FF1D /* DefaultErrorView.swift */; };
 		3A1551D924D5206400DA1F02 /* Ext_UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1551D824D5206400DA1F02 /* Ext_UIImageView.swift */; };
@@ -76,6 +77,7 @@
 		3AE5D58224F1713400499935 /* CurrencyUnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D58124F1713400499935 /* CurrencyUnderLineTextField.swift */; };
 		3AE5D58424F17D9E00499935 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D58324F17D9E00499935 /* SignUpViewController.swift */; };
 		3AE5D58624F25A0C00499935 /* Ext_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D58524F25A0C00499935 /* Ext_UIView.swift */; };
+		3AE5D58824F2B15800499935 /* LocalStroage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D58724F2B15800499935 /* LocalStroage.swift */; };
 		3AEC6D8324B018570072120C /* WanResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8224B018570072120C /* WanResponse.swift */; };
 		3AEC6D8524B040070072120C /* PageStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8424B040070072120C /* PageStrategy.swift */; };
 		3AEC6D8724B041A60072120C /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC6D8624B041A60072120C /* PageInfo.swift */; };
@@ -107,6 +109,7 @@
 		24BB74A624D94F2200EC0BD5 /* LeftEqualFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftEqualFlowLayout.swift; sourceTree = "<group>"; };
 		24BB74A824D9555800EC0BD5 /* NaviListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviListHeaderView.swift; sourceTree = "<group>"; };
 		24F73AA324A0BA0A007A2B4D /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		3A019AD324F2B62900AB9CD0 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		3A096D5624A7A36700E7FF1D /* DefaultEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEmptyView.swift; sourceTree = "<group>"; };
 		3A096D5824A7A42000E7FF1D /* DefaultErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultErrorView.swift; sourceTree = "<group>"; };
 		3A1551D824D5206400DA1F02 /* Ext_UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIImageView.swift; sourceTree = "<group>"; };
@@ -165,6 +168,7 @@
 		3AE5D58124F1713400499935 /* CurrencyUnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUnderLineTextField.swift; sourceTree = "<group>"; };
 		3AE5D58324F17D9E00499935 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3AE5D58524F25A0C00499935 /* Ext_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIView.swift; sourceTree = "<group>"; };
+		3AE5D58724F2B15800499935 /* LocalStroage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStroage.swift; sourceTree = "<group>"; };
 		3AEC6D8224B018570072120C /* WanResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanResponse.swift; sourceTree = "<group>"; };
 		3AEC6D8424B040070072120C /* PageStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStrategy.swift; sourceTree = "<group>"; };
 		3AEC6D8624B041A60072120C /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
@@ -333,6 +337,7 @@
 				3A90B0E824A481D800651342 /* component */,
 				3A90B0E524A47C1100651342 /* extension */,
 				3A15523C24DFB0DD00DA1F02 /* RouterCenter.swift */,
+				3AE5D58724F2B15800499935 /* LocalStroage.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 				3AE5D57F24F15E6100499935 /* SignInViewController.swift */,
 				3AE5D58324F17D9E00499935 /* SignUpViewController.swift */,
 				3AE5D57D24F1216900499935 /* AccountViewModel.swift */,
+				3A019AD324F2B62900AB9CD0 /* AccountModel.swift */,
 			);
 			path = account;
 			sourceTree = "<group>";
@@ -682,6 +688,7 @@
 				3A81D5E024AB973A000DEDEB /* R.generated.swift in Sources */,
 				3A15523624DF06D400DA1F02 /* ProjectTreeViewController.swift in Sources */,
 				3A79DAAC24A62EF7002BCD2A /* Ext_LottieAnimation.swift in Sources */,
+				3A019AD424F2B62900AB9CD0 /* AccountModel.swift in Sources */,
 				3AEC6DFC24B1F7DE0072120C /* Pagination.swift in Sources */,
 				3A90B0EC24A4858E00651342 /* Ext_UIColor_Hex.swift in Sources */,
 				3A1551DB24D6994600DA1F02 /* XBanner.swift in Sources */,
@@ -711,6 +718,7 @@
 				240FF5BF24A0A31A00E3F5A8 /* JsonUtils.swift in Sources */,
 				24BB74A924D9555800EC0BD5 /* NaviListHeaderView.swift in Sources */,
 				3A70932D24B4CE4100DCF916 /* ArticleListItemCell.swift in Sources */,
+				3AE5D58824F2B15800499935 /* LocalStroage.swift in Sources */,
 				3AEC6DF624B1F3760072120C /* WanAndroidRepo.swift in Sources */,
 				240FF5BC24A0992000E3F5A8 /* HttpClient.swift in Sources */,
 				3AE5D57324EFCC1500499935 /* NavViewController.swift in Sources */,

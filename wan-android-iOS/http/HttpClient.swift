@@ -46,6 +46,7 @@ class HttpClient: NSObject {
                 .debug()
                 .map { [weak self] (response, jsonString) -> T in
                     self?.saveCookie(response: response)
+                    self?.saveUserInfo(response: response, userInfoJson: jsonString)
                     if let model: T = JsonUtils.jsonParse(jsonStr: jsonString) {
                         return model
                     } else {
@@ -56,6 +57,7 @@ class HttpClient: NSObject {
             return requestString(method, requestUrl, parameters: params, encoding: encoding, headers: self.headers)
                 .map { [weak self] (response, jsonString) -> T in
                     self?.saveCookie(response: response)
+                    self?.saveUserInfo(response: response, userInfoJson: jsonString)
                     if let model: T = JsonUtils.jsonParse(jsonStr: jsonString) {
                         return model
                     } else {
@@ -77,18 +79,26 @@ class HttpClient: NSObject {
         for cookie in cookies {
             cookieArray.append(cookie.properties!)
         }
-        UserDefaults.standard.set(cookieArray, forKey: "tokens")
+        LocalStroage.shared.saveCookie(cookieArray: cookieArray)
     }
 
     private func getCookie() {
-        if let cookieArray = UserDefaults.standard.array(forKey: "tokens") {
+        if let cookieArray = LocalStroage.shared.getCookie() {
             for cookieData in cookieArray {
-                if let dict = cookieData as? [HTTPCookiePropertyKey: Any] {
-                    if let cookie = HTTPCookie.init(properties: dict) {
-                        Alamofire.SessionManager.default.session.configuration.httpCookieStorage?.setCookie(cookie)
-                    }
+                let dict = cookieData
+                if let cookie = HTTPCookie.init(properties: dict) {
+                    Alamofire.SessionManager.default.session.configuration.httpCookieStorage?.setCookie(cookie)
                 }
             }
         }
+    }
+
+    private func saveUserInfo(response: HTTPURLResponse, userInfoJson: String) {
+        guard let url = response.url,
+            url.absoluteString.contains("user/login") else {
+            return
+        }
+        
+        LocalStroage.shared.saveUserInfo(userInfoJson: userInfoJson)
     }
 }
