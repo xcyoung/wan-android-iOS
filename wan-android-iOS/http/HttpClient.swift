@@ -10,6 +10,12 @@ import Foundation
 import Alamofire
 import RxSwift
 import RxAlamofire
+//  需要鉴权信息的请求
+enum AuthStatePath: String, CaseIterable {
+    case collectInside = "lg/collect/"
+    case unCollectInside = "lg/uncollect_originId/"
+}
+
 class HttpClient: NSObject {
     private let baseUrl: String
     private var headers: HTTPHeaders
@@ -33,6 +39,15 @@ class HttpClient: NSObject {
         encoding: ParameterEncoding = URLEncoding.default,
         pathParams: Dictionary<String, String> = [:],
         params: Dictionary<String, Any> = [:]) -> Observable<T> {
+        if let _ = AuthStatePath.allCases.first(where: {
+            url.contains($0.rawValue)
+        }) {
+            if LocalStroage.shared.getCookie() == nil ||
+                LocalStroage.shared.getUserInfo() == nil {
+                return Observable<T>.error(XError.init(code: ErrorCode.localLoginInvalid.rawValue, message: "请先登录"))
+            }
+        }
+        
         var requestUrl = baseUrl + url
 
         for (key, value) in pathParams {

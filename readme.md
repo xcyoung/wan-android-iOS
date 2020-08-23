@@ -136,3 +136,7 @@ https://github.com/manondidi/swiftArch
 - 登录、注册功能
 
 - 完成收藏逻辑
+
+- 引入DoraemonKit用于调试
+
+- 添加网络请求需要鉴权状态的拦截

@@ -30,6 +30,6 @@ class XError: NSError {
 enum ErrorCode: Int {
     case success = 0
     case loginInvalid = -1001
-    
+    case localLoginInvalid = -100000
     case unkowned = -1
 }

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
+  - DoraemonKit/Core (3.0.2)
   - IQKeyboardManagerSwift (6.5.0)
   - lottie-ios (3.1.8)
   - MJRefresh (3.4.3)
@@ -20,6 +21,7 @@ PODS:
   - XLPagerTabStrip (8.1.0)
 
 DEPENDENCIES:
+  - DoraemonKit/Core (~> 3.0.2)
   - IQKeyboardManagerSwift (= 6.5.0)
   - lottie-ios (= 3.1.8)
   - MJRefresh (= 3.4.3)
@@ -33,6 +35,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - DoraemonKit
     - IQKeyboardManagerSwift
     - lottie-ios
     - MJRefresh
@@ -47,6 +50,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  DoraemonKit: 8587e7a9aae0773dfc96707d2369d89d2a21b3d2
   IQKeyboardManagerSwift: 6cd19976c6e871907c4ed9127c2d3affdd4defc2
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
@@ -59,6 +63,6 @@ SPEC CHECKSUMS:
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
 
-PODFILE CHECKSUM: 5e3f6b10444d810fa24a146253bc91946420e40b
+PODFILE CHECKSUM: c1478d12aa69efb7b36c1a31d11c11bec91a2bc8
 
 COCOAPODS: 1.5.3

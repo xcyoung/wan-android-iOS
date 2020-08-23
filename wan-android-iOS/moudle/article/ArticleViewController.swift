@@ -187,7 +187,8 @@ class ArticleViewController: PageTableViewController {
             if let cell = tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) as? ArticleListItemCell {
                 cell.updateLikeState(isLike: !isCollect, animated: true)
             }
-            if error.code == ErrorCode.loginInvalid.rawValue {
+            if error.code == ErrorCode.loginInvalid.rawValue ||
+                error.code == ErrorCode.localLoginInvalid.rawValue {
                 goToAccount()
             }
             toastError(error: error)

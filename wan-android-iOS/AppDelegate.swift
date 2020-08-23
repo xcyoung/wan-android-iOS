@@ -8,6 +8,9 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+#if DEBUG
+    import DoraemonKit
+#endif
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,12 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        #if DEBUG
+            DoraemonManager.shareInstance().install()
+            DoraemonManager.shareInstance().showDoraemon()
+        #endif
+
         RouterCenter.shared.initialize()
-        
+
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-        
+
         let window = UIWindow.init(frame: UIScreen.main.bounds)
         window.rootViewController = UINavigationController.init(rootViewController: HomeViewController.init())
 
