@@ -77,4 +77,14 @@ class WanAndroidService: BaseService {
         ]
         return httpClient.requestByRx(url: url, method: .post, params: body)
     }
+    
+    func signUp(userName: String, password: String, repassword: String) -> Observable<WanResponse<Empty>> {
+        let url = "user/register"
+        let body = [
+            "username": userName,
+            "password": password,
+            "repassword": repassword
+        ]
+        return httpClient.requestByRx(url: url, method: .post, params: body)
+    }
 }

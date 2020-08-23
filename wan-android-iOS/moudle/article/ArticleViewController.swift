@@ -146,14 +146,15 @@ class ArticleViewController: PageTableViewController {
     }
 
     @objc private func onLikeBtnClick(_ index: Int) {
-        if index < dataSource[0].count,
-            let model = dataSource[0][index] as? ArticleItem {
-            if model.collect {
-                articleViewModel.unCollectionInside(id: model.id)
-            } else {
-                articleViewModel.collectionInside(id: model.id)
-            }
-        }
+//        if index < dataSource[0].count,
+//            let model = dataSource[0][index] as? ArticleItem {
+//            if model.collect {
+//                articleViewModel.unCollectionInside(id: model.id)
+//            } else {
+//                articleViewModel.collectionInside(id: model.id)
+//            }
+//        }
+        goToAccount()
     }
 
     private func goToAccount() {

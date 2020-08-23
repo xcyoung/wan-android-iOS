@@ -70,6 +70,23 @@ class AccountViewController: BaseViewController {
             self?.dismiss(animated: true, completion: nil)
         }.disposed(by: disposeBag)
         
+        accountViewModel.signUpSuccessLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let isSuccess = event.element, isSuccess else {
+                return
+            }
+
+            self?.accountViewModel.goBack()
+        }.disposed(by: disposeBag)
+        
+        accountViewModel.errorLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let element = event.element,
+                let error = element else {
+                    return
+            }
+
+            self?.toastError(error: error)
+        }.disposed(by: disposeBag)
+
         showSubViewController(index: AccountView.signIn.rawValue, shouldShow: false)
         showSubViewController(index: AccountView.signUp.rawValue, shouldShow: false)
         showSubViewController(index: AccountView.select.rawValue)

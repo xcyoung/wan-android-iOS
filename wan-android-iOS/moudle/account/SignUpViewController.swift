@@ -40,6 +40,20 @@ class SignUpViewController: BaseViewController {
         return textField
     }()
     
+    private let repasswordTextFeild: CurrencyUnderLineTextField = {
+        let textField = CurrencyUnderLineTextField.init()
+        textField.placeholder = "确认密码"
+        textField.textColor = UIColor.project.text
+        textField.keyboardType = .emailAddress
+        textField.isSecureTextEntry = true
+        textField.tintColor = UIColor.project.primary
+        textField.lineColor = UIColor.project.primary
+        textField.lineHeight = 1
+        textField.clearButtonMode = .whileEditing
+        textField.contentEdgeInsets = .init(top: 4, left: 8, bottom: 4, right: 8)
+        return textField
+    }()
+    
     private let signUpBtn: UIButton = {
         let btn = UIButton.init(type: .system)
         btn.setTitle("注册", for: .normal)
@@ -62,7 +76,7 @@ class SignUpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        signUpBtn.addTarget(self, action: #selector(onSignInClick(_:)), for: .touchUpInside)
+        signUpBtn.addTarget(self, action: #selector(onSignUpClick(_:)), for: .touchUpInside)
     }
     
     override func initView() {
@@ -82,6 +96,11 @@ class SignUpViewController: BaseViewController {
         passwordTextFeild.myTrailing = CGFloat.init(32)
         passwordTextFeild.myLeading = CGFloat.init(32)
         
+        repasswordTextFeild.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
+        repasswordTextFeild.myTop = CGFloat.init(16)
+        repasswordTextFeild.myTrailing = CGFloat.init(32)
+        repasswordTextFeild.myLeading = CGFloat.init(32)
+        
         signUpBtn.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
         signUpBtn.myTop = CGFloat.init(32)
         signUpBtn.myTrailing = CGFloat.init(32)
@@ -89,6 +108,7 @@ class SignUpViewController: BaseViewController {
         
         layout.addSubview(userNameTextFeild)
         layout.addSubview(passwordTextFeild)
+        layout.addSubview(repasswordTextFeild)
         layout.addSubview(signUpBtn)
         parentView.addSubview(layout)
     }
@@ -97,7 +117,29 @@ class SignUpViewController: BaseViewController {
         return signUpBtn
     }
     
-    @objc private func onSignInClick(_ sender: UIButton) {
+    @objc private func onSignUpClick(_ sender: UIButton) {
+        guard let userName = userNameTextFeild.text,
+            let password = passwordTextFeild.text,
+            let repassword = repasswordTextFeild.text
+        else {
+            toast(message: "请输入完整信息")
+            return
+        }
         
+        if userName.isEmpty {
+            toast(message: "请输入用户名")
+            return
+        } else if password.isEmpty {
+            toast(message: "请输入密码")
+            return
+        } else if repassword.isEmpty {
+            toast(message: "请确认密码")
+            return
+        } else if password != repassword {
+            toast(message: "两次密码不一致")
+            return
+        }
+        
+        accountViewModel.signUp(userName: userName, password: password, repassword: repassword)
     }
 }

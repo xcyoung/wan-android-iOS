@@ -133,6 +133,6 @@ https://github.com/manondidi/swiftArch
 
 - 完善账号页面的动画效果
 
-- 登录功能
+- 登录、注册功能
 
 - 完成收藏逻辑

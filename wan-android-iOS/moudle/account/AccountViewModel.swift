@@ -20,6 +20,7 @@ class AccountViewModel: BaseViewModel {
     let viewSwtichLiveData = RxLiveData<(from: AccountView, to: AccountView)>.init(defalutValue: (from: .select, to: .select))
     let dismissLiveData = RxLiveData<Bool>.init(defalutValue: false)
     let signInSucessLiveData = RxLiveData<Bool>.init(defalutValue: false)
+    let signUpSuccessLiveData = RxLiveData<Bool>.init(defalutValue: false)
     private var accountView: AccountView = .select
     func onViewSwtich(accountView: AccountView) {
         viewSwtichLiveData.value = (from: self.accountView, to: accountView)
@@ -41,10 +42,18 @@ class AccountViewModel: BaseViewModel {
     }
 
     func signIn(userName: String, password: String) {
-        repo.signIn(userName: userName, password: password).subscribe(HttpObserverType.init(success: {[weak self] (response) in
+        repo.signIn(userName: userName, password: password).subscribe(HttpObserverType.init(success: { [weak self] (response) in
             self?.signInSucessLiveData.value = true
-        }, error: { (error) in
-            print(error)
+        }, error: { [weak self] (error) in
+                self?.errorLiveData.value = error
+            })).disposed(by: disposeBag)
+    }
+    
+    func signUp(userName: String, password: String, repassword: String) {
+        repo.signUp(userName: userName, password: password, repassword: repassword).subscribe(HttpObserverType.init(success: { [weak self] (response) in
+            self?.signUpSuccessLiveData.value = true
+        }, error: { [weak self] (error) in
+                self?.errorLiveData.value = error
             })).disposed(by: disposeBag)
     }
 }
