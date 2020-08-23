@@ -33,34 +33,43 @@ class WanAndroidService: BaseService {
         let url = "article/list/\(pageIndex)/json?cid=\(id)"
         return httpClient.requestByRx(url: url, method: .get)
     }
-    
+
     func naviList() -> Observable<WanResponse<[NaviListModel]>> {
         let url = "navi/json"
         return httpClient.requestByRx(url: url, method: .get)
     }
-    
+
     func officialChaptersList() -> Observable<WanResponse<[OfficialListModel]>> {
         let url = "wxarticle/chapters/json"
         return httpClient.requestByRx(url: url, method: .get)
     }
-    
+
     func officialList(id: Int, pageIndex: Int) -> Observable<WanResponse<ArticleListModel>> {
         let url = "wxarticle/list/\(id)/\(pageIndex)/json"
         return httpClient.requestByRx(url: url, method: .get)
     }
-    
+
     func projectTreeList() -> Observable<WanResponse<[ProjectListModel]>> {
         let url = "project/tree/json"
         return httpClient.requestByRx(url: url, method: .get)
     }
-    
+
     func projectList(id: Int, pageIndex: Int) -> Observable<WanResponse<ArticleListModel>> {
         let url = "project/list/\(pageIndex)/json?cid=\(id)"
         return httpClient.requestByRx(url: url, method: .get)
     }
-    
+
     func collectInside(id: Int) -> Observable<WanResponse<Empty>> {
         let url = "lg/collect/\(id)/json"
         return httpClient.requestByRx(url: url, method: .post)
+    }
+
+    func signIn(userName: String, password: String) -> Observable<WanResponse<Empty>> {
+        let url = "user/login"
+        let body = [
+            "username": userName,
+            "password": password
+        ]
+        return httpClient.requestByRx(url: url, method: .post, params: body)
     }
 }

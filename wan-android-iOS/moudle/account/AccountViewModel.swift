@@ -15,8 +15,11 @@ enum AccountView: Int {
 }
 
 class AccountViewModel: BaseViewModel {
+    private let repo = WanAndroidRepo.shared
+
     let viewSwtichLiveData = RxLiveData<(from: AccountView, to: AccountView)>.init(defalutValue: (from: .select, to: .select))
     let dismissLiveData = RxLiveData<Bool>.init(defalutValue: false)
+    let signInSucessLiveData = RxLiveData<Bool>.init(defalutValue: false)
     private var accountView: AccountView = .select
     func onViewSwtich(accountView: AccountView) {
         viewSwtichLiveData.value = (from: self.accountView, to: accountView)
@@ -35,5 +38,13 @@ class AccountViewModel: BaseViewModel {
 //            onViewSwtich(accountView: .select)
 //            break
         }
+    }
+
+    func signIn(userName: String, password: String) {
+        repo.signIn(userName: userName, password: password).subscribe(HttpObserverType.init(success: {[weak self] (response) in
+            self?.signInSucessLiveData.value = true
+        }, error: { (error) in
+            print(error)
+            })).disposed(by: disposeBag)
     }
 }

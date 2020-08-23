@@ -12,7 +12,7 @@ import MyLayout
 
 class SignInViewController: BaseViewController {
     private let accountViewModel: AccountViewModel
-    
+
     private let userNameTextFeild: CurrencyUnderLineTextField = {
         let textField = CurrencyUnderLineTextField.init()
         textField.placeholder = "用户名"
@@ -25,7 +25,7 @@ class SignInViewController: BaseViewController {
         textField.contentEdgeInsets = .init(top: 4, left: 8, bottom: 4, right: 8)
         return textField
     }()
-    
+
     private let passwordTextFeild: CurrencyUnderLineTextField = {
         let textField = CurrencyUnderLineTextField.init()
         textField.placeholder = "密码"
@@ -39,7 +39,7 @@ class SignInViewController: BaseViewController {
         textField.contentEdgeInsets = .init(top: 4, left: 8, bottom: 4, right: 8)
         return textField
     }()
-    
+
     private let signInBtn: UIButton = {
         let btn = UIButton.init(type: .system)
         btn.setTitle("登录", for: .normal)
@@ -49,55 +49,66 @@ class SignInViewController: BaseViewController {
         btn.contentEdgeInsets = .init(top: 8, left: 0, bottom: 8, right: 0)
         return btn
     }()
-    
+
     init(accountViewModel: AccountViewModel) {
         self.accountViewModel = accountViewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         signInBtn.addTarget(self, action: #selector(onSignInClick(_:)), for: .touchUpInside)
     }
-    
+
     override func initView() {
         super.initView()
-        
+
         let layout = MyLinearLayout.init()
         layout.orientation = MyOrientation_Vert
         layout.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.fill())
-        
+
         userNameTextFeild.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
         userNameTextFeild.myTop = CGFloat.init(8)
         userNameTextFeild.myTrailing = CGFloat.init(32)
         userNameTextFeild.myLeading = CGFloat.init(32)
-        
+
         passwordTextFeild.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
         passwordTextFeild.myTop = CGFloat.init(16)
         passwordTextFeild.myTrailing = CGFloat.init(32)
         passwordTextFeild.myLeading = CGFloat.init(32)
-        
+
         signInBtn.mySize = CGSize.init(width: MyLayoutSize.fill(), height: MyLayoutSize.wrap())
         signInBtn.myTop = CGFloat.init(32)
         signInBtn.myTrailing = CGFloat.init(32)
         signInBtn.myLeading = CGFloat.init(32)
-        
+
         layout.addSubview(userNameTextFeild)
         layout.addSubview(passwordTextFeild)
         layout.addSubview(signInBtn)
         parentView.addSubview(layout)
     }
-    
+
     func getSignInBtn() -> UIButton {
         return signInBtn
     }
-    
+
     @objc private func onSignInClick(_ sender: UIButton) {
-        
+        let userName = userNameTextFeild.text
+        let password = passwordTextFeild.text
+
+        if userName?.isEmpty == true {
+            toast(message: "请输入用户名")
+            return
+        } else if password?.isEmpty == true {
+            toast(message: "请输入密码")
+            return
+        } else {
+            accountViewModel.signIn(userName: userName!, password: password!)
+        }
     }
 }

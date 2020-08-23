@@ -43,9 +43,9 @@ class ArticleViewController: PageTableViewController {
             }
 
             if model.isSuccess {
-                item.zan = 1
+                item.collect = true
             } else {
-                item.zan = 0
+                item.collect = false
                 if let cell = self?.tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) as? ArticleListItemCell {
                     cell.updateLikeState(isLike: false, animated: true)
                 }
@@ -153,16 +153,16 @@ class ArticleViewController: PageTableViewController {
     }
 
     @objc private func onLikeBtnClick(_ index: Int) {
-//        if index < dataSource[0].count,
-//            let model = dataSource[0][index] as? ArticleItem {
-//            if model.zan == 1 {
-////                model.zan = 0
-//            } else {
-//                articleViewModel.collectionInside(id: model.id)
-//            }
-//        }
+        if index < dataSource[0].count,
+            let model = dataSource[0][index] as? ArticleItem {
+            if model.collect {
+                
+            } else {
+                articleViewModel.collectionInside(id: model.id)
+            }
+        }
         
-        goToAccount()
+//        goToAccount()
     }
     
     private func goToAccount() {

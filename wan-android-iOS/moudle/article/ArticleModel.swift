@@ -75,7 +75,7 @@ class ArticleItem: NSObject, Codable {
     let canEdit: Bool
     let chapterID: Int
     let chapterName: String
-    let collect: Bool
+    var collect: Bool
     let courseID: Int
     let desc, descMd, envelopePic: String
     let fresh: Bool
@@ -91,7 +91,7 @@ class ArticleItem: NSObject, Codable {
     let tags: [Tag]
     let title: String
     let type, userID, visible: Int
-    var zan: Int
+    let zan: Int
 
     enum CodingKeys: String, CodingKey {
         case apkLink, audit, author, canEdit

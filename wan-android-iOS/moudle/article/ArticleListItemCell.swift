@@ -183,7 +183,7 @@ class ArticleListItemCell: UITableViewCell {
             }
         }
 
-        updateLikeState(isLike: item.zan == 1)
+        updateLikeState(isLike: item.collect)
     }
 
     func addRecognizerToLikeBtn(_ onLike: @escaping (_ i: Int) -> Void, index: Int) {
