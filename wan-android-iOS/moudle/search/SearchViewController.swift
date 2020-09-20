@@ -18,8 +18,9 @@ class SearchViewController: BaseViewController {
 
     private let backBtn: UIButton = {
         let btn = UIButton.init()
-        btn.setImage(R.image.wan_ic_back_arrow_left(), for: .normal)
-        btn.tintColor = UIColor.project.primary
+        let image = R.image.wan_ic_back_arrow_left()
+        btn.setImage(image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.tintColor = UIColor.project.text
         return btn
     }()
 
