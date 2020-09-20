@@ -17,6 +17,7 @@ class RouterCenter: NSObject {
     enum Path: String, CaseIterable {
         case browser = "/browser"
         case account = "/account"
+        case search = "/search"
         func absolutePath() -> String {
             return "xWanAndroid://me.xcyoung.com" + self.rawValue
         }
@@ -57,6 +58,9 @@ class RouterCenter: NSObject {
             let accountNavigationVC = UINavigationController.init(rootViewController: target)
             accountNavigationVC.modalPresentationStyle = .fullScreen
             return accountNavigationVC
+        case Path.search.rawValue:
+            let target = SearchViewController.init()
+            return target
         default:
             return nil
         }
@@ -69,8 +73,72 @@ class RouterCenter: NSObject {
     func goToBrowser(url: String) {
         navigator.push("\(Path.browser.absolutePath())?url=\(url)")
     }
-    
+
     func goToAccount() {
         navigator.present(Path.account.absolutePath())
+    }
+
+    func goToSearch(fromVC: UIViewController? = nil) {
+        navigator.push("\(Path.search.absolutePath())")
+    }
+}
+
+
+class WanNavigationDelegate: NSObject, UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation,
+        from fromVC: UIViewController,
+        to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if fromVC.isKind(of: HomeViewController.self),
+            toVC.isKind(of: SearchViewController.self) {
+            return PushSearchAnimatedTransitioning.init()
+        }
+        return nil
+    }
+}
+
+class PushSearchAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
+
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.25
+    }
+
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let toVC = transitionContext.viewController(forKey: .to)
+        let fromVC = transitionContext.viewController(forKey: .from)
+
+        if let homeVC = fromVC as? HomeViewController,
+            let searchVC = toVC as? SearchViewController {
+            home2Search(homeVC: homeVC, searchVC: searchVC, using: transitionContext)
+        } else {
+
+        }
+    }
+
+    private func home2Search(
+        homeVC: HomeViewController,
+        searchVC: SearchViewController,
+        using transitionContext: UIViewControllerContextTransitioning) {
+//        guard let articleMainVC = homeVC.subVCMap[0] as? ArticleMainViewController
+//            else {
+//                return
+//        }
+//        let fromView = articleMainVC.getSearchBar()
+//        let toView = searchVC.getSearchArea()
+        transitionContext.containerView.addSubview(searchVC.view)
+        transitionContext.containerView.bringSubviewToFront(homeVC.view)
+//        let toFrame = toView.frame
+//        let fromFrame = fromView.frame
+        UIView.animate(withDuration: 0.5, animations: {
+//            fromView.alpha = 0
+//            fromView.frame = toFrame
+//            toView.alpha = 1.0
+            homeVC.view.alpha = 0
+            searchVC.view.alpha = 1
+        }) { (_) in
+//            fromView.frame = fromFrame
+            transitionContext.completeTransition(true)
+//            fromView.alpha = 1.0
+            homeVC.view.alpha = 1
+        }
     }
 }

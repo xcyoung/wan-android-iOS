@@ -54,10 +54,12 @@ class ArticleMainViewController: BaseViewController {
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(onSearchBarClick(_:)))
         searchBar.addGestureRecognizer(tap)
     }
+
+    @objc func getSearchBar() -> UIView {
+        return searchBar
+    }
     
     @objc private func onSearchBarClick(_ sender: UIGestureRecognizer) {
-//        toast(message: "还未实现哟～")
-        let searchVC = SearchViewController.init()
-        self.parent?.navigationController?.pushViewController(searchVC, animated: true)
+        RouterCenter.shared.goToSearch(fromVC: self)
     }
 }

@@ -37,7 +37,7 @@ class HomeViewController: BaseViewController {
 
     private let contentView: UIView = UIView.init()
 
-    private var subVCMap: [Int: BaseViewController] = [:]
+    var subVCMap: [Int: BaseViewController] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.delegate = self

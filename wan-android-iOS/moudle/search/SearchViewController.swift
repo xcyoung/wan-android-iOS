@@ -83,6 +83,10 @@ class SearchViewController: BaseViewController {
         return (hidden: true, animated: true)
     }
 
+    func getSearchArea() -> UIView {
+        return searchArea
+    }
+    
     @objc private func onBackClick(_ sender: UIView) {
         self.navigationController?.popViewController(animated: true)
     }

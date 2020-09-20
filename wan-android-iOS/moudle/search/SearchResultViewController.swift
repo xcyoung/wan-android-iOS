@@ -34,6 +34,14 @@ class SearchResultViewController: PageTableViewController {
 
             self?.onLoadSuccess(result: model)
         }.disposed(by: disposeBag)
+        
+        searchViewModel.errorLiveData.asObservable().subscribe { [weak self] (event) in
+            guard let error = event.element as? XError else {
+                return
+            }
+
+            self?.onLoadFail(error)
+        }.disposed(by: self.disposeBag)
     }
 
     override func initView() {

@@ -15,7 +15,7 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private let wanNavigationDelegate = WanNavigationDelegate.init()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
@@ -31,7 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
 
         let window = UIWindow.init(frame: UIScreen.main.bounds)
-        window.rootViewController = UINavigationController.init(rootViewController: HomeViewController.init())
+        let navigationController = UINavigationController.init(rootViewController: HomeViewController.init())
+        navigationController.delegate = self
+        window.rootViewController = navigationController
 
         UINavigationBar.appearance().tintColor = UIColor.project.text//前景色，按钮颜色
         UINavigationBar.appearance().barTintColor = UIColor.project.background //背景色，导航条背景色
@@ -55,3 +57,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation,
+        from fromVC: UIViewController,
+        to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return wanNavigationDelegate.navigationController(
+            navigationController,
+            animationControllerFor: operation,
+            from: fromVC,
+            to: toVC)
+    }
+}
