@@ -140,3 +140,7 @@ https://github.com/manondidi/swiftArch
 - 引入DoraemonKit用于调试
 
 - 添加网络请求需要鉴权状态的拦截
+
+### 2020.09.20
+
+- 新增搜索功能

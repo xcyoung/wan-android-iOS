@@ -24,10 +24,12 @@ class BaseViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        let hidden = getNavigationBarHidden()
-        self.navigationController?.setNavigationBarHidden(hidden.hidden, animated: hidden.animated)
-        if !hidden.hidden {
-            self.edgesForExtendedLayout = UIRectEdge.bottom
+        if self.parent?.isKind(of: UINavigationController.self) == true {
+            let hidden = getNavigationBarHidden()
+            self.navigationController?.setNavigationBarHidden(hidden.hidden, animated: hidden.animated)
+            if !hidden.hidden {
+                self.edgesForExtendedLayout = UIRectEdge.bottom
+            }
         }
     }
 

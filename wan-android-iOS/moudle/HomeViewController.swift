@@ -89,7 +89,7 @@ extension HomeViewController: UITabBarDelegate {
             }
             vc.view.frame = CGRect.init(x: 0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height)
             self.contentView.addSubview(vc.view)
-            vc.beginAppearanceTransition(true, animated: true)
+            self.addChild(vc)
             subVCMap[index] = vc
         }
         subVCMap.forEach { (key: Int, value: BaseViewController) in

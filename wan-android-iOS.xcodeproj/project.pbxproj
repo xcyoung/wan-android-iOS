@@ -54,12 +54,19 @@
 		3A79DA6F24A62650002BCD2A /* Ext_UIColor_project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79DA6E24A62650002BCD2A /* Ext_UIColor_project.swift */; };
 		3A79DAAC24A62EF7002BCD2A /* Ext_LottieAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79DAAB24A62EF7002BCD2A /* Ext_LottieAnimation.swift */; };
 		3A81D5E024AB973A000DEDEB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A81D5DF24AB973A000DEDEB /* R.generated.swift */; };
+		3A8A4B9E25170CAF00A540A4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8A4B9D25170CAF00A540A4 /* SearchViewModel.swift */; };
+		3A8A4BB22517206200A540A4 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8A4BB12517206200A540A4 /* SearchResultViewController.swift */; };
 		3A90B0E324A4781200651342 /* RxLiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0E224A4781200651342 /* RxLiveData.swift */; };
 		3A90B0E724A47C6F00651342 /* Ext_UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0E624A47C6F00651342 /* Ext_UIApplication.swift */; };
 		3A90B0EA24A481EA00651342 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0E924A481EA00651342 /* Toast.swift */; };
 		3A90B0EC24A4858E00651342 /* Ext_UIColor_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0EB24A4858E00651342 /* Ext_UIColor_Hex.swift */; };
 		3A90B0EF24A5996C00651342 /* ToastOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0EE24A5996C00651342 /* ToastOperation.swift */; };
 		3A90B0F124A59A4800651342 /* ToastHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90B0F024A59A4800651342 /* ToastHandler.swift */; };
+		3AA4AD4A2515BEFD0046E586 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4AD492515BEFD0046E586 /* SearchViewController.swift */; };
+		3AA4AD4C2516449C0046E586 /* ContentInsetsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4AD4B2516449C0046E586 /* ContentInsetsTextField.swift */; };
+		3AA4AD4E251645560046E586 /* SearchGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4AD4D251645560046E586 /* SearchGuideViewController.swift */; };
+		3AA4AD50251645FC0046E586 /* HotSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4AD4F251645FC0046E586 /* HotSearchView.swift */; };
+		3AA4AD522516464E0046E586 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4AD512516464E0046E586 /* SearchModel.swift */; };
 		3AB1A82424B369ED009F9596 /* HttpObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1A82324B369ED009F9596 /* HttpObserverType.swift */; };
 		3ACC1B3C24A8EB75001F69EB /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC1B3B24A8EB75001F69EB /* BaseTableViewController.swift */; };
 		3ACD1A3124A79A2400081C46 /* AnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD1A3024A79A2400081C46 /* AnimationProtocol.swift */; };
@@ -145,12 +152,19 @@
 		3A79DA6E24A62650002BCD2A /* Ext_UIColor_project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIColor_project.swift; sourceTree = "<group>"; };
 		3A79DAAB24A62EF7002BCD2A /* Ext_LottieAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_LottieAnimation.swift; sourceTree = "<group>"; };
 		3A81D5DF24AB973A000DEDEB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		3A8A4B9D25170CAF00A540A4 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		3A8A4BB12517206200A540A4 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		3A90B0E224A4781200651342 /* RxLiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxLiveData.swift; sourceTree = "<group>"; };
 		3A90B0E624A47C6F00651342 /* Ext_UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIApplication.swift; sourceTree = "<group>"; };
 		3A90B0E924A481EA00651342 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		3A90B0EB24A4858E00651342 /* Ext_UIColor_Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIColor_Hex.swift; sourceTree = "<group>"; };
 		3A90B0EE24A5996C00651342 /* ToastOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastOperation.swift; sourceTree = "<group>"; };
 		3A90B0F024A59A4800651342 /* ToastHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastHandler.swift; sourceTree = "<group>"; };
+		3AA4AD492515BEFD0046E586 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3AA4AD4B2516449C0046E586 /* ContentInsetsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentInsetsTextField.swift; sourceTree = "<group>"; };
+		3AA4AD4D251645560046E586 /* SearchGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGuideViewController.swift; sourceTree = "<group>"; };
+		3AA4AD4F251645FC0046E586 /* HotSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSearchView.swift; sourceTree = "<group>"; };
+		3AA4AD512516464E0046E586 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		3AB1A82324B369ED009F9596 /* HttpObserverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpObserverType.swift; sourceTree = "<group>"; };
 		3ACC1B3B24A8EB75001F69EB /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		3ACD1A3024A79A2400081C46 /* AnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationProtocol.swift; sourceTree = "<group>"; };
@@ -368,6 +382,7 @@
 				3AE5D47324ED811400499935 /* TagView.swift */,
 				3AE5D47524ED87F600499935 /* PaddingLabel.swift */,
 				3AE5D58124F1713400499935 /* CurrencyUnderLineTextField.swift */,
+				3AA4AD4B2516449C0046E586 /* ContentInsetsTextField.swift */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -381,6 +396,19 @@
 				3A90B0F024A59A4800651342 /* ToastHandler.swift */,
 			);
 			path = toast;
+			sourceTree = "<group>";
+		};
+		3AA4AD482515BEB90046E586 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				3AA4AD492515BEFD0046E586 /* SearchViewController.swift */,
+				3AA4AD4D251645560046E586 /* SearchGuideViewController.swift */,
+				3A8A4BB12517206200A540A4 /* SearchResultViewController.swift */,
+				3AA4AD4F251645FC0046E586 /* HotSearchView.swift */,
+				3A8A4B9D25170CAF00A540A4 /* SearchViewModel.swift */,
+				3AA4AD512516464E0046E586 /* SearchModel.swift */,
+			);
+			path = search;
 			sourceTree = "<group>";
 		};
 		3ACC1B3A24A8EB30001F69EB /* tableView */ = {
@@ -431,6 +459,7 @@
 		3AEC6DF924B1F7530072120C /* moudle */ = {
 			isa = PBXGroup;
 			children = (
+				3AA4AD482515BEB90046E586 /* search */,
 				3AE5D57824F10FF800499935 /* account */,
 				249F683A24D3CB6C0058C449 /* browser */,
 				3AEC6DFA24B1F7630072120C /* article */,
@@ -648,7 +677,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AE5D58024F15E6100499935 /* SignInViewController.swift in Sources */,
+				3AA4AD4C2516449C0046E586 /* ContentInsetsTextField.swift in Sources */,
 				3AE5D57A24F1101800499935 /* AccountViewController.swift in Sources */,
+				3AA4AD522516464E0046E586 /* SearchModel.swift in Sources */,
 				3ACD1A3124A79A2400081C46 /* AnimationProtocol.swift in Sources */,
 				3A1551E724D8606500DA1F02 /* TreeListItemCell.swift in Sources */,
 				3A15523424DF063D00DA1F02 /* ProjectModel.swift in Sources */,
@@ -686,6 +717,7 @@
 				3A79DA6F24A62650002BCD2A /* Ext_UIColor_project.swift in Sources */,
 				3AEC6DF824B1F41D0072120C /* WanAndroidService.swift in Sources */,
 				3AEE1C8924A5C18F00660388 /* ToastView.swift in Sources */,
+				3AA4AD4E251645560046E586 /* SearchGuideViewController.swift in Sources */,
 				3A90B0E724A47C6F00651342 /* Ext_UIApplication.swift in Sources */,
 				3A81D5E024AB973A000DEDEB /* R.generated.swift in Sources */,
 				3A15523624DF06D400DA1F02 /* ProjectTreeViewController.swift in Sources */,
@@ -699,6 +731,7 @@
 				3AEC6D8724B041A60072120C /* PageInfo.swift in Sources */,
 				3AEEE2DA24A46EC9000A10F6 /* BaseViewController.swift in Sources */,
 				3AE5D57524EFCD1A00499935 /* NaviItemCell.swift in Sources */,
+				3AA4AD50251645FC0046E586 /* HotSearchView.swift in Sources */,
 				3A1551E524D85C0500DA1F02 /* TreeViewModel.swift in Sources */,
 				3A1551DE24D6A37000DA1F02 /* XBannerItemCell.swift in Sources */,
 				3A90B0EF24A5996C00651342 /* ToastOperation.swift in Sources */,
@@ -708,9 +741,12 @@
 				3AEC6DEE24B17E6D0072120C /* WanAndroidPageStrategy.swift in Sources */,
 				3A15523D24DFB0DD00DA1F02 /* RouterCenter.swift in Sources */,
 				24BB74A724D94F2200EC0BD5 /* LeftEqualFlowLayout.swift in Sources */,
+				3AA4AD4A2515BEFD0046E586 /* SearchViewController.swift in Sources */,
+				3A8A4B9E25170CAF00A540A4 /* SearchViewModel.swift in Sources */,
 				24BB74A124D8FCE700EC0BD5 /* TreeListHeaderView.swift in Sources */,
 				3AE5D47424ED811400499935 /* TagView.swift in Sources */,
 				3AEC6DF224B19FE00072120C /* Ext_UIViewController.swift in Sources */,
+				3A8A4BB22517206200A540A4 /* SearchResultViewController.swift in Sources */,
 				3ACF902124A650A100648C9A /* PageStateManager.swift in Sources */,
 				3A096D5924A7A42000E7FF1D /* DefaultErrorView.swift in Sources */,
 				3A5F7334249BB4DB00A3AE68 /* AppDelegate.swift in Sources */,

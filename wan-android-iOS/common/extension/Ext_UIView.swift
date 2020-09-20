@@ -17,4 +17,34 @@ extension UIView {
             return .zero
         }
     }
+    
+    var safeAreaLeft: CGFloat {
+        get {
+            return getMainWindowSafeAreaInsets().left
+        }
+    }
+    
+    var safeAreaRight: CGFloat {
+        get {
+            return getMainWindowSafeAreaInsets().right
+        }
+    }
+    
+    var safeAreaTop: CGFloat {
+        get {
+            return getMainWindowSafeAreaInsets().top
+        }
+    }
+    
+    var safeAreaBottom: CGFloat {
+        get {
+            return getMainWindowSafeAreaInsets().bottom
+        }
+    }
+    
+    var matchWidth: CGFloat {
+        get {
+            return frame.width - getMainWindowSafeAreaInsets().left - getMainWindowSafeAreaInsets().right
+        }
+    }
 }

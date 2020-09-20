@@ -101,16 +101,24 @@ class WanAndroidRepo: NSObject {
     func collectInside(id: Int) -> Observable<WanResponse<Empty>> {
         return service.collectInside(id: id)
     }
-    
+
     func unCollectionInside(id: Int) -> Observable<WanResponse<Empty>> {
         return service.unCollectionInside(id: id)
     }
-    
+
     func signIn(userName: String, password: String) -> Observable<WanResponse<Empty>> {
         return service.signIn(userName: userName, password: password)
     }
-    
+
     func signUp(userName: String, password: String, repassword: String) -> Observable<WanResponse<Empty>> {
         return service.signUp(userName: userName, password: password, repassword: repassword)
+    }
+
+    func hotkey() -> Observable<WanResponse<[HotSearchModel]>> {
+        return service.hotkey()
+    }
+
+    func search(index: Int, keyword: String) -> Observable<WanResponse<ArticleListModel>> {
+        return service.search(index: index, keyword: keyword)
     }
 }

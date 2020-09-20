@@ -56,6 +56,8 @@ class ArticleMainViewController: BaseViewController {
     }
     
     @objc private func onSearchBarClick(_ sender: UIGestureRecognizer) {
-        toast(message: "还未实现哟～")
+//        toast(message: "还未实现哟～")
+        let searchVC = SearchViewController.init()
+        self.parent?.navigationController?.pushViewController(searchVC, animated: true)
     }
 }

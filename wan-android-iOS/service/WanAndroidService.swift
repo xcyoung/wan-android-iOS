@@ -68,7 +68,7 @@ class WanAndroidService: BaseService {
         let url = "lg/uncollect_originId/\(id)/json"
         return httpClient.requestByRx(url: url, method: .post)
     }
-    
+
     func signIn(userName: String, password: String) -> Observable<WanResponse<Empty>> {
         let url = "user/login"
         let body = [
@@ -77,13 +77,26 @@ class WanAndroidService: BaseService {
         ]
         return httpClient.requestByRx(url: url, method: .post, params: body)
     }
-    
+
     func signUp(userName: String, password: String, repassword: String) -> Observable<WanResponse<Empty>> {
         let url = "user/register"
         let body = [
             "username": userName,
             "password": password,
             "repassword": repassword
+        ]
+        return httpClient.requestByRx(url: url, method: .post, params: body)
+    }
+
+    func hotkey() -> Observable<WanResponse<[HotSearchModel]>> {
+        let url = "hotkey/json"
+        return httpClient.requestByRx(url: url, method: .get)
+    }
+
+    func search(index: Int, keyword: String) -> Observable<WanResponse<ArticleListModel>> {
+        let url = "article/query/\(index)/json"
+        let body = [
+            "k": keyword
         ]
         return httpClient.requestByRx(url: url, method: .post, params: body)
     }
