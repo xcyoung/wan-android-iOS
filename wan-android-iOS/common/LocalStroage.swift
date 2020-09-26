@@ -13,6 +13,15 @@ class LocalStroage: NSObject {
     enum UserDefaultKey: String {
         case cookie = "wan_android_cookie"
         case userInfo = "wan_android_userInfo"
+        case searchHistory = "wan_android_searchHistory"
+    }
+    
+    func getUserKey(key: String) -> String {
+        if let userInfo = getUserInfo() {
+            return "\(key)_[\(userInfo.id)]"
+        } else {
+            return key
+        }
     }
     
     func saveCookie(cookieArray: [[HTTPCookiePropertyKey: Any]]) {
@@ -34,5 +43,31 @@ class LocalStroage: NSObject {
         } else {
             return nil
         }
+    }
+    
+    func saveSearchHistory(keyword: String) {
+        if var history = UserDefaults.standard.array(forKey: getUserKey(key: UserDefaultKey.searchHistory.rawValue)) as? [String] {
+            if !history.contains(keyword) {
+                if history.count >= 10 {
+                    history.removeLast()
+                }
+                history.insert(keyword, at: 0)
+                UserDefaults.standard.set(history, forKey: getUserKey(key: UserDefaultKey.searchHistory.rawValue))
+            }
+        } else {
+            UserDefaults.standard.set([keyword], forKey: getUserKey(key: UserDefaultKey.searchHistory.rawValue))
+        }
+    }
+    
+    func getSearchHistory() -> [String] {
+        if let history = UserDefaults.standard.array(forKey: getUserKey(key: UserDefaultKey.searchHistory.rawValue)) as? [String] {
+            return history
+        } else {
+            return []
+        }
+    }
+    
+    func clearSearchHistory() {
+        UserDefaults.standard.removeObject(forKey: getUserKey(key: UserDefaultKey.searchHistory.rawValue))
     }
 }

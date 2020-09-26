@@ -67,6 +67,7 @@
 		3AA4AD4E251645560046E586 /* SearchGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4AD4D251645560046E586 /* SearchGuideViewController.swift */; };
 		3AA4AD50251645FC0046E586 /* HotSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4AD4F251645FC0046E586 /* HotSearchView.swift */; };
 		3AA4AD522516464E0046E586 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4AD512516464E0046E586 /* SearchModel.swift */; };
+		3AAFB88C251F26F200D528BA /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAFB88B251F26F200D528BA /* FlowLayout.swift */; };
 		3AB1A82424B369ED009F9596 /* HttpObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1A82324B369ED009F9596 /* HttpObserverType.swift */; };
 		3ACC1B3C24A8EB75001F69EB /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC1B3B24A8EB75001F69EB /* BaseTableViewController.swift */; };
 		3ACD1A3124A79A2400081C46 /* AnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD1A3024A79A2400081C46 /* AnimationProtocol.swift */; };
@@ -165,6 +166,7 @@
 		3AA4AD4D251645560046E586 /* SearchGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGuideViewController.swift; sourceTree = "<group>"; };
 		3AA4AD4F251645FC0046E586 /* HotSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSearchView.swift; sourceTree = "<group>"; };
 		3AA4AD512516464E0046E586 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		3AAFB88B251F26F200D528BA /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		3AB1A82324B369ED009F9596 /* HttpObserverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpObserverType.swift; sourceTree = "<group>"; };
 		3ACC1B3B24A8EB75001F69EB /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		3ACD1A3024A79A2400081C46 /* AnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationProtocol.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				3AE5D47524ED87F600499935 /* PaddingLabel.swift */,
 				3AE5D58124F1713400499935 /* CurrencyUnderLineTextField.swift */,
 				3AA4AD4B2516449C0046E586 /* ContentInsetsTextField.swift */,
+				3AAFB88B251F26F200D528BA /* FlowLayout.swift */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				24BB74A724D94F2200EC0BD5 /* LeftEqualFlowLayout.swift in Sources */,
 				3AA4AD4A2515BEFD0046E586 /* SearchViewController.swift in Sources */,
 				3A8A4B9E25170CAF00A540A4 /* SearchViewModel.swift in Sources */,
+				3AAFB88C251F26F200D528BA /* FlowLayout.swift in Sources */,
 				24BB74A124D8FCE700EC0BD5 /* TreeListHeaderView.swift in Sources */,
 				3AE5D47424ED811400499935 /* TagView.swift in Sources */,
 				3AEC6DF224B19FE00072120C /* Ext_UIViewController.swift in Sources */,

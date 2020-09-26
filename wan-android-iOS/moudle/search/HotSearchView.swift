@@ -53,6 +53,12 @@ class HotSearchView: UIView {
     }
 
     private func layout() {
+        let frameHeight = ceil(Double.init(hotSearchModels.count) / 2) * Double.init(itemHeight)
+        frame = CGRect.init(x: frame.minX,
+                            y: frame.minY,
+                            width: frame.width,
+                            height: CGFloat(frameHeight))
+        
         for i in 0..<hotSearchModels.count {
             let model = hotSearchModels[i]
             let label = createHotSearchItem(index: i)

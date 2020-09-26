@@ -14,6 +14,7 @@ class SearchViewModel: BaseViewModel {
     let beforeSearchLiveData = RxLiveData<String>.init(defalutValue: "")
     let onSearchLiveData = RxLiveData<String>.init(defalutValue: "")
     let searchResultLiveData = RxLiveData<ArticleListModel?>.init(defalutValue: nil)
+    let searchHistoryLiveData = RxLiveData<[String]>.init(defalutValue: [])
     func getHotKey() {
         repo.hotkey().subscribe(HttpObserverType.init(success: { [weak self] (response) in
             if let list = response.data {
@@ -34,6 +35,7 @@ class SearchViewModel: BaseViewModel {
 
     func search(index: Int) {
         search(index: index, keyword: self.currentKeyword)
+        getHistory()
     }
 
     func onGuideSearch(keyword: String) {
@@ -42,7 +44,13 @@ class SearchViewModel: BaseViewModel {
     
     func onSearch(keyword: String) {
         self.currentKeyword = keyword
+        LocalStroage.shared.saveSearchHistory(keyword: keyword)
         onSearchLiveData.value = keyword
+    }
+    
+    func getHistory() {
+        let history = LocalStroage.shared.getSearchHistory()
+        searchHistoryLiveData.value = history
     }
     
     func refreshSearch() {
