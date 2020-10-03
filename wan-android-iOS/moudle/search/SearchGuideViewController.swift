@@ -108,7 +108,7 @@ class SearchGuideViewController: BaseViewController {
     
     private func createHistoryItem(text: String) -> UILabel {
         let label = PaddingLabel.init()
-        label.layer.backgroundColor = UIColor.project.appBackground.cgColor
+        label.layer.backgroundColor = UIColor.project.background.cgColor
         label.textColor = UIColor.project.text
         label.layer.cornerRadius = 5
         label.text = text

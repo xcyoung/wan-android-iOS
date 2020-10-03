@@ -19,7 +19,7 @@ class NaviListViewController: BaseViewController {
         let layout = LeftEqualFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 3
-        layout.minimumInteritemSpacing = 2
+        layout.minimumInteritemSpacing = 4
         
         let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.project.background

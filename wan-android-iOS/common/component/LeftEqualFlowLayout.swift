@@ -23,7 +23,15 @@ class LeftEqualFlowLayout: UICollectionViewFlowLayout {
                 if preFrame.origin.y == frame.origin.y {
                     frame.origin.x = preFrame.maxX + self.minimumInteritemSpacing
                     attr.frame = frame
+                } else if preFrame.origin.y < frame.origin.y {
+                    frame.origin.x = 0 + self.minimumInteritemSpacing
+                    attr.frame = frame
                 }
+            } else {
+                let attr = attrs[i]
+                var frame = attr.frame
+                frame.origin.x = 0 + self.minimumInteritemSpacing
+                attr.frame = frame
             }
         }
         return attrs

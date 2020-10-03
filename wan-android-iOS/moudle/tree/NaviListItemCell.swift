@@ -10,9 +10,14 @@ import Foundation
 import UIKit
 
 class NaviListItemCell: UICollectionViewCell {
-    private let label: UILabel = {
-        let label = UILabel.init()
-        label.textColor = UIColor.white
+    private let label: PaddingLabel = {
+        let label = PaddingLabel.init()
+        label.layer.backgroundColor = UIColor.project.item.cgColor
+        label.textColor = UIColor.project.text
+        label.layer.cornerRadius = 8
+        label.isUserInteractionEnabled = true
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textInsets = UIEdgeInsets.init(top: 8, left: 4, bottom: 8, right: 4)
         label.textAlignment = .center
         return label
     }()
@@ -34,8 +39,6 @@ class NaviListItemCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.label.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height)
-//        selectedBackgroundView = UIView.init(frame: frame)
-//        selectedBackgroundView?.backgroundColor = UIColor.init(white: 0.5, alpha: 0.5)
     }
     
     func setModel(item: ArticleItem) {
